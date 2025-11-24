@@ -16,11 +16,3 @@ Dive into contemporary fantasy where ordinary lives collide with extraordinary p
     <a href="{{ '/phoenix-rising/' | relative_url }}">Explore Series →</a>
   </div>
   <div class="card">
-    <h3>📖 Immersive Reading</h3>
-    <p>Clean navigation, progress tracking, and responsive design make every chapter a pleasure to read on any device.</p>
-  </div>
-  <div class="card">
-    <h3>🔗 Connected Stories</h3>
-    <p>Explore interconnected narratives, bonus content, and hidden lore that expands the world beyond the main series.</p>
-  </div>
-</div>
