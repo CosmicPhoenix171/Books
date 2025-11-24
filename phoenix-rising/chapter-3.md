@@ -2,7 +2,8 @@
 layout: chapter
 title: "The First Confrontation"
 chapter_number: 3
-prev_url: /chapter-2/
+book: phoenix-rising
+prev_url: /phoenix-rising/chapter-2/
 next_url:
 ---
 

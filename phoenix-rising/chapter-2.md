@@ -1,3 +1,12 @@
+---
+layout: chapter
+title: "Awakening"
+chapter_number: 2
+book: phoenix-rising
+prev_url: /phoenix-rising/chapter-1/
+next_url: /phoenix-rising/chapter-3/
+---
+
 Chapter 2: Awakening
 
 Stella and Emma walked silently to their Jeep, each lost in their own thoughts. The revelation from Stella's mom weighed heavily on them. As Stella turned the ignition, the familiar rumble of the engine brought her a small measure of comfort, but it did little to ease the swirling anxiety in her mind.
@@ -84,7 +93,7 @@ The apartment was silent, and she hoped the routine of cooking would help distra
 
 Suddenly, a surge of heat coursed through her body. She gasped, feeling a burning sensation in her fingertips. Before she could react, a burst of flames shot out from her hands, igniting the frying pan in front of her.
 
-“Ah\!” Stella cried out, stumbling back in shock, her heart racing.
+“Ah!” Stella cried out, stumbling back in shock, her heart racing.
 
 Lucas, hearing the commotion, rushed into the kitchen. “Stella, what’s going on?” he exclaimed, eyes wide as he saw the flames licking the air.
 
@@ -96,7 +105,7 @@ Stella stood there, staring at the charred remains in the frying pan, her heart 
 
 Lucas, attempting to lighten the mood, gave a nervous chuckle. “Well, I guess we know who won’t be winning any cooking competitions anytime soon.”
 
-Emma shot him a sharp look, her eyes flashing with irritation. “Lucas, this is serious\! Can’t you see she’s upset?”
+Emma shot him a sharp look, her eyes flashing with irritation. “Lucas, this is serious! Can’t you see she’s upset?”
 
 Lucas’s expression turned serious as he looked back at Stella. “I'm sorry, Stella. Are you sure you're okay?”
 
@@ -146,7 +155,7 @@ Her mother sighed deeply. “Stella, remember what we talked about. Your powers 
 
 “Maybe you should consider taking a break from college until you get this under control. It’s too dangerous,” her mother suggested, her voice filled with concern.
 
-“No, Mom\! I can’t just quit college. My life is here, and I’ve worked so hard to get this far,” Stella replied, her voice rising with determination.
+“No, Mom! I can’t just quit college. My life is here, and I’ve worked so hard to get this far,” Stella replied, her voice rising with determination.
 
 “I understand, but your safety is more important than anything else. If something were to happen…” her mother trailed off, the fear evident in her voice.
 
@@ -212,7 +221,7 @@ Emma watched as Stella closed her eyes and began to breathe deeply, her hands re
 
 After a few minutes, Stella opened her eyes and gave Emma a small, unsure smile. “I think it’s working. I feel a little more in control,” she said, noticing the pendant dimming slightly, a sign that she was gaining more mastery over her powers.
 
-Emma smiled back, relieved. “That’s great\! Let’s keep going.”
+Emma smiled back, relieved. “That’s great! Let’s keep going.”
 
 They continued with the exercises, Stella focusing on controlling her emotions and channeling her powers in a safe manner. The training was difficult and exhausting, but Stella felt a growing sense of confidence with each passing moment. They practiced different techniques her mother had taught her, each one designed to help her manage her powers more effectively.
 

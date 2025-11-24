@@ -7,7 +7,7 @@ title: "Welcome"
 
 A short paragraph describing what the book is about. Mention the tone, themes, or why someone should read it.
 
-[Start Reading]({{ '/chapter-1/' | relative_url }}){: .btn-primary }
+[Start Reading]({{ '/phoenix-rising/chapter-1/' | relative_url }}){: .btn-primary }
 
 ## What's inside?
 
