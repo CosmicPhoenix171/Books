@@ -22,3 +22,20 @@ permalink: /table-of-contents/
 {% else %}
 <p>No Phoenix Rising chapters published yet. As soon as you add files inside `phoenix-rising/` with `layout: chapter` and `book: phoenix-rising`, they'll appear here.</p>
 {% endif %}
+
+## The Accidental Reaper
+
+{% assign reaper_chapters = site.pages | where: "book", "accidental-reaper" | sort: "chapter_number" %}
+{% if reaper_chapters.size > 0 %}
+<div class="card-grid">
+  {% for chapter in reaper_chapters %}
+  <a href="{{ chapter.url | relative_url }}" class="card">
+    <h3>Chapter {{ chapter.chapter_number }}</h3>
+    <p><strong>{{ chapter.title }}</strong></p>
+    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem;">{{ chapter.content | strip_html | truncatewords: 25 }}</p>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<p>No <em>Accidental Reaper</em> chapters published yet. As soon as you add files inside `accidental-reaper/` with `layout: chapter` and `book: accidental-reaper`, they'll appear here.</p>
+{% endif %}
