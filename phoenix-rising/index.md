@@ -4,13 +4,25 @@ title: "Phoenix Rising"
 permalink: /phoenix-rising/
 ---
 
-# Phoenix Rising
+# 🔥 Phoenix Rising
 
-A contemporary fantasy drama following Stella Aurelia Ignis as she grapples with newly awakened Phoenix powers, protects her friends, and keeps dangerous secrets hidden at Illinois Central College.
+When Stella's Phoenix-shaped pendant shatters, her suppressed fire powers explode into existence—along with the threat of those who hunt her kind. Navigate college life, complicated friendships, and deadly secrets in this contemporary urban fantasy.
 
-[Start at Chapter 1]({{ '/phoenix-rising/chapter-1/' | relative_url }}){: .btn-primary }
+[Begin Chapter 1]({{ '/phoenix-rising/chapter-1/' | relative_url }}){: .btn-primary }
 
-## Quick Links
-
-- [Full Table of Contents]({{ '/table-of-contents/' | relative_url }})
-- [SCP-5437 Dossier]({{ '/scp-5437/' | relative_url }})
+<div class="card-grid">
+  <div class="card">
+    <h3>📚 The Story</h3>
+    <p>Follow Stella, Emma, and Lucas as ancient powers collide with modern life at Illinois Central College. Every choice matters when you're the last Phoenix.</p>
+  </div>
+  <div class="card">
+    <h3>🎭 The Cast</h3>
+    <p><strong>Stella Aurelia Ignis</strong> – Phoenix heir struggling with newfound powers<br>
+    <strong>Emma</strong> – Mysterious friend with secrets of her own<br>
+    <strong>Lucas</strong> – Tech genius caught in supernatural chaos</p>
+  </div>
+  <div class="card">
+    <h3>🔗 Connected Content</h3>
+    <p><a href="{{ '/table-of-contents/' | relative_url }}">All Chapters</a> · <a href="{{ '/scp-5437/' | relative_url }}">SCP-5437 Dossier</a></p>
+  </div>
+</div>

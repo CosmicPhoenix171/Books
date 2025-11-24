@@ -3,20 +3,21 @@ layout: default
 ---
 <article class="chapter">
   {% if page.chapter_number %}
-  <p class="chapter-meta">Chapter {{ page.chapter_number }}</p>
+  <p class="chapter-meta">Chapter {{ page.chapter_number }} · {{ page.book | upcase }}</p>
   {% endif %}
   <h2>{{ page.title }}</h2>
+  <div class="reading-time">📖 {{ content | number_of_words | divided_by: 200 }} min read</div>
   <div class="chapter-content">
     {{ content }}
   </div>
   <nav class="chapter-nav">
     {% if page.prev_url %}
-      <a href="{{ page.prev_url | relative_url }}">[Previous]</a>
+      <a href="{{ page.prev_url | relative_url }}">← Previous Chapter</a>
     {% else %}
       <span></span>
     {% endif %}
     {% if page.next_url %}
-      <a href="{{ page.next_url | relative_url }}">[Next]</a>
+      <a href="{{ page.next_url | relative_url }}">Next Chapter →</a>
     {% endif %}
   </nav>
 </article>

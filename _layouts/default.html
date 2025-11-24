@@ -18,6 +18,20 @@
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+        z-index: 9999;
+        transition: width 150ms ease;
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+      }
       body {
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         margin: 0;
@@ -139,6 +153,52 @@
         font-size: 0.82rem;
         margin-bottom: 0.75rem;
       }
+      .chapter-content {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+      .chapter-content p:first-of-type::first-letter {
+        font-size: 3.5rem;
+        line-height: 0.9;
+        float: left;
+        margin: 0.1rem 0.5rem 0 0;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .reading-time {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      .card {
+        background: rgba(56, 189, 248, 0.06);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        background: rgba(56, 189, 248, 0.12);
+        box-shadow: 0 20px 45px rgba(14, 165, 233, 0.25);
+      }
+      .card h3 {
+        margin-top: 0;
+        font-size: 1.35rem;
+      }
+      .card a {
+        text-decoration: none;
+        color: inherit;
+      }
       footer {
         color: var(--muted);
         font-size: 0.9rem;
@@ -185,5 +245,14 @@
     <footer>
       <small>&copy; {{ site.title }} · Generated with Jekyll on GitHub Pages</small>
     </footer>
+    <div id="progress-bar"></div>
+    <script>
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+      });
+    </script>
   </body>
 </html>
