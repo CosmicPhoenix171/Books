@@ -15,4 +15,3 @@ Dive into contemporary fantasy where ordinary lives collide with extraordinary p
     <p>When Stella's suppression pendant cracks, her Phoenix powers awaken—and so do the hunters who seek them. A thrilling urban fantasy about identity, friendship, and survival.</p>
     <a href="{{ '/phoenix-rising/' | relative_url }}">Explore Series →</a>
   </div>
-  <div class="card">

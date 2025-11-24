@@ -21,8 +21,4 @@ When Stella's Phoenix-shaped pendant shatters, her suppressed fire powers explod
     <strong>Emma</strong> – Mysterious friend with secrets of her own<br>
     <strong>Lucas</strong> – Tech genius caught in supernatural chaos</p>
   </div>
-  <div class="card">
-    <h3>🔗 Connected Content</h3>
-    <p><a href="{{ '/table-of-contents/' | relative_url }}">All Chapters</a> · <a href="{{ '/scp-5437/' | relative_url }}">SCP-5437 Dossier</a></p>
-  </div>
 </div>
