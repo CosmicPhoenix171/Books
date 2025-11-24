@@ -1,0 +1,313 @@
+:root {
+  --bg: #020617;
+  --surface: #0f172a;
+  --card: rgba(15, 23, 42, 0.85);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --border: rgba(226, 232, 240, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  z-index: 9999;
+  transition: width 150ms ease;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 45%, #01030d 100%);
+  color: var(--text);
+  line-height: 1.7;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header,
+main,
+footer {
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+header {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 2rem clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 25px 60px rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+nav a:hover {
+  background: rgba(56, 189, 248, 0.3);
+  color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+main {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 25px 60px rgba(2, 6, 23, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+main :is(h1, h2, h3, h4, h5, h6) {
+  color: #f8fafc;
+  line-height: 1.2;
+}
+
+main p {
+  margin-bottom: 1.15rem;
+}
+
+main a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.35rem;
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #020617;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 25px 45px rgba(14, 165, 233, 0.45);
+}
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.chapter-nav a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.chapter-meta {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+
+.chapter-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.chapter-content p:first-of-type::first-letter {
+  font-size: 3.5rem;
+  line-height: 0.9;
+  float: left;
+  margin: 0.1rem 0.5rem 0 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.reading-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(56, 189, 248, 0.12);
+  box-shadow: 0 20px 45px rgba(14, 165, 233, 0.25);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.audio-player {
+  position: sticky;
+  top: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 45px rgba(2, 6, 23, 0.4);
+  backdrop-filter: blur(16px);
+  z-index: 100;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.audio-btn {
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #020617;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  font-size: 0.95rem;
+}
+
+.audio-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.4);
+}
+
+.audio-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.audio-select {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.audio-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0 0.5rem 2rem;
+  text-align: center;
+}
+
+footer small {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.35);
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.25rem 0.75rem;
+  }
+  header,
+  main {
+    padding: 1.5rem;
+  }
+  .chapter-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
