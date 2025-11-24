@@ -52,53 +52,89 @@
       header,
       main,
       footer {
-        width: min(960px, 100%);
+        width: min(1040px, 100%);
         margin: 0 auto;
       }
 
       header {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 1.25rem;
-        padding: 2rem clamp(1.5rem, 4vw, 3rem);
-        box-shadow: 0 25px 60px rgba(2, 6, 23, 0.45);
-        backdrop-filter: blur(16px);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.7));
+        border-radius: 1.5rem;
+        padding: 1.5rem clamp(1.75rem, 4vw, 2.5rem);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        backdrop-filter: blur(22px);
       }
 
-      header h1 {
-        margin: 0 0 0.75rem;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
-        letter-spacing: -0.02em;
-      }
-
-      header p {
-        margin: 0 0 1.25rem;
-        color: var(--muted);
-        max-width: 60ch;
-      }
-
-      nav {
+      .site-header-inner {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.75rem;
         flex-wrap: wrap;
-        gap: 0.5rem;
       }
 
-      nav a {
+      .site-title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .site-title {
+        margin: 0;
+        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        letter-spacing: -0.03em;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .site-title-badge {
+        padding: 0.15rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        background: rgba(56, 189, 248, 0.16);
+        border: 1px solid rgba(56, 189, 248, 0.45);
+        color: var(--accent);
+      }
+
+      .site-tagline {
+        margin: 0;
+        color: var(--muted);
+        max-width: 48ch;
+        font-size: 0.95rem;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .site-nav a {
         text-decoration: none;
         color: var(--text);
-        background: rgba(56, 189, 248, 0.12);
-        border: 1px solid rgba(56, 189, 248, 0.35);
-        padding: 0.4rem 0.95rem;
+        background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.20), rgba(15, 23, 42, 0.9));
+        border: 1px solid rgba(56, 189, 248, 0.45);
+        padding: 0.45rem 0.95rem;
         border-radius: 999px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
-        transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        opacity: 0.9;
+        transition: background 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
       }
 
-      nav a:hover {
-        background: rgba(56, 189, 248, 0.3);
-        color: #f8fafc;
+      .site-nav a:hover {
+        background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.95));
+        color: #f9fafb;
         transform: translateY(-1px);
+        box-shadow: 0 14px 30px rgba(8, 47, 73, 0.6);
+        opacity: 1;
       }
 
       main {
@@ -245,13 +281,21 @@
         box-shadow: 0 20px 40px rgba(2, 6, 23, 0.35);
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 768px) {
         body {
           padding: 1.25rem 0.75rem;
         }
         header,
         main {
-          padding: 1.5rem;
+          padding: 1.35rem 1.25rem;
+        }
+
+        .site-header-inner {
+          align-items: flex-start;
+        }
+
+        .site-nav {
+          justify-content: flex-start;
         }
         .chapter-nav {
           flex-direction: column;
@@ -262,15 +306,22 @@
   </head>
   <body>
     <header>
-      <h1>{{ site.title }}</h1>
-      <p>{{ site.description }}</p>
-      <nav>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/phoenix-rising/' | relative_url }}">Phoenix Rising</a>
-        <a href="{{ '/accidental-reaper/' | relative_url }}">The Accidental Reaper</a>
-        <a href="{{ '/table-of-contents/' | relative_url }}">Table of Contents</a>
-        <a href="{{ '/scp-5437/' | relative_url }}">SCP-5437</a>
-      </nav>
+      <div class="site-header-inner">
+        <div class="site-title-block">
+          <div class="site-title">
+            <span>{{ site.title }}</span>
+            <span class="site-title-badge">Story Archive</span>
+          </div>
+          <p class="site-tagline">{{ site.description }}</p>
+        </div>
+        <nav class="site-nav">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/phoenix-rising/' | relative_url }}">Phoenix Rising</a>
+          <a href="{{ '/accidental-reaper/' | relative_url }}">Accidental Reaper</a>
+          <a href="{{ '/table-of-contents/' | relative_url }}">Table of Contents</a>
+          <a href="{{ '/scp-5437/' | relative_url }}">SCP-5437</a>
+        </nav>
+      </div>
     </header>
     <main>
       {{ content }}
