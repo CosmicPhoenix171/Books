@@ -7,6 +7,33 @@ layout: default
   {% endif %}
   <h2>{{ page.title }}</h2>
   <div class="reading-time">📖 {{ content | number_of_words | divided_by: 200 }} min read</div>
+  
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button id="play-audio" class="audio-btn">▶️ Play Audio</button>
+      <button id="pause-audio" class="audio-btn" disabled>⏸️ Pause</button>
+      <button id="stop-audio" class="audio-btn" disabled>⏹️ Stop</button>
+      
+      <label class="audio-label">
+        Speed:
+        <select id="audio-speed" class="audio-select">
+          <option value="0.75">0.75x</option>
+          <option value="1" selected>1x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="1.75">1.75x</option>
+          <option value="2">2x</option>
+        </select>
+      </label>
+      
+      <label class="audio-label">
+        Voice:
+        <select id="audio-voice" class="audio-select">
+          <option>Loading voices...</option>
+        </select>
+      </label>
+    </div>
+  </div>
   <div class="chapter-content">
     {{ content }}
   </div>
