@@ -1,0 +1,7 @@
+title: "My Book Title"
+description: "A short description for your book." 
+url: "https://cosmicphoenix171.github.io"
+baseurl: "/Books"
+markdown: kramdown
+permalink: pretty
+plugins: []

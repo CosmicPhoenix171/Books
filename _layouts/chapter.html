@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="chapter">
+  {% if page.chapter_number %}
+  <p class="chapter-meta">Chapter {{ page.chapter_number }}</p>
+  {% endif %}
+  <h2>{{ page.title }}</h2>
+  <div class="chapter-content">
+    {{ content }}
+  </div>
+  <nav class="chapter-nav">
+    {% if page.prev_url %}
+      <a href="{{ page.prev_url | relative_url }}">[Previous]</a>
+    {% else %}
+      <span></span>
+    {% endif %}
+    {% if page.next_url %}
+      <a href="{{ page.next_url | relative_url }}">[Next]</a>
+    {% endif %}
+  </nav>
+</article>
