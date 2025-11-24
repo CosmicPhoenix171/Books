@@ -6,6 +6,12 @@ permalink: /accidental-reaper/
 
 # ⚰️ The Accidental Reaper
 
-When an ordinary college student accidentally claims the powers of a soul reaper meant for someone else, death starts leaving paperwork on her doorstep. Caught between cosmic bureaucracy, wayward ghosts, and midterms, she has to learn the rules fast—or become a clerical error in the afterlife.
+A college graduate dies early thanks to a reaper’s paperwork mistake, the reaper department hires him as their newest employee.
+Now death is his 9-to-5 job: guiding souls to the afterlife and dealing with the ones who refuse to go.
 
-_Coming soon. Chapters for **The Accidental Reaper** will appear here once you add them as markdown files in the `accidental-reaper/` folder with `layout: chapter` and `book: accidental-reaper` in their front matter._
+He’s assigned a strict, oddly protective trainer who seems to know more than she should.
+Meanwhile, he starts noticing strange inconsistencies in the world around him… and in himself.
+
+As he adjusts to reaper life, hidden powers, buried secrets, and cosmic forces begin to close in.
+
+_Coming soon. Chapters for **The Accidental Reaper** will appear here.

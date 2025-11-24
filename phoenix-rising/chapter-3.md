@@ -59,11 +59,7 @@ Stella looked down at the pendant, her fingers brushing over the cracks. “I kn
 
 With a plan, however uncertain, forming in their minds, the trio prepared to face Madison before their morning classes, the weight of the upcoming confrontation heavy on their shoulders.
 
----
-
 Unbeknownst to Stella and Emma, Lucas was determined to hack into Madison's phone regardless of the outcome of their confrontation. His fingers flew over the keyboard, setting up programs and scripts that would help him gain access to her phone. If their plan to reason with Madison didn’t work, he was prepared to take matters into his own hands.
-
-**Scene 2: Morning Encounter**
 
 The morning air at Illinois Central College was crisp and filled with the bustling energy of students making their way to classes. The campus was alive with activity, the sounds of laughter and conversation blending with the rustling of leaves and the distant hum of cars. Stella, Emma, and Lucas walked together, each lost in their own thoughts about the impending confrontation with Madison.
 
@@ -131,7 +127,6 @@ Stella nodded, grateful for their support, but the fear of what was to come over
 
 With each step toward their meeting place near the woods, the tension grew, the reality of the situation sinking in deeper. The pendant around Stella’s neck felt heavier than ever, the crack now a glaring reminder of her fragile control. As they approached the secluded area where Madison had demanded they meet, Stella knew that her life was about to change, one way or another.
 
-**Scene 3: The After-Class Confrontation**
 
 As the final bell rang, signaling the end of class, a cold wave of anxiety washed over Stella. She gathered her belongings slowly, her hands trembling slightly. Emma gave her a reassuring smile, though worry clouded her eyes.
 
@@ -178,8 +173,6 @@ Madison, satisfied with her victory, watched them with a smug expression as they
 As they started to run away, Madison’s taunts followed them. “Remember, Stella, I’m always watching. One wrong move, and everyone will know your secret.”
 
 Stella’s heart pounded in her chest, the fear of exposure looming over her. She knew they had to find a way to deal with Madison and protect her secret, but for now, they had to escape before her powers completely spiraled out of control.
-
-Scene 4: Escalation and Escape
 
 Stella and Emma hurried into the woods, the heat from the cracked pendant growing more intense with each step. The sounds of campus life faded away, replaced by the rustling leaves and chirping birds. The familiar path they had walked many times before now seemed foreboding, shadows casting eerie shapes that danced with their every movement.
 
