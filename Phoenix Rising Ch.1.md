@@ -1,11 +1,4 @@
----
-layout: chapter
-title: "The Journey Begins"
-chapter_number: 1
-prev_url:
-next_url: /chapter-2/
----
-**Chapter 1 - Awakening**
+**Chapter 1 \- Awakening** 
 
 Stella Aurelia Ignis sighed as she glanced around her dorm room. Posters of her favorite bands adorned the walls, and a stack of textbooks lay haphazardly on her desk, reminding her of the impending exams. She ran a hand through her long, wavy black hair, the auburn highlights catching the sunlight streaming through the window. The Phoenix-shaped pendant around her neck rested warmly against her skin, a constant, comforting presence.
 
@@ -17,11 +10,11 @@ Stella, similarly dressed in a matching set of black lace underwear, stood up an
 
 “As ready as I’ll ever be,” Stella replied, chuckling. “Let’s just hope I don’t embarrass myself in front of Professor Thompson again.”
 
-Before Emma could respond, the door burst open, and Lucas barreled in, laptop in hand. “Guys, you have to see this! I made a breakthrough in the program I’ve been working on—”
+Before Emma could respond, the door burst open, and Lucas barreled in, laptop in hand. “Guys, you have to see this\! I made a breakthrough in the program I’ve been working on—”
 
-His words were cut short as both girls shrieked in unison. “Lucas! Get out!” they yelled, grabbing pillows and anything within reach to throw at him.
+His words were cut short as both girls shrieked in unison. “Lucas\! Get out\!” they yelled, grabbing pillows and anything within reach to throw at him.
 
-Lucas, standing at 5'9" with his mop of tousled brown hair and hazel eyes wide with surprise, scrambled to cover his eyes. He had a wiry frame that suggested a mix of nerdy charm and hidden athleticism. “I swear I don’t see anything!” he exclaimed, almost dropping his laptop as he tried to cover his eyes and back out of the room quickly, narrowly avoiding a flying textbook. His T-shirt, adorned with a Windows 95 logo, flapped as he made his hasty retreat, clutching his laptop protectively.
+Lucas, standing at 5'9" with his mop of tousled brown hair and hazel eyes wide with surprise, scrambled to cover his eyes. He had a wiry frame that suggested a mix of nerdy charm and hidden athleticism. “I swear I don’t see anything\!” he exclaimed, almost dropping his laptop as he tried to cover his eyes and back out of the room quickly, narrowly avoiding a flying textbook. His T-shirt, adorned with a Windows 95 logo, flapped as he made his hasty retreat, clutching his laptop protectively.
 
 The door slammed shut behind him, leaving the girls in a mix of embarrassment and laughter.
 
@@ -45,9 +38,9 @@ Emma, still cranky from the morning’s surprise, shot Lucas a glare. “Next ti
 
 Stella walked over to Lucas, curiosity piqued. “So, what’s this breakthrough you’re so excited about?” she asked, peering at his laptop screen.
 
-Lucas brightened up immediately, the embarrassment fading from his face. “I finally cracked the code I was working on for that AI project. It can now predict user behavior with 90% accuracy! I was testing it all night, and it’s working perfectly.”
+Lucas brightened up immediately, the embarrassment fading from his face. “I finally cracked the code I was working on for that AI project. It can now predict user behavior with 90% accuracy\! I was testing it all night, and it’s working perfectly.”
 
-“That’s amazing, Lucas!” Stella said, genuinely impressed. “But seriously, if you really wanted to peek that badly, all you had to do was ask,” she added with a teasing smile to ensure he knew it was a joke.
+“That’s amazing, Lucas\!” Stella said, genuinely impressed. “But seriously, if you really wanted to peek that badly, all you had to do was ask,” she added with a teasing smile to ensure he knew it was a joke.
 
 Lucas chuckled, rubbing the back of his neck. “Yeah, I was just really excited. I’ll definitely knock next time, promise.”
 
@@ -163,7 +156,7 @@ Emma helped Stella gather her things, and they left the lab, stepping into the c
 
 They sat down, and Stella tried to compose herself. The warmth of the pendant had subsided slightly, but the crack was still glowing faintly. Emma’s eyes widened further when she noticed the crack.
 
-“Stella, your pendant is cracked... and glowing!” Emma exclaimed, her voice filled with concern.
+“Stella, your pendant is cracked... and glowing\!” Emma exclaimed, her voice filled with concern.
 
 Stella looked down at the pendant, her heart racing. “I know. I don’t understand what’s happening.”
 
@@ -175,7 +168,7 @@ Emma nodded. “You should call her.”
 
 Stella pulled out her phone and dialed her mother’s number, her hands trembling slightly. After a few rings, her mother answered.
 
-“Hi, sweetie! How’s your day going?” her mother’s warm voice came through the phone.
+“Hi, sweetie\! How’s your day going?” her mother’s warm voice came through the phone.
 
 “Mom, something’s wrong with the pendant,” Stella said, trying to keep her voice steady. “It’s cracked and glowing, and I’ve been feeling strange lately.”
 
@@ -233,7 +226,7 @@ Stella stared at her mom, her mind racing. “This can’t be real. Phoenixes? P
 
 Her mom shook her head, her expression serious. “I know it sounds unbelievable, but it’s the truth. The pendant is cracked and glowing because your powers are starting to manifest.”
 
-Emma, now fully understanding the gravity of the situation, squeezed Stella’s hand. “We’ll figure this out together.”
+Emma looked at Stella, her concern now mixed with awe.
 
 Stella took a deep breath, feeling the warmth of the pendant against her skin. “I don’t know. This sounds like something out of a fantasy novel. Mom, how can any of this be real?”
 
