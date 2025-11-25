@@ -12,7 +12,7 @@ These are worldbuilding and character notes for **The Accidental Reaper**. Theyâ
 
 ## ðŸŒ‘ Main Character (MC)
 
-**Name:** Not chosen yet (currently just "MC").
+**Name:** Not chosen yet "MC".
 
 **Age:** Early 20s, recently graduated college.
 
