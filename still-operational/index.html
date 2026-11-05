@@ -29,7 +29,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <body>
 <header class="top"><div class="brand">Still Operational <span style="color:#72808d">/ Writing Studio</span></div><a href="../">All books</a></header>
 <div class="layout"><main class="main">
-<div class="intro"><div class="eyebrow">Manuscript • Draft 1</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Read, listen, annotate, revise</div>
+<div class="intro"><div class="eyebrow">Manuscript • Draft 2</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Revised full-length manuscript</div>
 <div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
@@ -55,7 +55,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 (function(){
 'use strict';
 const $=id=>document.getElementById(id), root=$('chapter'), voiceEl=$('voice');
-const KEY='still-operational-review-v1';
+const KEY='still-operational-review-v2';
 let data={notes:[],index:0,bookmark:0,speed:1,fontSize:19,voice:''};
 try{Object.assign(data,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
 if(!Array.isArray(data.notes))data.notes=[];
