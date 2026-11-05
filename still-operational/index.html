@@ -44,12 +44,13 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
-<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p></div>
+<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="recorded" disabled>Recorded Heart MP3 · publishing</option><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p></div>
 <div id="heartLoading" class="heart-loading" hidden>
   <div class="heart-loading-head"><strong id="heartStage">Loading Kokoro Heart</strong><span id="heartPercent" class="heart-loading-number">Preparing…</span></div>
   <div id="heartTrack" class="heart-progress-track is-indeterminate" role="progressbar" aria-label="Kokoro Heart model download" aria-valuemin="0" aria-valuemax="100"><div id="heartFill" class="heart-progress-fill"></div></div>
   <p id="heartDetails" class="heart-loading-details">Preparing the voice engine…</p>
 </div>
+<div id="recordedDownloads" class="setting" hidden><label>Download Heart MP3 sections</label><div id="recordedFileLinks" class="controlrow" style="margin-top:6px"></div></div>
 <div class="setting"><label for="voice">Device narrator voice</label><select id="voice"><option value="">Default device voice</option></select></div>
 <div class="progress"><div id="bar"></div></div><p class="status" id="status">Press Play to begin. Tap a sentence to attach notes, then select Read selection to listen from it.</p>
 </section>
@@ -88,12 +89,14 @@ const engineEl=$('engine');
 const heartSupported=!!(window.AudioContext||window.webkitAudioContext);
 let heartModel=null,heartModelPromise=null,heartAudioContext=null,heartSource=null;
 let heartQueue=Promise.resolve(),heartCache=new Map(),heartPending=new Map();
-const engineName=()=>data.engine==='browser'?'browser':'heart';
+let recordedManifest=null,recordedSentenceCues=[],recordedSegmentCues=[],recordedSegment=-1,recordedRun=-1;
+const recordedAudio=new Audio();recordedAudio.preload='metadata';
+const engineName=()=>data.engine==='recorded'?'recorded':data.engine==='browser'?'browser':'heart';
 function setStatus(message){$('status').textContent=message}
 function updateButtons(){$('play').textContent=playing?(paused?'▶ Resume':'Ⅱ Pause'):'▶ Play'}
 function prepareHeartAudio(){if(!heartAudioContext){const AudioCtor=window.AudioContext||window.webkitAudioContext;heartAudioContext=new AudioCtor()}if(heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
 function stopHeartAudio(){if(heartSource){heartSource.onended=null;try{heartSource.stop()}catch(e){}try{heartSource.disconnect()}catch(e){}heartSource=null}if(heartAudioContext&&heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
-function stop(){run++;playing=false;paused=false;if(supported)window.speechSynthesis.cancel();stopHeartAudio();updateButtons();setStatus('Stopped · Tap Play to continue at the highlighted sentence.')}
+function stop(){run++;playing=false;paused=false;if(supported)window.speechSynthesis.cancel();stopHeartAudio();recordedAudio.pause();updateButtons();setStatus('Stopped · Tap Play to continue at the highlighted sentence.')}
 let heartOverallAvailable=false;
 function setHeartProgress(phase,percent,details){
  const panel=$('heartLoading'),track=$('heartTrack'),fill=$('heartFill');
@@ -224,25 +227,148 @@ function sayBrowser(token){
  utterance.onerror=e=>{if(token!==run||!playing)return;if(e.error==='canceled'||e.error==='interrupted')return;playing=false;paused=false;updateButtons();setStatus('Device narrator interrupted. Tap Play to resume.')};
  window.speechSynthesis.speak(utterance);
 }
+
+function createRecordedCues(){
+ recordedSentenceCues=new Array(sentences.length);
+ recordedSegmentCues=[];
+ const byParagraph=[];
+ sentences.forEach((item,index)=>{
+  if(!byParagraph[item.paragraph])byParagraph[item.paragraph]=[];
+  byParagraph[item.paragraph].push(index);
+ });
+ recordedManifest.segments.forEach((segment,segmentIndex)=>{
+  const segmentCues=[];
+  for(const cue of segment.cues){
+   const ids=byParagraph[cue.paragraph]||[];
+   if(!ids.length)throw new Error('Audio alignment is missing paragraph '+cue.paragraph);
+   const weights=ids.map(index=>Math.max(1,sentences[index].text.replace(/[^A-Za-z0-9]/g,'').length));
+   const total=weights.reduce((sum,w)=>sum+w,0);
+   let at=cue.start;
+   ids.forEach((idx,i)=>{
+    const until=i===ids.length-1?cue.end:at+(cue.end-cue.start)*(weights[i]/weights.slice(i).reduce((a,b)=>a+b,0));
+    const item={segment:segmentIndex,start:at,end:until,index:idx};
+    recordedSentenceCues[idx]=item;segmentCues.push(item);at=until;
+   });
+  }
+  recordedSegmentCues.push(segmentCues);
+ });
+ if(recordedSentenceCues.some(x=>!x))throw new Error('Incomplete audio sentence cues');
+}
+function renderRecordedDownloads(){
+ const wrap=$('recordedFileLinks');wrap.replaceChildren();
+ recordedManifest.segments.forEach((part,i)=>{
+  const link=document.createElement('a');
+  link.href=part.file;
+  link.download='Still-Operational-Chapter1-Heart-'+(i+1)+'.mp3';
+  link.className='btn small';
+  link.textContent='MP3 '+(i+1);
+  link.title='Download recorded Heart audio section '+(i+1);
+  wrap.appendChild(link);
+ });
+ $('recordedDownloads').hidden=false;
+}
+function loadRecordedManifest(book){
+ fetch('audio/manifest.json?v='+encodeURIComponent(book.revision))
+ .then(r=>{if(!r.ok)throw Error('Narration is still being prepared');return r.json()})
+ .then(manifest=>{
+  if(manifest.revision!==book.revision||manifest.paragraphs!==book.paragraphs.length||
+     !Array.isArray(manifest.segments)||!manifest.segments.length)throw Error('Audio was rendered for a different manuscript revision');
+  recordedManifest=manifest;
+  createRecordedCues();
+  const recordedOption=engineEl.querySelector('option[value="recorded"]');
+  recordedOption.disabled=false;recordedOption.textContent='Recorded Kokoro Heart · instant MP3';
+  renderRecordedDownloads();
+  if(!playing&&engineName()==='heart'){
+   data.engine='recorded';save();updateEngineUI();
+   setStatus('Recorded Kokoro Heart ready · Tap Play for instant MP3 narration.');
+  }else if(engineName()==='recorded'){
+   updateEngineUI();
+   setStatus('Recorded Kokoro Heart ready · Tap Play to listen.');
+  }
+ })
+ .catch(()=>{if(engineName()==='recorded'){data.engine='heart';save();updateEngineUI()}});
+}
+function seekRecorded(index,token){
+ if(!recordedManifest)return setStatus('Recorded audio is not yet available. Choose Kokoro Heart or Device voices.');
+ const cue=recordedSentenceCues[index];
+ if(!cue)return setStatus('Audio for this passage could not be found.');
+ const segment=recordedManifest.segments[cue.segment];
+ const url=new URL(segment.file,document.baseURI).href;
+ recordedSegment=cue.segment;recordedRun=token;
+ recordedAudio.playbackRate=+data.speed||1;
+ const start=()=>{
+  if(run!==token||!playing||engineName()!=='recorded'||paused)return;
+  try{recordedAudio.currentTime=cue.start+0.01}catch(e){}
+  recordedAudio.play().then(()=>{
+   if(run===token&&playing)setStatus('Recorded Heart · Playing section '+(cue.segment+1)+' of '+recordedManifest.segments.length);
+  }).catch(err=>{
+   if(run!==token)return;
+   stop();setStatus('MP3 playback could not start: '+(err?.message||'browser error')+'. Tap Play again or choose another voice.');
+  });
+ };
+ if(recordedAudio.src!==url){
+  recordedAudio.pause();
+  recordedAudio.src=url;
+  recordedAudio.load();
+  if(recordedAudio.readyState>=1)start();
+  else recordedAudio.addEventListener('loadedmetadata',start,{once:true});
+ }else if(recordedAudio.readyState>=1)start();
+ else recordedAudio.addEventListener('loadedmetadata',start,{once:true});
+}
+recordedAudio.addEventListener('timeupdate',()=>{
+ if(engineName()!=='recorded'||!playing||paused||recordedRun!==run)return;
+ const cues=recordedSegmentCues[recordedSegment]||[];
+ let chosen=-1;
+ const at=recordedAudio.currentTime;
+ for(let i=0;i<cues.length;i++){
+  if(at<cues[i].start)break;
+  chosen=cues[i].index;
+  if(at<cues[i].end)break;
+ }
+ if(chosen>=0&&chosen!==data.index)mark(chosen);
+});
+recordedAudio.addEventListener('ended',()=>{
+ if(recordedRun!==run||!playing||engineName()!=='recorded')return;
+ const next=recordedSegment+1;
+ if(next>=recordedManifest.segments.length){stop();setStatus('Chapter complete.');return}
+ const first=recordedSegmentCues[next]?.[0]?.index;
+ if(typeof first!=='number'){stop();setStatus('The next MP3 section is unavailable.');return}
+ mark(first);seekRecorded(first,run);
+});
+recordedAudio.addEventListener('waiting',()=>{
+ if(engineName()==='recorded'&&playing)setStatus('Recorded Heart · Buffering the next part…');
+});
+recordedAudio.addEventListener('error',()=>{
+ if(engineName()!=='recorded'||!playing)return;
+ stop();setStatus('Recorded MP3 unavailable. Choose Kokoro Heart to generate narration on your device.');
+});
+
 function startAt(i){
  if(!sentences.length){setStatus('Manuscript is still loading.');return}
  if(engineName()==='heart'&&!heartSupported){setStatus('Kokoro Heart requires audio support. Choose Device voices.');return}
  if(engineName()==='browser'&&!supported){setStatus('Device speech is unavailable. Choose Kokoro Heart, or try Chrome or Edge.');return}
+ if(engineName()==='recorded'&&!recordedManifest){setStatus('The recorded Heart MP3 is still being prepared. Choose another voice.');return}
  stop();
  mark(i);
  if(engineName()==='heart')prepareHeartAudio();
  playing=true;paused=false;updateButtons();
- if(engineName()==='heart')sayHeart(run);else sayBrowser(run);
+ if(engineName()==='recorded')seekRecorded(data.index,run);else if(engineName()==='heart')sayHeart(run);else sayBrowser(run);
 }
 $('play').onclick=()=>{
  if(playing){
   if(paused){
+   if(engineName()==='recorded'){
+    paused=false;recordedAudio.play().catch(()=>{setStatus('Tap Play to resume the MP3.');});updateButtons();return;
+   }
    const resumeHeart=engineName()==='heart';
    if(resumeHeart&&heartAudioContext)heartAudioContext.resume().catch(()=>{});
    else if(supported)window.speechSynthesis.resume();
    paused=false;setStatus('Narration resumed.');
    if(resumeHeart&&!heartSource)sayHeart(run);
   }else{
+   if(engineName()==='recorded'){
+    recordedAudio.pause();paused=true;setStatus('MP3 narration paused.');updateButtons();return;
+   }
    if(engineName()==='heart'&&heartAudioContext)heartAudioContext.suspend().catch(()=>{});
    else if(supported)window.speechSynthesis.pause();
    paused=true;setStatus('Narration paused.');
@@ -260,6 +386,7 @@ $('speed').oninput=e=>{
  data.speed=+e.target.value;
  $('speedLabel').textContent=data.speed.toFixed(1)+'×';
  heartCache.clear();save();
+ if(engineName()==='recorded'){recordedAudio.playbackRate=data.speed;return}
  if(playing)startAt(data.index);
 };
 function loadVoices(){
@@ -274,16 +401,23 @@ function loadVoices(){
 }
 function updateEngineUI(){
  engineEl.value=engineName();
- if(engineName()==='browser'||heartModel)$('heartLoading').hidden=true;
- voiceEl.disabled=engineName()==='heart';
- $('engineHelp').textContent=engineName()==='heart'
- ? 'Kokoro Heart (af_heart) uses a neural speech model, with an initial download of roughly 90 MB. On-device generation can be slow on phones. If it fails, switch to Device voices.'
+ if(engineName()!=='heart'||heartModel)$('heartLoading').hidden=true;
+ voiceEl.disabled=engineName()!=='browser';
+ $('engineHelp').textContent=engineName()==='recorded'
+ ? 'Pre-generated Kokoro Heart MP3 files stream directly from this website. Your phone does not need to run the neural model. Follow-along sentence timing is estimated from paragraph boundaries.'
+ : engineName()==='heart'
+ ? 'Kokoro Heart (af_heart) generates new speech on your device and downloads a large AI model the first time. If it fails, choose Device voices.'
  : 'The device narrator starts quickly and uses voices installed in your browser. Choose a voice below.';
 }
 if(supported){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices}
 if(!heartSupported&&data.engine==='heart')data.engine='browser';
 updateEngineUI();
-engineEl.onchange=e=>{stop();data.engine=e.target.value;save();updateEngineUI();setStatus(engineName()==='heart'?'Heart selected · Tap Play to download the neural voice model and start narration.':'Device voices selected · Tap Play to start narration.')};
+engineEl.onchange=e=>{
+ stop();data.engine=e.target.value;save();updateEngineUI();
+ setStatus(engineName()==='recorded'?'Recorded Heart MP3 selected · Tap Play to begin.':
+ engineName()==='heart'?'Kokoro Heart selected · Tap Play to download the model and generate narration.':
+ 'Device voices selected · Tap Play to start narration.');
+};
 voiceEl.onchange=e=>{data.voice=e.target.value;save();if(playing&&engineName()==='browser')startAt(data.index)};
 $('playSelection').onclick=()=>{if(selected<0){setStatus('Tap a passage first, then choose Read selection.');return}startAt(selected)};
 
@@ -302,7 +436,7 @@ $('bookmark').onclick=()=>{data.bookmark=data.index;save();$('status').textConte
 $('restore').onclick=()=>{mark(data.bookmark||0);scrollToIndex(data.index)};
 $('notesJump').onclick=()=>$('notesPanel').scrollIntoView({behavior:'smooth'});
 renderNotes();
-fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}mark(data.index,false);markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.'}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
-window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();save()});
+fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}mark(data.index,false);markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';loadRecordedManifest(book)}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
+window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();recordedAudio.pause();save()});
 })();
 </script></body></html>
