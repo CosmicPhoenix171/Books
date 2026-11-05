@@ -44,7 +44,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
-<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="recorded" disabled>Recorded Heart MP3 · publishing</option><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p></div>
+<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="recorded" disabled>Recorded Heart MP3 · being updated</option><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p><div class="controlrow" style="margin-top:10px;align-items:center"><span id="recordedState" class="hint" role="status" aria-live="polite" style="flex:1;margin:0">Checking for matching recorded audio…</span><button class="btn small" id="checkRecorded" type="button">Check MP3</button></div></div>
 <div id="heartLoading" class="heart-loading" hidden>
   <div class="heart-loading-head"><strong id="heartStage">Loading Kokoro Heart</strong><span id="heartPercent" class="heart-loading-number">Preparing…</span></div>
   <div id="heartTrack" class="heart-progress-track is-indeterminate" role="progressbar" aria-label="Kokoro Heart model download" aria-valuemin="0" aria-valuemax="100"><div id="heartFill" class="heart-progress-fill"></div></div>
@@ -287,34 +287,47 @@ function renderRecordedDownloads(){
  });
  $('recordedDownloads').hidden=false;
 }
-function loadRecordedManifest(book){
- fetch('audio/manifest.json?v='+encodeURIComponent(book.revision),{cache:'no-store'})
- .then(r=>{if(!r.ok)throw Error('Narration is still being prepared');return r.json()})
- .then(manifest=>{
+let chapterForAudio=null,recordedFetchBusy=false;
+async function loadRecordedManifest(book){
+ chapterForAudio=book;
+ if(recordedManifest||recordedFetchBusy)return;
+ recordedFetchBusy=true;
+ $('checkRecorded').disabled=true;
+ $('recordedState').textContent='Checking the MP3 recording for '+book.revision.split(' — ')[0]+'…';
+ try{
+  const resp=await fetch('audio/manifest.json?v='+encodeURIComponent(book.revision)+'&t='+Date.now(),{cache:'no-store'});
+  if(!resp.ok)throw Error('Audio file index unavailable');
+  const manifest=await resp.json();
   if(manifest.revision!==book.revision||manifest.paragraphs!==book.paragraphs.length||
-     !Array.isArray(manifest.segments)||!manifest.segments.length)throw Error('Audio was rendered for a different manuscript revision');
+     !Array.isArray(manifest.segments)||!manifest.segments.length)throw Error('The recording belongs to an older draft.');
   recordedManifest=manifest;
   createRecordedCues();
-  const recordedOption=engineEl.querySelector('option[value="recorded"]');
-  recordedOption.disabled=false;recordedOption.textContent='Recorded Kokoro Heart · instant MP3';
+  const option=engineEl.querySelector('option[value="recorded"]');
+  option.disabled=false;option.textContent='Recorded Kokoro Heart · instant MP3';
   renderRecordedDownloads();
+  $('recordedState').textContent='Recorded Heart is ready for this chapter. Choose it above for instant playback.';
+  $('checkRecorded').textContent='MP3 ready';
   if(!playing&&(engineName()==='heart'||(engineName()==='browser'&&!data.manualEngineChoice))){
    data.engine='recorded';save();updateEngineUI();
    setStatus('Recorded Kokoro Heart ready · Tap Play for instant MP3 narration.');
   }else if(engineName()==='recorded'){
    updateEngineUI();
-   setStatus('Recorded Kokoro Heart ready · Tap Play to listen.');
+   if(!playing)setStatus('Recorded Kokoro Heart ready · Tap Play to listen.');
   }
- })
- .catch(()=>{
-  // Stale recordings must never play against a newer draft. Do not default to an
-  // expensive local AI download while the matching narration is being rebuilt.
+ }catch(error){
+  // Only play recorded speech when the transcript revision and paragraph count match.
   if(engineName()==='recorded'||(engineName()==='heart'&&!data.manualEngineChoice)){
    data.engine='browser';save();updateEngineUI();
   }
-  if(!playing)setStatus('The recorded Heart audiobook is being updated for this draft. Device voices are available now; the MP3 option will return when its narration matches the text.');
- });
+  $('recordedState').textContent='The MP3 is still being prepared for '+book.revision.split(' — ')[0]+'. This option will unlock automatically when it is ready.';
+  if(!playing)setStatus('Matching recorded Heart audio is not ready yet. Device voices are available now.');
+ }finally{
+  recordedFetchBusy=false;
+  $('checkRecorded').disabled=!!recordedManifest;
+ }
 }
+$('checkRecorded').onclick=()=>{if(chapterForAudio)loadRecordedManifest(chapterForAudio)};
+setInterval(()=>{if(chapterForAudio&&!recordedManifest&&!document.hidden)loadRecordedManifest(chapterForAudio)},45000);
 function seekRecorded(index,token){
  if(!recordedManifest)return setStatus('Recorded audio is not yet available. Choose Kokoro Heart or Device voices.');
  const cue=recordedSentenceCues[index];
