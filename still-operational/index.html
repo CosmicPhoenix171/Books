@@ -40,11 +40,11 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <body>
 <header class="top"><div class="brand">Still Operational <span style="color:#72808d">/ Writing Studio</span></div><a href="../">All books</a></header>
 <div class="layout"><main class="main">
-<div class="intro"><div class="eyebrow">Manuscript • Draft 3.2</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Revised Juno character and cannon test</div>
+<div class="intro"><div class="eyebrow">Manuscript • <span id="chapterRevision">Draft 3.3</span></div><h1>Still Operational</h1><div class="subtitle">Chapter One · Reading and annotation studio</div>
 <div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
-<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="recorded" disabled>Recorded Heart MP3 · being updated</option><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p><div class="controlrow" style="margin-top:10px;align-items:center"><span id="recordedState" class="hint" role="status" aria-live="polite" style="flex:1;margin:0">Checking for matching recorded audio…</span><button class="btn small" id="checkRecorded" type="button">Check MP3</button></div></div>
+<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="recorded" disabled>Recorded Heart MP3 · being updated</option><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Fast Heart uses GPU acceleration if supported (first download around 310 MB), otherwise the smaller CPU model. It prepares upcoming sentences and saves generated audio for faster replay.</p><div class="controlrow" style="margin-top:10px;align-items:center"><span id="recordedState" class="hint" role="status" aria-live="polite" style="flex:1;margin:0">Checking for matching recorded audio…</span><button class="btn small" id="checkRecorded" type="button">Check MP3</button></div></div>
 <div id="heartLoading" class="heart-loading" hidden>
   <div class="heart-loading-head"><strong id="heartStage">Loading Kokoro Heart</strong><span id="heartPercent" class="heart-loading-number">Preparing…</span></div>
   <div id="heartTrack" class="heart-progress-track is-indeterminate" role="progressbar" aria-label="Kokoro Heart model download" aria-valuemin="0" aria-valuemax="100"><div id="heartFill" class="heart-progress-fill"></div></div>
@@ -89,6 +89,44 @@ const engineEl=$('engine');
 const heartSupported=!!(window.AudioContext||window.webkitAudioContext);
 let heartModel=null,heartModelPromise=null,heartAudioContext=null,heartSource=null;
 let heartQueue=Promise.resolve(),heartCache=new Map(),heartPending=new Map();
+let heartCompute='CPU',heartForceCpu=false,heartDiskPromise=null;
+function heartDisk(){
+ if(!window.indexedDB)return Promise.resolve(null);
+ if(heartDiskPromise)return heartDiskPromise;
+ heartDiskPromise=new Promise(resolve=>{
+  try{
+   const r=indexedDB.open('still-operational-heart-v1',1);
+   r.onupgradeneeded=()=>{const s=r.result.createObjectStore('audio',{keyPath:'key'});s.createIndex('saved','saved')};
+   r.onsuccess=()=>resolve(r.result);r.onerror=()=>resolve(null);r.onblocked=()=>resolve(null);
+  }catch(e){resolve(null)}
+ });return heartDiskPromise;
+}
+async function readHeartCache(key){
+ const db=await heartDisk();if(!db)return null;
+ return new Promise(resolve=>{
+  try{
+   const r=db.transaction('audio','readonly').objectStore('audio').get(key);
+   r.onsuccess=()=>resolve(r.result?.samples?.length?{samples:r.result.samples,sampling_rate:r.result.sampling_rate}:null);
+   r.onerror=()=>resolve(null);
+  }catch(e){resolve(null)}
+ });
+}
+function saveHeartCache(key,clip){
+ heartDisk().then(db=>{
+  if(!db)return;
+  try{
+   const tx=db.transaction('audio','readwrite'),store=tx.objectStore('audio');
+   store.put({key,samples:clip.samples,sampling_rate:clip.sampling_rate,saved:Date.now()});
+   const count=store.count();
+   count.onsuccess=()=>{
+    let excess=count.result-160;if(excess<=0)return;
+    const cur=store.index('saved').openCursor();
+    cur.onsuccess=()=>{const row=cur.result;if(row&&excess-->0){row.delete();row.continue()}};
+   };
+  }catch(e){}
+ }).catch(()=>{});
+}
+
 let recordedManifest=null,recordedSentenceCues=[],recordedSegmentCues=[],recordedSegment=-1,recordedRun=-1;
 const recordedAudio=new Audio();recordedAudio.preload='metadata';
 const engineName=()=>data.engine==='recorded'?'recorded':data.engine==='browser'?'browser':'heart';
@@ -149,9 +187,24 @@ async function loadHeartModel(){
  heartModelPromise=(async()=>{
   const mod=await import('https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/+esm');
   setHeartProgress('Loading Kokoro model',null,'Checking downloaded and cached model files…');
-  const engine=await mod.KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX',{
-   dtype:'q8',device:'wasm',progress_callback:onHeartDownloadProgress
-  });
+  const modelId='onnx-community/Kokoro-82M-v1.0-ONNX';
+  let engine=null;
+  if(!heartForceCpu&&navigator.gpu&&typeof navigator.gpu.requestAdapter==='function'){
+   let adapter=null;
+   try{adapter=await navigator.gpu.requestAdapter()}catch(e){}
+   if(adapter){
+    try{
+     setHeartProgress('Loading fast GPU voice',null,'First WebGPU model download may be about 310 MB.');
+     engine=await mod.KokoroTTS.from_pretrained(modelId,{dtype:'fp32',device:'webgpu',progress_callback:onHeartDownloadProgress});
+     heartCompute='GPU';
+    }catch(e){console.warn('GPU voice unavailable; using CPU instead.',e);heartForceCpu=true}
+   }
+  }
+  if(!engine){
+   setHeartProgress('Loading compact CPU voice',null,'Preparing the smaller 90 MB voice model.');
+   engine=await mod.KokoroTTS.from_pretrained(modelId,{dtype:'q8',device:'wasm',progress_callback:onHeartDownloadProgress});
+   heartCompute='CPU';
+  }
   heartModel=engine;
   setHeartProgress('Heart voice model ready',100,'Download and model initialization complete. Preparing narration…');
   return engine;
@@ -162,28 +215,44 @@ async function loadHeartModel(){
  });
  return heartModelPromise;
 }
-function heartCacheKey(i){return data.speed.toFixed(2)+':'+i}
+function heartCacheKey(i){return JSON.stringify(['kokoro-1.2.1','af_heart',data.speed.toFixed(2),sentences[i].text])}
+function rememberHeart(key,clip){
+ if(heartCache.has(key))heartCache.delete(key);
+ heartCache.set(key,clip);
+ while(heartCache.size>32)heartCache.delete(heartCache.keys().next().value);
+}
 function generateHeart(i){
  if(i<0||i>=sentences.length)return Promise.reject(new Error('Invalid sentence'));
  const key=heartCacheKey(i);
- if(heartCache.has(key))return Promise.resolve(heartCache.get(key));
+ if(heartCache.has(key)){const clip=heartCache.get(key);rememberHeart(key,clip);return Promise.resolve(clip)}
  if(heartPending.has(key))return heartPending.get(key);
+ const text=sentences[i].text,speed=+data.speed||1;
  const promise=heartQueue.then(async()=>{
-  const tts=await loadHeartModel();
-  if(playing&&i===data.index)setHeartProgress('Generating Heart narration',null,'Voice model loaded. Creating audio for the selected passage…');
-  const audio=await tts.generate(sentences[i].text,{voice:'af_heart',speed:+data.speed||1});
-  // Kokoro's RawAudio uses .audio (older versions) or .data (newer versions).
-  const samples=audio?.audio ?? audio?.data;
+  let clip=await readHeartCache(key);
+  if(clip){rememberHeart(key,clip);return clip}
+  let tts=await loadHeartModel(),raw;
+  if(playing&&i===data.index)setHeartProgress('Generating Heart narration',null,'Preparing this passage while buffering those ahead…');
+  try{raw=await tts.generate(text,{voice:'af_heart',speed})}
+  catch(error){
+   if(heartCompute!=='GPU'||heartForceCpu)throw error;
+   console.warn('GPU inference failed; switching to CPU.',error);
+   heartForceCpu=true;heartModel=null;heartModelPromise=null;
+   tts=await loadHeartModel();raw=await tts.generate(text,{voice:'af_heart',speed});
+  }
+  const samples=raw?.audio??raw?.data;
   if(!samples||!samples.length)throw new Error('The Heart engine produced an empty waveform.');
-  const result={samples,sampling_rate:audio.sampling_rate||24000};
-  heartCache.set(key,result);
-  while(heartCache.size>8){const first=heartCache.keys().next().value;heartCache.delete(first)}
-  return result;
+  clip={samples,sampling_rate:raw.sampling_rate||24000};
+  rememberHeart(key,clip);saveHeartCache(key,clip);
+  return clip;
  });
  heartQueue=promise.catch(()=>{});
  heartPending.set(key,promise);
- promise.then(()=>heartPending.delete(key),()=>heartPending.delete(key));
+ promise.finally(()=>heartPending.delete(key)).catch(()=>{});
  return promise;
+}
+function prefetchHeart(i){
+ if(!playing||engineName()!=='heart')return;
+ for(let n=i+1;n<Math.min(sentences.length,i+5);n++)generateHeart(n).catch(()=>{});
 }
 async function sayHeart(token){
  if(!playing||token!==run)return;
@@ -210,8 +279,8 @@ async function sayHeart(token){
   };
   source.start();
   $('heartLoading').hidden=true;
-  setStatus('Kokoro Heart · Reading sentence '+(i+1)+' of '+sentences.length);
-  if(i+1<sentences.length)generateHeart(i+1).catch(()=>{});
+  setStatus('Kokoro Heart ('+heartCompute+') · Reading sentence '+(i+1)+' of '+sentences.length);
+  prefetchHeart(i);
  }catch(e){
   if(token!==run)return;
   stop();
@@ -446,7 +515,7 @@ function updateEngineUI(){
  $('engineHelp').textContent=engineName()==='recorded'
  ? 'Pre-generated Kokoro Heart MP3 files stream directly from this website. Your phone does not need to run the neural model. Follow-along sentence timing is estimated from paragraph boundaries.'
  : engineName()==='heart'
- ? 'Kokoro Heart (af_heart) generates new speech on your device and downloads a large AI model the first time. If it fails, choose Device voices.'
+ ? 'Fast Heart uses the GPU when available (one-time download around 310 MB), otherwise the compact CPU model. It pre-generates four upcoming sentences and caches audio for future visits.'
  : 'The device narrator starts quickly and uses voices installed in your browser. Choose a voice below.';
 }
 if(supported){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices}
@@ -505,7 +574,7 @@ $('bookmark').onclick=()=>{data.bookmark=data.index;data.bookmarkExcerpt=sentenc
 $('restore').onclick=()=>{mark(data.bookmark||0);scrollToIndex(data.index)};
 $('notesJump').onclick=()=>$('notesPanel').scrollIntoView({behavior:'smooth'});
 renderNotes();
-fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}reconcileSavedLocations();mark(data.index,false);renderNotes();markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';loadRecordedManifest(book)}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
+fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();$('chapterRevision').textContent=book.revision.split(' — ')[0];for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}reconcileSavedLocations();mark(data.index,false);renderNotes();markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';loadRecordedManifest(book)}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
 window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();recordedAudio.pause();save()});
 })();
 </script></body></html>
