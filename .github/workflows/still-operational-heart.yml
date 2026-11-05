@@ -69,6 +69,10 @@ jobs:
           merge-multiple: true
       - name: Verify and combine timing metadata
         run: python scripts/merge_still_operational_audio.py
+      - name: Assemble the complete downloadable chapter MP3
+        run: |
+          command -v ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+          python scripts/combine_still_operational_heart.py
       - name: Save narrated MP3s to GitHub Pages
         run: |
           git config user.name "github-actions[bot]"

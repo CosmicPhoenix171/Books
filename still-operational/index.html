@@ -40,7 +40,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <body>
 <header class="top"><div class="brand">Still Operational <span style="color:#72808d">/ Writing Studio</span></div><a href="../">All books</a></header>
 <div class="layout"><main class="main">
-<div class="intro"><div class="eyebrow">Manuscript • Draft 3</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Revised, clarified and expanded</div>
+<div class="intro"><div class="eyebrow">Manuscript • Draft 3.1</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Updated XR-17 cannon recoil test</div>
 <div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
@@ -83,7 +83,7 @@ const supported='speechSynthesis' in window && 'SpeechSynthesisUtterance' in win
 const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const split=t=>t.match(/[^.!?…]+(?:[.!?…]+[”"’']?|$)/g)?.filter(x=>x.trim())||[t];
 function scrollToIndex(i){const el=document.querySelector('[data-i="'+i+'"]');if(el&&$('autoScroll').checked)el.scrollIntoView({behavior:'smooth',block:'center'})}
-function mark(i,doScroll=true){data.index=Math.max(0,Math.min(i,sentences.length-1));document.querySelectorAll('.sentence.active').forEach(el=>el.classList.remove('active'));const el=document.querySelector('[data-i="'+data.index+'"]');if(el){el.classList.add('active');if(doScroll)scrollToIndex(data.index)}$('bar').style.width=((data.index+1)/Math.max(1,sentences.length)*100).toFixed(1)+'%';save()}
+function mark(i,doScroll=true){data.index=Math.max(0,Math.min(i,sentences.length-1));data.lastExcerpt=sentences[data.index]?.text||'';document.querySelectorAll('.sentence.active').forEach(el=>el.classList.remove('active'));const el=document.querySelector('[data-i="'+data.index+'"]');if(el){el.classList.add('active');if(doScroll)scrollToIndex(data.index)}$('bar').style.width=((data.index+1)/Math.max(1,sentences.length)*100).toFixed(1)+'%';save()}
 
 const engineEl=$('engine');
 const heartSupported=!!(window.AudioContext||window.webkitAudioContext);
@@ -295,7 +295,10 @@ function loadRecordedManifest(book){
    setStatus('Recorded Kokoro Heart ready · Tap Play to listen.');
   }
  })
- .catch(()=>{if(engineName()==='recorded'){data.engine='heart';save();updateEngineUI()}});
+ .catch(()=>{
+  if(engineName()==='recorded'){data.engine='heart';save();updateEngineUI()}
+  if(!playing)setStatus('Recorded Heart MP3s are being refreshed to match this edition. In the meantime, choose Kokoro Heart or Device voices.');
+ });
 }
 function seekRecorded(index,token){
  if(!recordedManifest)return setStatus('Recorded audio is not yet available. Choose Kokoro Heart or Device voices.');
@@ -433,19 +436,48 @@ $('playSelection').onclick=()=>{if(selected<0){setStatus('Tap a passage first, t
 $('fontSize').value=data.fontSize;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';$('fontSize').oninput=e=>{data.fontSize=+e.target.value;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';save()};
 function selectSentence(i){selected=i;document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('active-note',+el.dataset.i===i));$('chosen').textContent=i<0?'General chapter note':sentences[i].text;$('noteText').focus(); if(window.innerWidth<950)$('notesPanel').scrollIntoView({behavior:'smooth'})}
 $('clearSelection').onclick=()=>selectSentence(-1);
-function renderNotes(){const el=$('notes');$('count').textContent=data.notes.length+' note'+(data.notes.length===1?'':'s');el.replaceChildren();if(!data.notes.length){el.innerHTML='<p class="empty">No notes yet.</p>';return}data.notes.forEach(n=>{const wrap=document.createElement('div');wrap.className='note';const title=document.createElement('strong');title.textContent=n.sentence<0?'GENERAL NOTE':'SENTENCE '+(n.sentence+1);wrap.appendChild(title);if(n.excerpt){const q=document.createElement('div');q.className='excerpt';q.textContent=n.excerpt;wrap.appendChild(q)}const p=document.createElement('p');p.textContent=n.text;wrap.appendChild(p);const actions=document.createElement('div');actions.className='note-actions';const jump=document.createElement('button');jump.className='btn small';jump.textContent='Go to text';jump.disabled=n.sentence<0;jump.onclick=()=>{mark(n.sentence);document.querySelector('[data-i="'+n.sentence+'"]')?.scrollIntoView({behavior:'smooth',block:'center'})};const del=document.createElement('button');del.className='btn small';del.textContent='Delete';del.onclick=()=>{data.notes=data.notes.filter(x=>x.id!==n.id);save();renderNotes();markAnnotated()};actions.append(jump,del);wrap.appendChild(actions);el.appendChild(wrap)})}
+function renderNotes(){const el=$('notes');$('count').textContent=data.notes.length+' note'+(data.notes.length===1?'':'s');el.replaceChildren();if(!data.notes.length){el.innerHTML='<p class="empty">No notes yet.</p>';return}data.notes.forEach(n=>{const wrap=document.createElement('div');wrap.className='note';const title=document.createElement('strong');title.textContent=n.unmatched?'PASSAGE CHANGED · REVIEW':n.sentence<0?'GENERAL NOTE':'SENTENCE '+(n.sentence+1);wrap.appendChild(title);if(n.excerpt){const q=document.createElement('div');q.className='excerpt';q.textContent=n.excerpt;wrap.appendChild(q)}const p=document.createElement('p');p.textContent=n.text;wrap.appendChild(p);const actions=document.createElement('div');actions.className='note-actions';const jump=document.createElement('button');jump.className='btn small';jump.textContent='Go to text';jump.disabled=n.sentence<0;jump.onclick=()=>{mark(n.sentence);document.querySelector('[data-i="'+n.sentence+'"]')?.scrollIntoView({behavior:'smooth',block:'center'})};const del=document.createElement('button');del.className='btn small';del.textContent='Delete';del.onclick=()=>{data.notes=data.notes.filter(x=>x.id!==n.id);save();renderNotes();markAnnotated()};actions.append(jump,del);wrap.appendChild(actions);el.appendChild(wrap)})}
 function markAnnotated(){document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('annotated',data.notes.some(n=>n.sentence===+el.dataset.i)))}
+function matchPriorSentence(excerpt,oldIndex){
+ if(!excerpt)return -1;
+ let closest=-1,dist=Infinity;
+ for(let i=0;i<sentences.length;i++){
+  if(sentences[i].text!==excerpt)continue;
+  const d=Math.abs(i-(Number.isFinite(oldIndex)?oldIndex:0));
+  if(d<dist){dist=d;closest=i}
+ }
+ return closest;
+}
+function reconcileSavedLocations(){
+ const prevIndex=data.index;
+ if(data.lastExcerpt&&sentences[prevIndex]?.text!==data.lastExcerpt){
+  const match=matchPriorSentence(data.lastExcerpt,prevIndex);
+  if(match>=0)data.index=match;
+ }
+ if(data.bookmarkExcerpt&&sentences[data.bookmark]?.text!==data.bookmarkExcerpt){
+  const match=matchPriorSentence(data.bookmarkExcerpt,data.bookmark);
+  if(match>=0)data.bookmark=match;
+ }
+ for(const note of data.notes){
+  if(!note.excerpt)continue;
+  if(note.sentence>=0&&sentences[note.sentence]?.text===note.excerpt){note.unmatched=false;continue}
+  const match=matchPriorSentence(note.excerpt,note.sentence);
+  if(match>=0){note.sentence=match;note.unmatched=false}
+  else{note.sentence=-1;note.unmatched=true}
+ }
+ save();
+}
 $('addNote').onclick=()=>{const text=$('noteText').value.trim();if(!text)return;data.notes.push({id:Date.now()+'-'+Math.random().toString(36).slice(2),sentence:selected,excerpt:selected>=0?sentences[selected].text:'',text,created:new Date().toISOString()});$('noteText').value='';save();renderNotes();markAnnotated()};
 function download(text,name,type){const a=document.createElement('a');const url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)}
-$('exportNotes').onclick=()=>download(JSON.stringify({book:'Still Operational',chapter:1,revision:'Draft 3',notes:data.notes},null,2),'Still-Operational-Ch1-Draft3-Notes.json','application/json');
+$('exportNotes').onclick=()=>download(JSON.stringify({book:'Still Operational',chapter:1,revision:'Draft 3.1',notes:data.notes},null,2) ,'Still-Operational-Ch1-Draft3-1-Notes.json','application/json');
 try{if(localStorage.getItem('still-operational-review-v2'))$('exportPrior').style.display='inline-block'}catch(e){}
 $('exportPrior').onclick=()=>{try{const previous=localStorage.getItem('still-operational-review-v2');if(previous)download(previous,'Still-Operational-Ch1-Draft2-Notes.json','application/json')}catch(e){$('status').textContent='Prior notes are unavailable in this browser.'}};
-$('exportAll').onclick=()=>{const out=['# Still Operational — Chapter 1 revision review','','## Reader comments',''];if(!data.notes.length)out.push('No notes recorded.');data.notes.forEach((n,i)=>{out.push('### Note '+(i+1)+(n.sentence>=0?' — sentence '+(n.sentence+1):''),'',n.excerpt?'> '+n.excerpt:'', '',n.text,'')});out.push('## Full chapter draft','');document.querySelectorAll('#chapter p').forEach(p=>out.push(p.textContent,'') );download(out.join('\n'),'Still-Operational-Ch1-Draft3-Review.md','text/markdown')};
-$('bookmark').onclick=()=>{data.bookmark=data.index;save();$('status').textContent='Reading position saved at sentence '+(data.index+1)};
+$('exportAll').onclick=()=>{const out=['# Still Operational — Chapter 1 revision review','','## Reader comments',''];if(!data.notes.length)out.push('No notes recorded.');data.notes.forEach((n,i)=>{out.push('### Note '+(i+1)+(n.sentence>=0?' — sentence '+(n.sentence+1):''),'',n.excerpt?'> '+n.excerpt:'', '',n.text,'')});out.push('## Full chapter draft','');document.querySelectorAll('#chapter p').forEach(p=>out.push(p.textContent,'') );download(out.join('\n') ,'Still-Operational-Ch1-Draft3-1-Review.md','text/markdown')};
+$('bookmark').onclick=()=>{data.bookmark=data.index;data.bookmarkExcerpt=sentences[data.index]?.text||'';save();$('status').textContent='Reading position saved at sentence '+(data.index+1)};
 $('restore').onclick=()=>{mark(data.bookmark||0);scrollToIndex(data.index)};
 $('notesJump').onclick=()=>$('notesPanel').scrollIntoView({behavior:'smooth'});
 renderNotes();
-fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}mark(data.index,false);markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';loadRecordedManifest(book)}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
+fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}reconcileSavedLocations();mark(data.index,false);renderNotes();markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';loadRecordedManifest(book)}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
 window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();recordedAudio.pause();save()});
 })();
 </script></body></html>
