@@ -116,10 +116,10 @@ async function sayHeart(token){
  setStatus(heartModel?'Heart · Preparing sentence '+(i+1)+' of '+sentences.length:'Heart · Downloading and preparing voice; first use requires an AI model.');
  try{
   const audio=await generateHeart(i);
-  if(token!==run||!playing||engineName()!=='heart')return;
+  if(token!==run||!playing||engineName()!=='heart'||paused)return;
   prepareHeartAudio();
   if(heartAudioContext.state==='suspended')await heartAudioContext.resume();
-  if(token!==run||!playing)return;
+  if(token!==run||!playing||paused)return;
   const buffer=heartAudioContext.createBuffer(1,audio.data.length,audio.sampling_rate||24000);
   buffer.copyToChannel(audio.data,0);
   const source=heartAudioContext.createBufferSource();
@@ -166,9 +166,11 @@ function startAt(i){
 $('play').onclick=()=>{
  if(playing){
   if(paused){
-   if(engineName()==='heart'&&heartAudioContext)heartAudioContext.resume().catch(()=>{});
+   const resumeHeart=engineName()==='heart';
+   if(resumeHeart&&heartAudioContext)heartAudioContext.resume().catch(()=>{});
    else if(supported)window.speechSynthesis.resume();
    paused=false;setStatus('Narration resumed.');
+   if(resumeHeart&&!heartSource)sayHeart(run);
   }else{
    if(engineName()==='heart'&&heartAudioContext)heartAudioContext.suspend().catch(()=>{});
    else if(supported)window.speechSynthesis.pause();
