@@ -183,7 +183,7 @@ async function loadHeartModel(){
  if(heartModelPromise)return heartModelPromise;
  heartOverallAvailable=false;
  setHeartProgress('Connecting to Kokoro Heart',null,'Preparing the voice engine and checking locally cached files…');
- setStatus('Loading Kokoro Heart · the first download can be around 90 MB. Keep this page open.');
+ setStatus('Loading Kokoro Heart · GPU model can be about 310 MB initially; CPU fallback about 90 MB. Generated speech is cached for future listening.');
  heartModelPromise=(async()=>{
   const mod=await import('https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/+esm');
   setHeartProgress('Loading Kokoro model',null,'Checking downloaded and cached model files…');
