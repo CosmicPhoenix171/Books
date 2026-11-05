@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10151d">
+<title>Still Operational | Reading Studio</title>
+<style>
+:root{color-scheme:dark;--bg:#10151d;--panel:#19222e;--panel2:#202c39;--text:#e8e8e2;--muted:#a7b3bd;--accent:#dcae79;--edge:#34414c;--reading:rgba(220,174,121,.22)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}button{cursor:pointer}a{color:var(--accent)}
+.top{padding:17px max(18px,calc((100vw - 1460px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--edge);background:#141b25}
+.brand{font-weight:800;letter-spacing:.11em;font-size:13px;text-transform:uppercase}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 355px;max-width:1450px;margin:auto;min-height:calc(100vh - 75px)}
+.main{min-width:0;padding:48px clamp(20px,5vw,90px) 100px}.side{border-left:1px solid var(--edge);background:#151d27;padding:24px;position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto}
+h1{font:700 clamp(37px,5vw,66px)/1.1 Georgia,serif;letter-spacing:-.035em;margin:12px 0 7px}h2{font:700 23px Georgia,serif;margin:0 0 6px}.subtitle{color:var(--muted);font-size:15px}.intro{padding-bottom:25px;border-bottom:1px solid var(--edge);margin-bottom:30px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.btn{background:var(--panel2);border:1px solid var(--edge);border-radius:10px;padding:10px 14px;font-weight:650}.btn:hover{border-color:var(--accent)}.primary{background:var(--accent);color:#1b1711;border-color:var(--accent)}.small{font-size:12px;padding:8px 10px}
+.controls{background:var(--panel);border:1px solid var(--edge);padding:16px;border-radius:14px;margin:12px 0 34px}
+.controlrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.controlrow .btn{white-space:nowrap}
+input[type=range]{accent-color:var(--accent);max-width:130px}.grow{flex:1}select,textarea,input[type=text]{background:#111923;border:1px solid var(--edge);border-radius:8px;padding:9px}
+select{max-width:100%}label{color:var(--muted);font-size:12px}.status{font-size:12px;color:var(--muted);margin:12px 0 0}.progress{height:4px;background:#35404a;border-radius:8px;margin-top:16px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0}
+#chapter{font:19px/1.89 Georgia,'Times New Roman',serif;letter-spacing:.005em;max-width:760px;margin:auto}
+#chapter p{margin:0 0 1.05em}.sentence{border-radius:3px;cursor:pointer}.sentence:hover{background:rgba(220,174,121,.09)}.sentence.active{background:var(--reading);box-decoration-break:clone;-webkit-box-decoration-break:clone}.sentence.annotated{border-bottom:1px dotted var(--accent)}
+#chapter p.selected{border-left:3px solid var(--accent);padding-left:13px;margin-left:-16px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.hint{font-size:12px;color:var(--muted);margin-bottom:16px}.side textarea{width:100%;min-height:125px;resize:vertical}.note{border:1px solid var(--edge);border-radius:10px;padding:12px;margin:12px 0;background:#19232e}.note strong{font-size:12px;color:var(--accent)}.note p{font-size:13px;white-space:pre-wrap;margin:8px 0}.note .excerpt{color:var(--muted);font-size:12px;max-height:65px;overflow:hidden}.note-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:9px}
+.empty{font-size:13px;color:var(--muted)}.setting{margin-top:17px}.setting label{display:block;margin-bottom:5px}.side hr{border:0;border-top:1px solid var(--edge);margin:24px 0}
+button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:950px){.layout{display:block}.main{padding:28px 20px 45px}.side{position:static;max-height:none;border-top:1px solid var(--edge);border-left:0}.top{padding:16px 20px}#chapter{font-size:18px;line-height:1.8}.controlrow{gap:7px}.toolbar .btn{flex:1}}
+</style></head>
+<body>
+<header class="top"><div class="brand">Still Operational <span style="color:#72808d">/ Writing Studio</span></div><a href="../">All books</a></header>
+<div class="layout"><main class="main">
+<div class="intro"><div class="eyebrow">Manuscript • Draft 1</div><h1>Still Operational</h1><div class="subtitle">Chapter One · Read, listen, annotate, revise</div>
+<div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
+<section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
+<div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
+<div class="setting"><label for="voice">Narrator voice</label><select id="voice"><option value="">Default device voice</option></select></div>
+<div class="progress"><div id="bar"></div></div><p class="status" id="status">Select Play to begin, or tap any sentence to start there. Voice options depend on your browser.</p>
+</section>
+<article id="chapter" aria-label="Chapter One"><p>Loading manuscript…</p></article>
+</main>
+<aside class="side" id="notesPanel"><div class="sectionhead"><h2>Revision notes</h2><span class="eyebrow" id="count">0 notes</span></div>
+<p class="hint">Tap a sentence in the chapter to attach a note. Your notes stay on this browser until you export them.</p>
+<div class="eyebrow" style="margin-bottom:8px">Selected passage</div><div id="chosen" class="hint">No passage selected. A general chapter note will be created.</div>
+<label for="noteText">Your comment or requested change</label><textarea id="noteText" placeholder="Example: Make this dialogue more natural; slow down the tension here..."></textarea>
+<div class="toolbar"><button class="btn primary" id="addNote">Save note</button><button class="btn" id="clearSelection">Clear selection</button></div>
+<hr><div class="sectionhead"><h2>Saved notes</h2></div><div id="notes"><p class="empty">No notes yet.</p></div>
+<hr><div class="toolbar"><button class="btn" id="exportNotes">↓ Export notes</button><button class="btn" id="exportAll">↓ Export review</button></div>
+<p class="hint" style="margin-top:12px">Export a review file and share it in ChatGPT when you want the chapter rewritten with your comments.</p>
+<hr><h2>Reading preferences</h2>
+<div class="setting"><label for="fontSize">Text size <span id="fontLabel">19px</span></label><input id="fontSize" type="range" min="16" max="25" value="19" step="1"></div>
+<div class="setting"><label for="autoScroll"><input id="autoScroll" type="checkbox" checked> Follow narration as it reads</label></div>
+<p class="hint" style="margin-top:22px">Playback uses the speech voices installed in your browser. For best reliability, leave this page open while listening.</p>
+</aside></div>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id), root=$('chapter'), voiceEl=$('voice');
+const KEY='still-operational-review-v1';
+let data={notes:[],index:0,bookmark:0,speed:1,fontSize:19,voice:''};
+try{Object.assign(data,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
+if(!Array.isArray(data.notes))data.notes=[];
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}};
+let sentences=[],selected=-1,playing=false,paused=false,run=0,voices=[];
+const supported='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const split=t=>t.match(/[^.!?…]+(?:[.!?…]+[”"’']?|$)/g)?.filter(x=>x.trim())||[t];
+function scrollToIndex(i){const el=document.querySelector('[data-i="'+i+'"]');if(el&&$('autoScroll').checked)el.scrollIntoView({behavior:'smooth',block:'center'})}
+function mark(i,doScroll=true){data.index=Math.max(0,Math.min(i,sentences.length-1));document.querySelectorAll('.sentence.active').forEach(el=>el.classList.remove('active'));const el=document.querySelector('[data-i="'+data.index+'"]');if(el){el.classList.add('active');if(doScroll)scrollToIndex(data.index)}$('bar').style.width=((data.index+1)/Math.max(1,sentences.length)*100).toFixed(1)+'%';save()}
+function updateButtons(){$('play').textContent=playing?(paused?'▶ Resume':'Ⅱ Pause'):'▶ Play'}
+function stop(){run++;playing=false;paused=false;if(supported)window.speechSynthesis.cancel();updateButtons();$('status').textContent='Stopped · Tap Play to continue at the highlighted sentence.'}
+function sayCurrent(token){if(!playing||token!==run)return;if(data.index>=sentences.length){stop();$('status').textContent='Chapter complete.';return}mark(data.index);const item=sentences[data.index];$('status').textContent='Reading sentence '+(data.index+1)+' of '+sentences.length;
+const utterance=new SpeechSynthesisUtterance(item.text);utterance.rate=+data.speed||1;utterance.pitch=1;utterance.lang='en-US';const voice=voices.find(v=>v.voiceURI===data.voice);if(voice)utterance.voice=voice;
+utterance.onend=()=>{if(token!==run||!playing)return;data.index++;if(data.index>=sentences.length){stop();$('status').textContent='Chapter complete.';return}sayCurrent(token)};
+utterance.onerror=e=>{if(token!==run||!playing)return;if(e.error==='canceled'||e.error==='interrupted')return;playing=false;paused=false;updateButtons();$('status').textContent='Voice interrupted. Tap Play to resume.'};
+window.speechSynthesis.speak(utterance);
+}
+function startAt(i){if(!supported){$('status').textContent='This browser does not support speech synthesis. Try Chrome or Edge.';return}stop();mark(i);playing=true;paused=false;updateButtons();sayCurrent(run)}
+$('play').onclick=()=>{if(playing){if(paused){window.speechSynthesis.resume();paused=false;$('status').textContent='Narration resumed.'}else{window.speechSynthesis.pause();paused=true;$('status').textContent='Narration paused.'}updateButtons();return}startAt(data.index)};
+$('stop').onclick=stop;$('back').onclick=()=>startAt(data.index-1);$('next').onclick=()=>startAt(data.index+1);
+$('speed').value=data.speed;$('speedLabel').textContent=(+data.speed).toFixed(1)+'×';$('speed').oninput=e=>{data.speed=+e.target.value;$('speedLabel').textContent=data.speed.toFixed(1)+'×';save();if(playing)startAt(data.index)};
+function loadVoices(){if(!supported)return;voices=window.speechSynthesis.getVoices();const current=data.voice;voiceEl.innerHTML='<option value="">Default device voice</option>';voices.filter(v=>v.lang.toLowerCase().startsWith('en')).forEach(v=>{let opt=document.createElement('option');opt.value=v.voiceURI;opt.textContent=v.name+' · '+v.lang;voiceEl.appendChild(opt)});voiceEl.value=current; if(voiceEl.selectedIndex<0)voiceEl.value=''}
+if(supported){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices}else $('play').disabled=true;
+voiceEl.onchange=e=>{data.voice=e.target.value;save();if(playing)startAt(data.index)};
+$('fontSize').value=data.fontSize;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';$('fontSize').oninput=e=>{data.fontSize=+e.target.value;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';save()};
+function selectSentence(i){selected=i;document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('active-note',+el.dataset.i===i));$('chosen').textContent=i<0?'General chapter note':sentences[i].text;$('noteText').focus(); if(window.innerWidth<950)$('notesPanel').scrollIntoView({behavior:'smooth'})}
+$('clearSelection').onclick=()=>selectSentence(-1);
+function renderNotes(){const el=$('notes');$('count').textContent=data.notes.length+' note'+(data.notes.length===1?'':'s');el.replaceChildren();if(!data.notes.length){el.innerHTML='<p class="empty">No notes yet.</p>';return}data.notes.forEach(n=>{const wrap=document.createElement('div');wrap.className='note';const title=document.createElement('strong');title.textContent=n.sentence<0?'GENERAL NOTE':'SENTENCE '+(n.sentence+1);wrap.appendChild(title);if(n.excerpt){const q=document.createElement('div');q.className='excerpt';q.textContent=n.excerpt;wrap.appendChild(q)}const p=document.createElement('p');p.textContent=n.text;wrap.appendChild(p);const actions=document.createElement('div');actions.className='note-actions';const jump=document.createElement('button');jump.className='btn small';jump.textContent='Go to text';jump.disabled=n.sentence<0;jump.onclick=()=>{mark(n.sentence);document.querySelector('[data-i="'+n.sentence+'"]')?.scrollIntoView({behavior:'smooth',block:'center'})};const del=document.createElement('button');del.className='btn small';del.textContent='Delete';del.onclick=()=>{data.notes=data.notes.filter(x=>x.id!==n.id);save();renderNotes();markAnnotated()};actions.append(jump,del);wrap.appendChild(actions);el.appendChild(wrap)})}
+function markAnnotated(){document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('annotated',data.notes.some(n=>n.sentence===+el.dataset.i)))}
+$('addNote').onclick=()=>{const text=$('noteText').value.trim();if(!text)return;data.notes.push({id:Date.now()+'-'+Math.random().toString(36).slice(2),sentence:selected,excerpt:selected>=0?sentences[selected].text:'',text,created:new Date().toISOString()});$('noteText').value='';save();renderNotes();markAnnotated()};
+function download(text,name,type){const a=document.createElement('a');const url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+$('exportNotes').onclick=()=>download(JSON.stringify({book:'Still Operational',chapter:1,notes:data.notes},null,2),'Still-Operational-Ch1-Notes.json','application/json');
+$('exportAll').onclick=()=>{const out=['# Still Operational — Chapter 1 revision review','','## Reader comments',''];if(!data.notes.length)out.push('No notes recorded.');data.notes.forEach((n,i)=>{out.push('### Note '+(i+1)+(n.sentence>=0?' — sentence '+(n.sentence+1):''),'',n.excerpt?'> '+n.excerpt:'', '',n.text,'')});out.push('## Full chapter draft','');document.querySelectorAll('#chapter p').forEach(p=>out.push(p.textContent,'') );download(out.join('\n'),'Still-Operational-Ch1-Review.md','text/markdown')};
+$('bookmark').onclick=()=>{data.bookmark=data.index;save();$('status').textContent='Reading position saved at sentence '+(data.index+1)};
+$('restore').onclick=()=>{mark(data.bookmark||0);scrollToIndex(data.index)};
+$('notesJump').onclick=()=>$('notesPanel').scrollIntoView({behavior:'smooth'});
+renderNotes();
+fetch('chapter-1.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}mark(data.index,false);markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.'}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
+window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();save()});
+})();
+</script></body></html>
