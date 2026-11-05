@@ -245,7 +245,7 @@ function createRecordedCues(){
    const total=weights.reduce((sum,w)=>sum+w,0);
    let at=cue.start;
    ids.forEach((idx,i)=>{
-    const until=i===ids.length-1?cue.end:at+(cue.end-cue.start)*(weights[i]/weights.slice(i).reduce((a,b)=>a+b,0));
+    const until=i===ids.length-1?cue.end:at+(cue.end-at)*(weights[i]/weights.slice(i).reduce((a,b)=>a+b,0));
     const item={segment:segmentIndex,start:at,end:until,index:idx};
     recordedSentenceCues[idx]=item;segmentCues.push(item);at=until;
    });
