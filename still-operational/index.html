@@ -256,6 +256,15 @@ function createRecordedCues(){
 }
 function renderRecordedDownloads(){
  const wrap=$('recordedFileLinks');wrap.replaceChildren();
+ if(recordedManifest.fullFile){
+  const all=document.createElement('a');
+  all.href=recordedManifest.fullFile;
+  all.download='Still-Operational-Chapter1-Heart-Full.mp3';
+  all.className='btn small primary';
+  all.textContent='Full chapter MP3';
+  all.title='Download the entire Heart audiobook in one MP3 file';
+  wrap.appendChild(all);
+ }
  recordedManifest.segments.forEach((part,i)=>{
   const link=document.createElement('a');
   link.href=part.file;
@@ -268,7 +277,7 @@ function renderRecordedDownloads(){
  $('recordedDownloads').hidden=false;
 }
 function loadRecordedManifest(book){
- fetch('audio/manifest.json?v='+encodeURIComponent(book.revision))
+ fetch('audio/manifest.json?v='+encodeURIComponent(book.revision),{cache:'no-store'})
  .then(r=>{if(!r.ok)throw Error('Narration is still being prepared');return r.json()})
  .then(manifest=>{
   if(manifest.revision!==book.revision||manifest.paragraphs!==book.paragraphs.length||
