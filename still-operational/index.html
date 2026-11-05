@@ -74,7 +74,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 'use strict';
 const $=id=>document.getElementById(id), root=$('chapter'), voiceEl=$('voice');
 const KEY='still-operational-review-v3';
-let data={notes:[],index:0,bookmark:0,speed:1,fontSize:19,voice:'',engine:'heart'};
+let data={notes:[],index:0,bookmark:0,speed:1,fontSize:19,voice:'',engine:'browser'};
 try{Object.assign(data,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
 if(!Array.isArray(data.notes))data.notes=[];
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}};
@@ -170,11 +170,15 @@ function generateHeart(i){
  if(heartPending.has(key))return heartPending.get(key);
  const promise=heartQueue.then(async()=>{
   const tts=await loadHeartModel();
+  if(playing&&i===data.index)setHeartProgress('Generating Heart narration',null,'Voice model loaded. Creating audio for the selected passage…');
   const audio=await tts.generate(sentences[i].text,{voice:'af_heart',speed:+data.speed||1});
-  if(!audio||!audio.data||!audio.data.length)throw new Error('Heart returned no audio.');
-  heartCache.set(key,audio);
+  // Kokoro's RawAudio uses .audio (older versions) or .data (newer versions).
+  const samples=audio?.audio ?? audio?.data;
+  if(!samples||!samples.length)throw new Error('The Heart engine produced an empty waveform.');
+  const result={samples,sampling_rate:audio.sampling_rate||24000};
+  heartCache.set(key,result);
   while(heartCache.size>8){const first=heartCache.keys().next().value;heartCache.delete(first)}
-  return audio;
+  return result;
  });
  heartQueue=promise.catch(()=>{});
  heartPending.set(key,promise);
@@ -193,8 +197,8 @@ async function sayHeart(token){
   prepareHeartAudio();
   if(heartAudioContext.state==='suspended')await heartAudioContext.resume();
   if(token!==run||!playing||paused)return;
-  const buffer=heartAudioContext.createBuffer(1,audio.data.length,audio.sampling_rate||24000);
-  buffer.copyToChannel(audio.data,0);
+  const buffer=heartAudioContext.createBuffer(1,audio.samples.length,audio.sampling_rate||24000);
+  buffer.copyToChannel(audio.samples,0);
   const source=heartAudioContext.createBufferSource();
   source.buffer=buffer;source.connect(heartAudioContext.destination);heartSource=source;
   source.onended=()=>{
@@ -211,7 +215,14 @@ async function sayHeart(token){
  }catch(e){
   if(token!==run)return;
   stop();
-  setStatus('Kokoro Heart could not load or generate audio on this device. Select Device voices above to keep listening. '+(e&&e.message?String(e.message).slice(0,120):''));
+  $('heartLoading').hidden=true;
+  const fallback=recordedManifest?'recorded':'browser';
+  if(fallback==='browser'&&!supported){
+   setStatus('Kokoro Heart could not generate audio on this device. No browser voice was detected. '+(e?.message||''));
+   return;
+  }
+  data.engine=fallback;save();updateEngineUI();
+  setStatus('Kokoro Heart encountered a playback error. Switched to '+(fallback==='recorded'?'Recorded Heart MP3':'Device voices')+'. Tap Play to continue. '+(e?.message||''));
  }
 }
 function sayBrowser(token){
@@ -287,7 +298,7 @@ function loadRecordedManifest(book){
   const recordedOption=engineEl.querySelector('option[value="recorded"]');
   recordedOption.disabled=false;recordedOption.textContent='Recorded Kokoro Heart · instant MP3';
   renderRecordedDownloads();
-  if(!playing&&engineName()==='heart'){
+  if(!playing&&(engineName()==='heart'||(engineName()==='browser'&&!data.manualEngineChoice))){
    data.engine='recorded';save();updateEngineUI();
    setStatus('Recorded Kokoro Heart ready · Tap Play for instant MP3 narration.');
   }else if(engineName()==='recorded'){
@@ -296,8 +307,12 @@ function loadRecordedManifest(book){
   }
  })
  .catch(()=>{
-  if(engineName()==='recorded'){data.engine='heart';save();updateEngineUI()}
-  if(!playing)setStatus('Recorded Heart MP3s are being refreshed to match this edition. In the meantime, choose Kokoro Heart or Device voices.');
+  // Stale recordings must never play against a newer draft. Do not default to an
+  // expensive local AI download while the matching narration is being rebuilt.
+  if(engineName()==='recorded'||(engineName()==='heart'&&!data.manualEngineChoice)){
+   data.engine='browser';save();updateEngineUI();
+  }
+  if(!playing)setStatus('The recorded Heart audiobook is being updated for this draft. Device voices are available now; the MP3 option will return when its narration matches the text.');
  });
 }
 function seekRecorded(index,token){
@@ -425,7 +440,7 @@ if(supported){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices}
 if(!heartSupported&&data.engine==='heart')data.engine='browser';
 updateEngineUI();
 engineEl.onchange=e=>{
- stop();data.engine=e.target.value;save();updateEngineUI();
+ stop();data.engine=e.target.value;data.manualEngineChoice=true;save();updateEngineUI();
  setStatus(engineName()==='recorded'?'Recorded Heart MP3 selected · Tap Play to begin.':
  engineName()==='heart'?'Kokoro Heart selected · Tap Play to download the model and generate narration.':
  'Device voices selected · Tap Play to start narration.');
