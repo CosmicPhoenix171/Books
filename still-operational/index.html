@@ -18,6 +18,17 @@ h1{font:700 clamp(37px,5vw,66px)/1.1 Georgia,serif;letter-spacing:-.035em;margin
 .controlrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.controlrow .btn{white-space:nowrap}
 input[type=range]{accent-color:var(--accent);max-width:130px}.grow{flex:1}select,textarea,input[type=text]{background:#111923;border:1px solid var(--edge);border-radius:8px;padding:9px}
 select{max-width:100%}label{color:var(--muted);font-size:12px}.status{font-size:12px;color:var(--muted);margin:12px 0 0}.progress{height:4px;background:#35404a;border-radius:8px;margin-top:16px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0}
+.heart-loading{margin-top:14px;padding:13px 14px;border:1px solid var(--edge);background:#111923;border-radius:11px}
+.heart-loading[hidden]{display:none}
+.heart-loading-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.heart-loading-head strong{font-weight:680}
+.heart-loading-number{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:750;white-space:nowrap}
+.heart-progress-track{margin-top:10px;height:10px;border-radius:6px;background:#36424e;overflow:hidden}
+.heart-progress-fill{width:0;height:100%;background:var(--accent);transition:width .18s ease}
+.heart-progress-track.is-indeterminate .heart-progress-fill{width:35%;animation:heart-loading-sweep 1.5s ease-in-out infinite;transition:none}
+.heart-loading-details{font-size:12px;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere}
+@keyframes heart-loading-sweep{0%{transform:translateX(-110%)}100%{transform:translateX(300%)}}
+@media(prefers-reduced-motion:reduce){.heart-progress-fill{transition:none}.heart-progress-track.is-indeterminate .heart-progress-fill{animation:none;width:35%}}
 #chapter{font:19px/1.89 Georgia,'Times New Roman',serif;letter-spacing:.005em;max-width:760px;margin:auto}
 #chapter p{margin:0 0 1.05em}.sentence{border-radius:3px;cursor:pointer}.sentence:hover{background:rgba(220,174,121,.09)}.sentence.active{background:var(--reading);box-decoration-break:clone;-webkit-box-decoration-break:clone}.sentence.annotated{border-bottom:1px dotted var(--accent)}
 #chapter p.selected{border-left:3px solid var(--accent);padding-left:13px;margin-left:-16px}
@@ -34,6 +45,11 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus
 <section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
 <div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
 <div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Heart uses the original Kokoro af_heart voice. First play downloads an AI speech model (about 90 MB); generation happens on your device and may be slow on phones.</p></div>
+<div id="heartLoading" class="heart-loading" hidden>
+  <div class="heart-loading-head"><strong id="heartStage">Loading Kokoro Heart</strong><span id="heartPercent" class="heart-loading-number">Preparing…</span></div>
+  <div id="heartTrack" class="heart-progress-track is-indeterminate" role="progressbar" aria-label="Kokoro Heart model download" aria-valuemin="0" aria-valuemax="100"><div id="heartFill" class="heart-progress-fill"></div></div>
+  <p id="heartDetails" class="heart-loading-details">Preparing the voice engine…</p>
+</div>
 <div class="setting"><label for="voice">Device narrator voice</label><select id="voice"><option value="">Default device voice</option></select></div>
 <div class="progress"><div id="bar"></div></div><p class="status" id="status">Press Play to begin. Tap a sentence to attach notes, then select Read selection to listen from it.</p>
 </section>
@@ -78,15 +94,69 @@ function updateButtons(){$('play').textContent=playing?(paused?'▶ Resume':'Ⅱ
 function prepareHeartAudio(){if(!heartAudioContext){const AudioCtor=window.AudioContext||window.webkitAudioContext;heartAudioContext=new AudioCtor()}if(heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
 function stopHeartAudio(){if(heartSource){heartSource.onended=null;try{heartSource.stop()}catch(e){}try{heartSource.disconnect()}catch(e){}heartSource=null}if(heartAudioContext&&heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
 function stop(){run++;playing=false;paused=false;if(supported)window.speechSynthesis.cancel();stopHeartAudio();updateButtons();setStatus('Stopped · Tap Play to continue at the highlighted sentence.')}
+let heartOverallAvailable=false;
+function setHeartProgress(phase,percent,details){
+ const panel=$('heartLoading'),track=$('heartTrack'),fill=$('heartFill');
+ if(engineName()!=='heart')return;
+ panel.hidden=false;
+ $('heartStage').textContent=phase;
+ $('heartDetails').textContent=details||'';
+ if(Number.isFinite(percent)){
+  const value=Math.max(0,Math.min(100,percent));
+  track.classList.remove('is-indeterminate');
+  track.setAttribute('aria-valuenow',String(Math.round(value)));
+  fill.style.width=value.toFixed(1)+'%';
+  $('heartPercent').textContent=Math.round(value)+'%';
+ }else{
+  track.classList.add('is-indeterminate');
+  track.removeAttribute('aria-valuenow');
+  fill.style.width='';
+  $('heartPercent').textContent='Preparing…';
+ }
+}
+function onHeartDownloadProgress(info){
+ if(!info||engineName()!=='heart')return;
+ const status=info.status;
+ if(status==='progress_total' && Number.isFinite(info.progress)){
+  heartOverallAvailable=true;
+  const received=Number.isFinite(info.loaded)?(info.loaded/1048576).toFixed(1):null;
+  const total=Number.isFinite(info.total)&&info.total>0?(info.total/1048576).toFixed(1):null;
+  const size=received&&total?received+' of '+total+' MB':'Downloading model files…';
+  setHeartProgress('Downloading Heart voice model',info.progress,size);
+  return;
+ }
+ if(status==='progress' && !heartOverallAvailable){
+  const file=String(info.file||'model file').split('/').pop();
+  const bytes=Number.isFinite(info.loaded)&&Number.isFinite(info.total)&&info.total>0
+   ?' · '+(info.loaded/1048576).toFixed(1)+' / '+(info.total/1048576).toFixed(1)+' MB':'';
+  setHeartProgress('Downloading Heart model file',Number.isFinite(info.progress)?info.progress:null,file+bytes+' · progress for this file');
+  return;
+ }
+ if((status==='initiate'||status==='download') && !heartOverallAvailable){
+  const file=String(info.file||'model file').split('/').pop();
+  setHeartProgress('Starting model download',null,file);
+ }
+}
 async function loadHeartModel(){
  if(heartModel)return heartModel;
  if(heartModelPromise)return heartModelPromise;
+ heartOverallAvailable=false;
+ setHeartProgress('Connecting to Kokoro Heart',null,'Preparing the voice engine and checking locally cached files…');
  setStatus('Loading Kokoro Heart · the first download can be around 90 MB. Keep this page open.');
  heartModelPromise=(async()=>{
   const mod=await import('https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/+esm');
-  const engine=await mod.KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX',{dtype:'q8',device:'wasm'});
-  heartModel=engine;return engine;
- })().catch(error=>{heartModelPromise=null;throw error});
+  setHeartProgress('Loading Kokoro model',null,'Checking downloaded and cached model files…');
+  const engine=await mod.KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX',{
+   dtype:'q8',device:'wasm',progress_callback:onHeartDownloadProgress
+  });
+  heartModel=engine;
+  setHeartProgress('Heart voice model ready',100,'Download and model initialization complete. Preparing narration…');
+  return engine;
+ })().catch(error=>{
+  heartModelPromise=null;
+  setHeartProgress('Heart failed to load',null,'Try again or choose Device voices in the narration engine menu.');
+  throw error;
+ });
  return heartModelPromise;
 }
 function heartCacheKey(i){return data.speed.toFixed(2)+':'+i}
@@ -132,6 +202,7 @@ async function sayHeart(token){
    sayHeart(token);
   };
   source.start();
+  $('heartLoading').hidden=true;
   setStatus('Kokoro Heart · Reading sentence '+(i+1)+' of '+sentences.length);
   if(i+1<sentences.length)generateHeart(i+1).catch(()=>{});
  }catch(e){
@@ -203,6 +274,7 @@ function loadVoices(){
 }
 function updateEngineUI(){
  engineEl.value=engineName();
+ if(engineName()==='browser'||heartModel)$('heartLoading').hidden=true;
  voiceEl.disabled=engineName()==='heart';
  $('engineHelp').textContent=engineName()==='heart'
  ? 'Kokoro Heart (af_heart) uses a neural speech model, with an initial download of roughly 90 MB. On-device generation can be slow on phones. If it fails, switch to Device voices.'
