@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10151d">
+<title>Still Operational — Chapter Two | Reading Studio</title>
+<style>
+:root{color-scheme:dark;--bg:#10151d;--panel:#19222e;--panel2:#202c39;--text:#e8e8e2;--muted:#a7b3bd;--accent:#dcae79;--edge:#34414c;--reading:rgba(220,174,121,.22)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}button{cursor:pointer}a{color:var(--accent)}
+.top{padding:17px max(18px,calc((100vw - 1460px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--edge);background:#141b25}
+.brand{font-weight:800;letter-spacing:.11em;font-size:13px;text-transform:uppercase}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 355px;max-width:1450px;margin:auto;min-height:calc(100vh - 75px)}
+.main{min-width:0;padding:48px clamp(20px,5vw,90px) 100px}.side{border-left:1px solid var(--edge);background:#151d27;padding:24px;position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto}
+h1{font:700 clamp(37px,5vw,66px)/1.1 Georgia,serif;letter-spacing:-.035em;margin:12px 0 7px}h2{font:700 23px Georgia,serif;margin:0 0 6px}.subtitle{color:var(--muted);font-size:15px}.intro{padding-bottom:25px;border-bottom:1px solid var(--edge);margin-bottom:30px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.btn{background:var(--panel2);border:1px solid var(--edge);border-radius:10px;padding:10px 14px;font-weight:650}.btn:hover{border-color:var(--accent)}.primary{background:var(--accent);color:#1b1711;border-color:var(--accent)}.small{font-size:12px;padding:8px 10px}
+.controls{background:var(--panel);border:1px solid var(--edge);padding:16px;border-radius:14px;margin:12px 0 34px}
+.controlrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.controlrow .btn{white-space:nowrap}
+input[type=range]{accent-color:var(--accent);max-width:130px}.grow{flex:1}select,textarea,input[type=text]{background:#111923;border:1px solid var(--edge);border-radius:8px;padding:9px}
+select{max-width:100%}label{color:var(--muted);font-size:12px}.status{font-size:12px;color:var(--muted);margin:12px 0 0}.progress{height:4px;background:#35404a;border-radius:8px;margin-top:16px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0}
+.heart-loading{margin-top:14px;padding:13px 14px;border:1px solid var(--edge);background:#111923;border-radius:11px}
+.heart-loading[hidden]{display:none}
+.heart-loading-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px}
+.heart-loading-head strong{font-weight:680}
+.heart-loading-number{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:750;white-space:nowrap}
+.heart-progress-track{margin-top:10px;height:10px;border-radius:6px;background:#36424e;overflow:hidden}
+.heart-progress-fill{width:0;height:100%;background:var(--accent);transition:width .18s ease}
+.heart-progress-track.is-indeterminate .heart-progress-fill{width:35%;animation:heart-loading-sweep 1.5s ease-in-out infinite;transition:none}
+.heart-loading-details{font-size:12px;color:var(--muted);margin:9px 0 0;overflow-wrap:anywhere}
+@keyframes heart-loading-sweep{0%{transform:translateX(-110%)}100%{transform:translateX(300%)}}
+@media(prefers-reduced-motion:reduce){.heart-progress-fill{transition:none}.heart-progress-track.is-indeterminate .heart-progress-fill{animation:none;width:35%}}
+#chapter{font:19px/1.89 Georgia,'Times New Roman',serif;letter-spacing:.005em;max-width:760px;margin:auto}
+#chapter p{margin:0 0 1.05em}.sentence{border-radius:3px;cursor:pointer}.sentence:hover{background:rgba(220,174,121,.09)}.sentence.active{background:var(--reading);box-decoration-break:clone;-webkit-box-decoration-break:clone}.sentence.annotated{border-bottom:1px dotted var(--accent)}
+#chapter p.selected{border-left:3px solid var(--accent);padding-left:13px;margin-left:-16px}
+body{padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+.playback-dock{position:fixed;inset-inline:0;bottom:0;z-index:100;background:#151d27;border-top:1px solid var(--edge);padding:12px max(18px,calc((100vw - 1300px)/2)) calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:72px}
+.dock-progress{position:absolute;left:0;right:0;top:0;height:3px;background:#35404a;overflow:hidden}
+.dock-progress>div{height:100%;background:var(--accent);width:0%;transition:width .15s linear}
+.dock-caption{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.dock-caption strong{font-size:13px;letter-spacing:.025em}
+.dock-caption span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.dock-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.dock-play{min-width:122px;padding:12px 18px;font-size:15px}
+.dock-skip{min-width:45px;min-height:45px}
+@media(max-width:600px){body{padding-bottom:calc(82px + env(safe-area-inset-bottom,0px))}.playback-dock{padding:9px 14px calc(9px + env(safe-area-inset-bottom,0px));gap:10px}.dock-caption strong{font-size:12px}.dock-caption span{display:none}.dock-actions{gap:6px}.dock-play{min-width:100px;padding:12px 13px}.dock-skip{min-width:38px;padding:10px 9px}}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.hint{font-size:12px;color:var(--muted);margin-bottom:16px}.side textarea{width:100%;min-height:125px;resize:vertical}.note{border:1px solid var(--edge);border-radius:10px;padding:12px;margin:12px 0;background:#19232e}.note strong{font-size:12px;color:var(--accent)}.note p{font-size:13px;white-space:pre-wrap;margin:8px 0}.note .excerpt{color:var(--muted);font-size:12px;max-height:65px;overflow:hidden}.note-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:9px}
+.empty{font-size:13px;color:var(--muted)}.setting{margin-top:17px}.setting label{display:block;margin-bottom:5px}.side hr{border:0;border-top:1px solid var(--edge);margin:24px 0}
+button:focus-visible,select:focus-visible,textarea:focus-visible,.sentence:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:950px){.layout{display:block}.main{padding:28px 20px 45px}.side{position:static;max-height:none;border-top:1px solid var(--edge);border-left:0}.top{padding:16px 20px}#chapter{font-size:18px;line-height:1.8}.controlrow{gap:7px}.toolbar .btn{flex:1}}
+</style></head>
+<body>
+<header class="top"><div class="brand">Still Operational <span style="color:#72808d">/ Writing Studio</span></div><nav aria-label="Chapters" style="display:flex;gap:14px;flex-wrap:wrap"><a href="./">Chapter 1</a><a href="chapter-2.html">Chapter 2</a><a href="../">All books</a></nav></header>
+<div class="layout"><main class="main">
+<div class="intro"><div class="eyebrow">Manuscript • <span id="chapterRevision">Draft 1.0</span></div><h1>Still Operational</h1><div class="subtitle">Chapter Two · The Broken Link · Reading and annotation studio</div>
+<div class="toolbar"><button class="btn small" id="bookmark">★ Save reading position</button><button class="btn small" id="restore">↩ Resume where I left off</button><button class="btn small" id="notesJump">✎ Notes</button></div></div>
+<section class="controls" aria-label="Narration controls"><div class="eyebrow" style="margin-bottom:11px">Text-to-speech narration</div>
+<div class="controlrow"><button class="btn primary" id="play">▶ Play</button><button class="btn" id="stop">■ Stop</button><button class="btn" id="back">↶ Previous</button><button class="btn" id="next">Next ↷</button><span class="grow"></span><label for="speed">Speed <strong id="speedLabel">1.0×</strong></label><input id="speed" type="range" min="0.6" max="1.8" value="1" step="0.1"></div>
+<div class="setting"><label for="engine">Narration engine</label><select id="engine"><option value="heart">Kokoro Heart · natural AI voice</option><option value="browser">Device voices · quick fallback</option></select><p class="hint" id="engineHelp" style="margin:8px 0 0">Fast Heart uses GPU acceleration if supported (first download around 310 MB), otherwise the smaller CPU model. It prepares upcoming sentences and saves generated audio for faster replay.</p></div>
+<div id="heartLoading" class="heart-loading" hidden>
+  <div class="heart-loading-head"><strong id="heartStage">Loading Kokoro Heart</strong><span id="heartPercent" class="heart-loading-number">Preparing…</span></div>
+  <div id="heartTrack" class="heart-progress-track is-indeterminate" role="progressbar" aria-label="Kokoro Heart model download" aria-valuemin="0" aria-valuemax="100"><div id="heartFill" class="heart-progress-fill"></div></div>
+  <p id="heartDetails" class="heart-loading-details">Preparing the voice engine…</p>
+</div>
+<div class="setting"><label for="voice">Device narrator voice</label><select id="voice"><option value="">Default device voice</option></select></div>
+<div class="progress"><div id="bar"></div></div><p class="status" id="status">Press Play to begin. Tap a sentence to attach notes, then select Read selection to listen from it.</p>
+</section>
+<article id="chapter" aria-label="Chapter Two"><p>Loading manuscript…</p></article>
+</main>
+<aside class="side" id="notesPanel"><div class="sectionhead"><h2>Revision notes</h2><span class="eyebrow" id="count">0 notes</span></div>
+<p class="hint">Tap a sentence in the chapter to attach a note. Your notes stay on this browser until you export them.</p>
+<div class="eyebrow" style="margin-bottom:8px">Selected passage</div><div id="chosen" class="hint">No passage selected. A general chapter note will be created.</div>
+<label for="noteText">Your comment or requested change</label><textarea id="noteText" placeholder="Example: Make this dialogue more natural; slow down the tension here..."></textarea>
+<div class="toolbar"><button class="btn primary" id="addNote">Save note</button><button class="btn" id="playSelection">▶ Read selection</button><button class="btn" id="clearSelection">Clear selection</button></div>
+<hr><div class="sectionhead"><h2>Saved notes</h2></div><div id="notes"><p class="empty">No notes yet.</p></div>
+<hr><div class="toolbar"><button class="btn" id="exportNotes">↓ Export notes</button><button class="btn" id="exportAll">↓ Export review</button></div>
+<p class="hint" style="margin-top:12px">Export a review file and share it in ChatGPT when you want the chapter rewritten with your comments.</p>
+<hr><h2>Reading preferences</h2>
+<div class="setting"><label for="fontSize">Text size <span id="fontLabel">19px</span></label><input id="fontSize" type="range" min="16" max="25" value="19" step="1"></div>
+<div class="setting"><label for="autoScroll"><input id="autoScroll" type="checkbox" checked> Follow narration as it reads</label></div>
+<p class="hint" style="margin-top:22px">Heart uses the original Kokoro neural voice. It requires a substantial first-time download and runs locally in the browser; performance varies by device. Device voices remain available if Heart does not load. Keep this page open while listening.</p>
+</aside></div>
+<nav class="playback-dock" aria-label="Persistent narration controls">
+ <div class="dock-progress" aria-hidden="true"><div id="dockProgress"></div></div>
+ <div class="dock-caption"><strong>Still Operational · Chapter Two</strong><span id="dockStatus">Ready to listen</span></div>
+ <div class="dock-actions">
+  <button class="btn dock-skip" id="dockBack" type="button" aria-label="Previous sentence" title="Previous sentence">↶</button>
+  <button class="btn primary dock-play" id="dockPlay" type="button" aria-label="Play narration">▶ Play</button>
+  <button class="btn dock-skip" id="dockNext" type="button" aria-label="Next sentence" title="Next sentence">↷</button>
+ </div>
+</nav>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id), root=$('chapter'), voiceEl=$('voice');
+const KEY='still-operational-review-ch2-v1';
+let data={notes:[],index:0,bookmark:0,speed:1,fontSize:19,voice:'',engine:'browser'};
+try{Object.assign(data,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
+if(!Array.isArray(data.notes))data.notes=[];
+if(data.engine==='recorded')data.engine='browser';
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}};
+let sentences=[],selected=-1,playing=false,paused=false,run=0,voices=[];
+let loadedRevision='Draft 1.0';
+const supported='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const split=t=>t.match(/[^.!?…]+(?:[.!?…]+[”"’']?|$)/g)?.filter(x=>x.trim())||[t];
+function scrollToIndex(i){const el=document.querySelector('[data-i="'+i+'"]');if(el&&$('autoScroll').checked)el.scrollIntoView({behavior:'smooth',block:'center'})}
+function mark(i,doScroll=true){data.index=Math.max(0,Math.min(i,sentences.length-1));data.lastExcerpt=sentences[data.index]?.text||'';document.querySelectorAll('.sentence.active').forEach(el=>el.classList.remove('active'));const el=document.querySelector('[data-i="'+data.index+'"]');if(el){el.classList.add('active');if(doScroll)scrollToIndex(data.index)}const progress=((data.index+1)/Math.max(1,sentences.length)*100).toFixed(1)+'%';$('bar').style.width=progress;$('dockProgress').style.width=progress;save()}
+
+const engineEl=$('engine');
+const heartSupported=!!(window.AudioContext||window.webkitAudioContext);
+let heartModel=null,heartModelPromise=null,heartAudioContext=null,heartSource=null;
+let heartQueue=Promise.resolve(),heartCache=new Map(),heartPending=new Map();
+let heartCompute='CPU',heartForceCpu=false,heartDiskPromise=null;
+function heartDisk(){
+ if(!window.indexedDB)return Promise.resolve(null);
+ if(heartDiskPromise)return heartDiskPromise;
+ heartDiskPromise=new Promise(resolve=>{
+  try{
+   const r=indexedDB.open('still-operational-heart-v1',1);
+   r.onupgradeneeded=()=>{const s=r.result.createObjectStore('audio',{keyPath:'key'});s.createIndex('saved','saved')};
+   r.onsuccess=()=>resolve(r.result);r.onerror=()=>resolve(null);r.onblocked=()=>resolve(null);
+  }catch(e){resolve(null)}
+ });return heartDiskPromise;
+}
+async function readHeartCache(key){
+ const db=await heartDisk();if(!db)return null;
+ return new Promise(resolve=>{
+  try{
+   const r=db.transaction('audio','readonly').objectStore('audio').get(key);
+   r.onsuccess=()=>resolve(r.result?.samples?.length?{samples:r.result.samples,sampling_rate:r.result.sampling_rate}:null);
+   r.onerror=()=>resolve(null);
+  }catch(e){resolve(null)}
+ });
+}
+function saveHeartCache(key,clip){
+ heartDisk().then(db=>{
+  if(!db)return;
+  try{
+   const tx=db.transaction('audio','readwrite'),store=tx.objectStore('audio');
+   store.put({key,samples:clip.samples,sampling_rate:clip.sampling_rate,saved:Date.now()});
+   const count=store.count();
+   count.onsuccess=()=>{
+    let excess=count.result-160;if(excess<=0)return;
+    const cur=store.index('saved').openCursor();
+    cur.onsuccess=()=>{const row=cur.result;if(row&&excess-->0){row.delete();row.continue()}};
+   };
+  }catch(e){}
+ }).catch(()=>{});
+}
+
+const engineName=()=>data.engine==='browser'?'browser':'heart';
+function setStatus(message){$('status').textContent=message;$('dockStatus').textContent=message}
+function updateButtons(){
+ const label=playing?(paused?'▶ Resume':'Ⅱ Pause'):'▶ Play';
+ $('play').textContent=label;
+ $('dockPlay').textContent=label;
+ $('dockPlay').setAttribute('aria-label',playing?(paused?'Resume narration':'Pause narration'):'Play narration');
+}
+function prepareHeartAudio(){if(!heartAudioContext){const AudioCtor=window.AudioContext||window.webkitAudioContext;heartAudioContext=new AudioCtor()}if(heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
+function stopHeartAudio(){if(heartSource){heartSource.onended=null;try{heartSource.stop()}catch(e){}try{heartSource.disconnect()}catch(e){}heartSource=null}if(heartAudioContext&&heartAudioContext.state==='suspended')heartAudioContext.resume().catch(()=>{})}
+function stop(){run++;playing=false;paused=false;if(supported)window.speechSynthesis.cancel();stopHeartAudio();updateButtons();setStatus('Stopped · Tap Play to continue at the highlighted sentence.')}
+let heartOverallAvailable=false;
+function setHeartProgress(phase,percent,details){
+ const panel=$('heartLoading'),track=$('heartTrack'),fill=$('heartFill');
+ if(engineName()!=='heart')return;
+ panel.hidden=false;
+ $('heartStage').textContent=phase;
+ $('heartDetails').textContent=details||'';
+ if(Number.isFinite(percent)){
+  const value=Math.max(0,Math.min(100,percent));
+  track.classList.remove('is-indeterminate');
+  track.setAttribute('aria-valuenow',String(Math.round(value)));
+  fill.style.width=value.toFixed(1)+'%';
+  $('heartPercent').textContent=Math.round(value)+'%';
+ }else{
+  track.classList.add('is-indeterminate');
+  track.removeAttribute('aria-valuenow');
+  fill.style.width='';
+  $('heartPercent').textContent='Preparing…';
+ }
+}
+function onHeartDownloadProgress(info){
+ if(!info||engineName()!=='heart')return;
+ const status=info.status;
+ if(status==='progress_total' && Number.isFinite(info.progress)){
+  heartOverallAvailable=true;
+  const received=Number.isFinite(info.loaded)?(info.loaded/1048576).toFixed(1):null;
+  const total=Number.isFinite(info.total)&&info.total>0?(info.total/1048576).toFixed(1):null;
+  const size=received&&total?received+' of '+total+' MB':'Downloading model files…';
+  setHeartProgress('Downloading Heart voice model',info.progress,size);
+  return;
+ }
+ if(status==='progress' && !heartOverallAvailable){
+  const file=String(info.file||'model file').split('/').pop();
+  const bytes=Number.isFinite(info.loaded)&&Number.isFinite(info.total)&&info.total>0
+   ?' · '+(info.loaded/1048576).toFixed(1)+' / '+(info.total/1048576).toFixed(1)+' MB':'';
+  setHeartProgress('Downloading Heart model file',Number.isFinite(info.progress)?info.progress:null,file+bytes+' · progress for this file');
+  return;
+ }
+ if((status==='initiate'||status==='download') && !heartOverallAvailable){
+  const file=String(info.file||'model file').split('/').pop();
+  setHeartProgress('Starting model download',null,file);
+ }
+}
+async function loadHeartModel(){
+ if(heartModel)return heartModel;
+ if(heartModelPromise)return heartModelPromise;
+ heartOverallAvailable=false;
+ setHeartProgress('Connecting to Kokoro Heart',null,'Preparing the voice engine and checking locally cached files…');
+ setStatus('Loading Kokoro Heart · GPU model can be about 310 MB initially; CPU fallback about 90 MB. Generated speech is cached for future listening.');
+ heartModelPromise=(async()=>{
+  const mod=await import('https://cdn.jsdelivr.net/npm/kokoro-js@1.2.1/+esm');
+  setHeartProgress('Loading Kokoro model',null,'Checking downloaded and cached model files…');
+  const modelId='onnx-community/Kokoro-82M-v1.0-ONNX';
+  let engine=null;
+  if(!heartForceCpu&&navigator.gpu&&typeof navigator.gpu.requestAdapter==='function'){
+   let adapter=null;
+   try{adapter=await navigator.gpu.requestAdapter()}catch(e){}
+   if(adapter){
+    try{
+     setHeartProgress('Loading fast GPU voice',null,'First WebGPU model download may be about 310 MB.');
+     engine=await mod.KokoroTTS.from_pretrained(modelId,{dtype:'fp32',device:'webgpu',progress_callback:onHeartDownloadProgress});
+     heartCompute='GPU';
+    }catch(e){console.warn('GPU voice unavailable; using CPU instead.',e);heartForceCpu=true}
+   }
+  }
+  if(!engine){
+   setHeartProgress('Loading compact CPU voice',null,'Preparing the smaller 90 MB voice model.');
+   engine=await mod.KokoroTTS.from_pretrained(modelId,{dtype:'q8',device:'wasm',progress_callback:onHeartDownloadProgress});
+   heartCompute='CPU';
+  }
+  heartModel=engine;
+  setHeartProgress('Heart voice model ready',100,'Download and model initialization complete. Preparing narration…');
+  return engine;
+ })().catch(error=>{
+  heartModelPromise=null;
+  setHeartProgress('Heart failed to load',null,'Try again or choose Device voices in the narration engine menu.');
+  throw error;
+ });
+ return heartModelPromise;
+}
+function heartCacheKey(i){return JSON.stringify(['kokoro-1.2.1','af_heart',data.speed.toFixed(2),sentences[i].text])}
+function rememberHeart(key,clip){
+ if(heartCache.has(key))heartCache.delete(key);
+ heartCache.set(key,clip);
+ while(heartCache.size>32)heartCache.delete(heartCache.keys().next().value);
+}
+function generateHeart(i){
+ if(i<0||i>=sentences.length)return Promise.reject(new Error('Invalid sentence'));
+ const key=heartCacheKey(i);
+ if(heartCache.has(key)){const clip=heartCache.get(key);rememberHeart(key,clip);return Promise.resolve(clip)}
+ if(heartPending.has(key))return heartPending.get(key);
+ const text=sentences[i].text,speed=+data.speed||1;
+ const promise=heartQueue.then(async()=>{
+  let clip=await readHeartCache(key);
+  if(clip){rememberHeart(key,clip);return clip}
+  let tts=await loadHeartModel(),raw;
+  if(playing&&i===data.index)setHeartProgress('Generating Heart narration',null,'Preparing this passage while buffering those ahead…');
+  try{raw=await tts.generate(text,{voice:'af_heart',speed})}
+  catch(error){
+   if(heartCompute!=='GPU'||heartForceCpu)throw error;
+   console.warn('GPU inference failed; switching to CPU.',error);
+   heartForceCpu=true;heartModel=null;heartModelPromise=null;
+   tts=await loadHeartModel();raw=await tts.generate(text,{voice:'af_heart',speed});
+  }
+  const samples=raw?.audio??raw?.data;
+  if(!samples||!samples.length)throw new Error('The Heart engine produced an empty waveform.');
+  clip={samples,sampling_rate:raw.sampling_rate||24000};
+  rememberHeart(key,clip);saveHeartCache(key,clip);
+  return clip;
+ });
+ heartQueue=promise.catch(()=>{});
+ heartPending.set(key,promise);
+ promise.finally(()=>heartPending.delete(key)).catch(()=>{});
+ return promise;
+}
+function prefetchHeart(i){
+ if(!playing||engineName()!=='heart')return;
+ for(let n=i+1;n<Math.min(sentences.length,i+5);n++)generateHeart(n).catch(()=>{});
+}
+async function sayHeart(token){
+ if(!playing||token!==run)return;
+ const i=data.index;
+ if(i>=sentences.length){stop();setStatus('Chapter complete.');return}
+ mark(i);
+ setStatus(heartModel?'Heart · Preparing sentence '+(i+1)+' of '+sentences.length:'Heart · Downloading and preparing voice; first use requires an AI model.');
+ try{
+  const audio=await generateHeart(i);
+  if(token!==run||!playing||engineName()!=='heart'||paused)return;
+  prepareHeartAudio();
+  if(heartAudioContext.state==='suspended')await heartAudioContext.resume();
+  if(token!==run||!playing||paused)return;
+  const buffer=heartAudioContext.createBuffer(1,audio.samples.length,audio.sampling_rate||24000);
+  buffer.copyToChannel(audio.samples,0);
+  const source=heartAudioContext.createBufferSource();
+  source.buffer=buffer;source.connect(heartAudioContext.destination);heartSource=source;
+  source.onended=()=>{
+   if(token!==run||!playing||heartSource!==source)return;
+   heartSource=null;
+   data.index++;
+   if(data.index>=sentences.length){stop();setStatus('Chapter complete.');return}
+   sayHeart(token);
+  };
+  source.start();
+  $('heartLoading').hidden=true;
+  setStatus('Kokoro Heart ('+heartCompute+') · Reading sentence '+(i+1)+' of '+sentences.length);
+  prefetchHeart(i);
+ }catch(e){
+  if(token!==run)return;
+  stop();
+  $('heartLoading').hidden=true;
+  const fallback='browser';
+  if(fallback==='browser'&&!supported){
+   setStatus('Kokoro Heart could not generate audio on this device. No browser voice was detected. '+(e?.message||''));
+   return;
+  }
+  data.engine=fallback;save();updateEngineUI();
+  setStatus('Kokoro Heart encountered a playback error. Switched to Device voices. Tap Play to continue. '+(e?.message||''));
+ }
+}
+function sayBrowser(token){
+ if(!playing||token!==run)return;
+ if(data.index>=sentences.length){stop();setStatus('Chapter complete.');return}
+ mark(data.index);
+ const item=sentences[data.index];
+ setStatus('Device narrator · Reading sentence '+(data.index+1)+' of '+sentences.length);
+ const utterance=new SpeechSynthesisUtterance(item.text);
+ utterance.rate=+data.speed||1;utterance.pitch=1;utterance.lang='en-US';
+ const voice=voices.find(v=>v.voiceURI===data.voice);if(voice)utterance.voice=voice;
+ utterance.onend=()=>{if(token!==run||!playing)return;data.index++;if(data.index>=sentences.length){stop();setStatus('Chapter complete.');return}sayBrowser(token)};
+ utterance.onerror=e=>{if(token!==run||!playing)return;if(e.error==='canceled'||e.error==='interrupted')return;playing=false;paused=false;updateButtons();setStatus('Device narrator interrupted. Tap Play to resume.')};
+ window.speechSynthesis.speak(utterance);
+}
+
+function startAt(i){
+ if(!sentences.length){setStatus('Manuscript is still loading.');return}
+ if(engineName()==='heart'&&!heartSupported){setStatus('Kokoro Heart requires audio support. Choose Device voices.');return}
+ if(engineName()==='browser'&&!supported){setStatus('Device speech is unavailable. Choose Kokoro Heart, or try Chrome or Edge.');return}
+  stop();
+ mark(i);
+ if(engineName()==='heart')prepareHeartAudio();
+ playing=true;paused=false;updateButtons();
+ if(engineName()==='heart')sayHeart(run);else sayBrowser(run);
+}
+$('play').onclick=()=>{
+ if(playing){
+  if(paused){
+   
+   const resumeHeart=engineName()==='heart';
+   if(resumeHeart&&heartAudioContext)heartAudioContext.resume().catch(()=>{});
+   else if(supported)window.speechSynthesis.resume();
+   paused=false;setStatus('Narration resumed.');
+   if(resumeHeart&&!heartSource)sayHeart(run);
+  }else{
+   
+   if(engineName()==='heart'&&heartAudioContext)heartAudioContext.suspend().catch(()=>{});
+   else if(supported)window.speechSynthesis.pause();
+   paused=true;setStatus('Narration paused.');
+  }
+  updateButtons();return;
+ }
+ startAt(data.index);
+};
+$('stop').onclick=stop;
+$('back').onclick=()=>startAt(data.index-1);
+$('next').onclick=()=>startAt(data.index+1);
+$('dockPlay').onclick=()=>$('play').click();
+$('dockBack').onclick=()=>$('back').click();
+$('dockNext').onclick=()=>$('next').click();
+updateButtons();
+$('speed').value=data.speed;
+$('speedLabel').textContent=(+data.speed).toFixed(1)+'×';
+$('speed').oninput=e=>{
+ data.speed=+e.target.value;
+ $('speedLabel').textContent=data.speed.toFixed(1)+'×';
+ heartCache.clear();save();
+  if(playing)startAt(data.index);
+};
+function loadVoices(){
+ if(!supported)return;
+ voices=window.speechSynthesis.getVoices();
+ const current=data.voice;
+ voiceEl.innerHTML='<option value="">Default device voice</option>';
+ voices.filter(v=>v.lang.toLowerCase().startsWith('en'))
+ .sort((a,b)=>Number(b.localService)-Number(a.localService))
+ .forEach(v=>{const opt=document.createElement('option');opt.value=v.voiceURI;opt.textContent=v.name+' · '+v.lang+(v.localService?' · installed':'');voiceEl.appendChild(opt)});
+ voiceEl.value=current;if(voiceEl.selectedIndex<0)voiceEl.value='';
+}
+function updateEngineUI(){
+ engineEl.value=engineName();
+ if(engineName()!=='heart'||heartModel)$('heartLoading').hidden=true;
+ voiceEl.disabled=engineName()!=='browser';
+ $('engineHelp').textContent=engineName()==='heart'
+ ? 'Fast Heart uses the GPU when available (one-time download around 310 MB), otherwise the compact CPU model. It pre-generates four upcoming sentences and caches audio for future visits.'
+ : 'The device narrator starts quickly and uses voices installed in your browser. Choose a voice below.';
+}
+if(supported){loadVoices();window.speechSynthesis.onvoiceschanged=loadVoices}
+if(!heartSupported&&data.engine==='heart')data.engine='browser';
+updateEngineUI();
+engineEl.onchange=e=>{
+ stop();data.engine=e.target.value;data.manualEngineChoice=true;save();updateEngineUI();
+ setStatus(engineName()==='heart'?'Kokoro Heart selected · Tap Play to download the model and generate narration.':
+ 'Device voices selected · Tap Play to start narration.');
+};
+voiceEl.onchange=e=>{data.voice=e.target.value;save();if(playing&&engineName()==='browser')startAt(data.index)};
+$('playSelection').onclick=()=>{if(selected<0){setStatus('Tap a passage first, then choose Read selection.');return}startAt(selected)};
+
+$('fontSize').value=data.fontSize;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';$('fontSize').oninput=e=>{data.fontSize=+e.target.value;root.style.fontSize=data.fontSize+'px';$('fontLabel').textContent=data.fontSize+'px';save()};
+function selectSentence(i){selected=i;document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('active-note',+el.dataset.i===i));$('chosen').textContent=i<0?'General chapter note':sentences[i].text;$('noteText').focus(); if(window.innerWidth<950)$('notesPanel').scrollIntoView({behavior:'smooth'})}
+$('clearSelection').onclick=()=>selectSentence(-1);
+function renderNotes(){const el=$('notes');$('count').textContent=data.notes.length+' note'+(data.notes.length===1?'':'s');el.replaceChildren();if(!data.notes.length){el.innerHTML='<p class="empty">No notes yet.</p>';return}data.notes.forEach(n=>{const wrap=document.createElement('div');wrap.className='note';const title=document.createElement('strong');title.textContent=n.unmatched?'PASSAGE CHANGED · REVIEW':n.sentence<0?'GENERAL NOTE':'SENTENCE '+(n.sentence+1);wrap.appendChild(title);if(n.excerpt){const q=document.createElement('div');q.className='excerpt';q.textContent=n.excerpt;wrap.appendChild(q)}const p=document.createElement('p');p.textContent=n.text;wrap.appendChild(p);const actions=document.createElement('div');actions.className='note-actions';const jump=document.createElement('button');jump.className='btn small';jump.textContent='Go to text';jump.disabled=n.sentence<0;jump.onclick=()=>{mark(n.sentence);document.querySelector('[data-i="'+n.sentence+'"]')?.scrollIntoView({behavior:'smooth',block:'center'})};const del=document.createElement('button');del.className='btn small';del.textContent='Delete';del.onclick=()=>{data.notes=data.notes.filter(x=>x.id!==n.id);save();renderNotes();markAnnotated()};actions.append(jump,del);wrap.appendChild(actions);el.appendChild(wrap)})}
+function markAnnotated(){document.querySelectorAll('.sentence').forEach(el=>el.classList.toggle('annotated',data.notes.some(n=>n.sentence===+el.dataset.i)))}
+function matchPriorSentence(excerpt,oldIndex){
+ if(!excerpt)return -1;
+ let closest=-1,dist=Infinity;
+ for(let i=0;i<sentences.length;i++){
+  if(sentences[i].text!==excerpt)continue;
+  const d=Math.abs(i-(Number.isFinite(oldIndex)?oldIndex:0));
+  if(d<dist){dist=d;closest=i}
+ }
+ return closest;
+}
+function reconcileSavedLocations(){
+ const prevIndex=data.index;
+ if(data.lastExcerpt&&sentences[prevIndex]?.text!==data.lastExcerpt){
+  const match=matchPriorSentence(data.lastExcerpt,prevIndex);
+  if(match>=0)data.index=match;
+ }
+ if(data.bookmarkExcerpt&&sentences[data.bookmark]?.text!==data.bookmarkExcerpt){
+  const match=matchPriorSentence(data.bookmarkExcerpt,data.bookmark);
+  if(match>=0)data.bookmark=match;
+ }
+ for(const note of data.notes){
+  if(!note.excerpt)continue;
+  if(note.sentence>=0&&sentences[note.sentence]?.text===note.excerpt){note.unmatched=false;continue}
+  const match=matchPriorSentence(note.excerpt,note.sentence);
+  if(match>=0){note.sentence=match;note.unmatched=false}
+  else{note.sentence=-1;note.unmatched=true}
+ }
+ save();
+}
+$('addNote').onclick=()=>{const text=$('noteText').value.trim();if(!text)return;data.notes.push({id:Date.now()+'-'+Math.random().toString(36).slice(2),sentence:selected,excerpt:selected>=0?sentences[selected].text:'',text,created:new Date().toISOString()});$('noteText').value='';save();renderNotes();markAnnotated()};
+function download(text,name,type){const a=document.createElement('a');const url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000)}
+$('exportNotes').onclick=()=>download(JSON.stringify({book:'Still Operational',chapter:2,revision:loadedRevision,notes:data.notes},null,2),'Still-Operational-Ch2-Notes.json','application/json');
+$('exportAll').onclick=()=>{const out=['# Still Operational — Chapter 2 revision review','','## Reader comments',''];if(!data.notes.length)out.push('No notes recorded.');data.notes.forEach((n,i)=>{out.push('### Note '+(i+1)+(n.sentence>=0?' — sentence '+(n.sentence+1):''),'',n.excerpt?'> '+n.excerpt:'', '',n.text,'')});out.push('## Full chapter draft','');document.querySelectorAll('#chapter p').forEach(p=>out.push(p.textContent,'') );download(out.join('\n') ,'Still-Operational-Ch2-Review.md','text/markdown')};
+$('bookmark').onclick=()=>{data.bookmark=data.index;data.bookmarkExcerpt=sentences[data.index]?.text||'';save();$('status').textContent='Reading position saved at sentence '+(data.index+1)};
+$('restore').onclick=()=>{mark(data.bookmark||0);scrollToIndex(data.index)};
+$('notesJump').onclick=()=>$('notesPanel').scrollIntoView({behavior:'smooth'});
+renderNotes();
+fetch('chapter-2.json').then(r=>{if(!r.ok)throw Error('File not found');return r.json()}).then(book=>{root.replaceChildren();loadedRevision=book.revision;$('chapterRevision').textContent=book.revision.split(' — ')[0];for(const [p,para] of book.paragraphs.entries()){const el=document.createElement('p');el.dataset.paragraph=p;split(para).forEach(s=>{const idx=sentences.length;sentences.push({text:s.trim(),paragraph:p});const span=document.createElement('span');span.className='sentence';span.dataset.i=idx;span.tabIndex=0;span.textContent=s;span.title='Click to select passage. Double-click to play from here.';span.onclick=()=>selectSentence(idx);span.ondblclick=()=>startAt(idx);span.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();selectSentence(idx)}};el.appendChild(span)});root.appendChild(el)}reconcileSavedLocations();mark(data.index,false);renderNotes();markAnnotated();$('status').textContent='Ready · '+book.paragraphs.length+' paragraphs, '+sentences.length+' sentences. Tap Play to begin.';}).catch(e=>{root.innerHTML='<p>Chapter could not load. Please refresh the page.</p>';$('status').textContent='Could not load the manuscript.'});
+window.addEventListener('beforeunload',()=>{if(supported)window.speechSynthesis.cancel();save()});
+})();
+</script></body></html>
