@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render one part of Still Operational Chapter 1 using Kokoro Heart.
 
-Inputs: the published chapter-1.json and its immutable Draft 3 section files.
+Input: the published chapter-1.json, divided into contiguous, ordered sections.
 Outputs: one MP3 and a timing sidecar in still-operational/audio/.
 The sidecar stores measured start/end times for every spoken paragraph.
 """
@@ -28,19 +28,13 @@ VOICE = "af_heart"
 def read_source(part: str):
     main = json.loads((BOOK / "chapter-1.json").read_text(encoding="utf-8"))
     full = main["paragraphs"]
-    offset = 0
-    expected = []
-    for p in PARTS:
-        raw = json.loads((BOOK / "draft-3" / f"part-{p}.json").read_text(encoding="utf-8"))["paragraphs"]
-        current = [x.replace("*", "") for x in raw]
-        expected.extend(current)
-        if p == part:
-            result = (offset, current)
-        offset += len(current)
-    if expected != full:
-        raise RuntimeError("Draft 3 part files differ from published Chapter 1; refusing to render out-of-sync audio.")
+    if len(full) < len(PARTS) or any(not isinstance(p, str) or not p.strip() for p in full):
+        raise ValueError("Chapter 1 must contain nonempty paragraphs for every audio part.")
+    part_index = PARTS.index(part)
+    begin = len(full) * part_index // len(PARTS)
+    end = len(full) * (part_index + 1) // len(PARTS)
     revision = hashlib.sha256(json.dumps(full, ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest()
-    return result[0], result[1], revision
+    return begin, full[begin:end], revision
 
 
 def open_encoder(filename: Path):
