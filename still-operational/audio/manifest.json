@@ -1,0 +1,2764 @@
+{
+  "book": "Still Operational",
+  "chapter": 1,
+  "revision": "Draft 4.8 — XR-17 speed and agile deployment",
+  "revision_hash": "61c4f8631fbaee84c75bb9848c0ac0632d44372209242c7b25ba3ab024b15648",
+  "voice": "af_heart",
+  "type": "pre-rendered-mp3",
+  "paragraphs": 539,
+  "totalDuration": 3366.689,
+  "segments": [
+    {
+      "file": "audio/heart-01.mp3",
+      "duration": 533.833,
+      "firstParagraph": 0,
+      "lastParagraph": 76,
+      "cues": [
+        {
+          "paragraph": 0,
+          "start": 0.0,
+          "end": 3.171
+        },
+        {
+          "paragraph": 1,
+          "start": 3.171,
+          "end": 14.361
+        },
+        {
+          "paragraph": 2,
+          "start": 14.361,
+          "end": 29.615
+        },
+        {
+          "paragraph": 3,
+          "start": 29.615,
+          "end": 35.864
+        },
+        {
+          "paragraph": 4,
+          "start": 35.864,
+          "end": 38.597
+        },
+        {
+          "paragraph": 5,
+          "start": 38.597,
+          "end": 43.845
+        },
+        {
+          "paragraph": 6,
+          "start": 43.845,
+          "end": 49.391
+        },
+        {
+          "paragraph": 7,
+          "start": 49.391,
+          "end": 50.837
+        },
+        {
+          "paragraph": 8,
+          "start": 50.837,
+          "end": 53.505
+        },
+        {
+          "paragraph": 9,
+          "start": 53.505,
+          "end": 62.652
+        },
+        {
+          "paragraph": 10,
+          "start": 62.652,
+          "end": 64.793
+        },
+        {
+          "paragraph": 11,
+          "start": 64.793,
+          "end": 67.676
+        },
+        {
+          "paragraph": 12,
+          "start": 67.676,
+          "end": 69.757
+        },
+        {
+          "paragraph": 13,
+          "start": 69.757,
+          "end": 72.574
+        },
+        {
+          "paragraph": 14,
+          "start": 72.574,
+          "end": 75.529
+        },
+        {
+          "paragraph": 15,
+          "start": 75.529,
+          "end": 95.836
+        },
+        {
+          "paragraph": 16,
+          "start": 95.836,
+          "end": 98.057
+        },
+        {
+          "paragraph": 17,
+          "start": 98.057,
+          "end": 102.898
+        },
+        {
+          "paragraph": 18,
+          "start": 102.898,
+          "end": 104.046
+        },
+        {
+          "paragraph": 19,
+          "start": 104.046,
+          "end": 108.494
+        },
+        {
+          "paragraph": 20,
+          "start": 108.494,
+          "end": 109.878
+        },
+        {
+          "paragraph": 21,
+          "start": 109.878,
+          "end": 112.737
+        },
+        {
+          "paragraph": 22,
+          "start": 112.737,
+          "end": 123.362
+        },
+        {
+          "paragraph": 23,
+          "start": 123.362,
+          "end": 147.244
+        },
+        {
+          "paragraph": 24,
+          "start": 147.244,
+          "end": 162.998
+        },
+        {
+          "paragraph": 25,
+          "start": 162.998,
+          "end": 166.147
+        },
+        {
+          "paragraph": 26,
+          "start": 166.147,
+          "end": 171.928
+        },
+        {
+          "paragraph": 27,
+          "start": 171.928,
+          "end": 178.168
+        },
+        {
+          "paragraph": 28,
+          "start": 178.168,
+          "end": 187.118
+        },
+        {
+          "paragraph": 29,
+          "start": 187.118,
+          "end": 189.053
+        },
+        {
+          "paragraph": 30,
+          "start": 189.053,
+          "end": 192.143
+        },
+        {
+          "paragraph": 31,
+          "start": 192.143,
+          "end": 194.44
+        },
+        {
+          "paragraph": 32,
+          "start": 194.44,
+          "end": 205.306
+        },
+        {
+          "paragraph": 33,
+          "start": 205.306,
+          "end": 213.466
+        },
+        {
+          "paragraph": 34,
+          "start": 213.466,
+          "end": 215.144
+        },
+        {
+          "paragraph": 35,
+          "start": 215.144,
+          "end": 230.12
+        },
+        {
+          "paragraph": 36,
+          "start": 230.12,
+          "end": 235.05
+        },
+        {
+          "paragraph": 37,
+          "start": 235.05,
+          "end": 245.918
+        },
+        {
+          "paragraph": 38,
+          "start": 245.918,
+          "end": 248.247
+        },
+        {
+          "paragraph": 39,
+          "start": 248.247,
+          "end": 253.259
+        },
+        {
+          "paragraph": 40,
+          "start": 253.259,
+          "end": 256.822
+        },
+        {
+          "paragraph": 41,
+          "start": 256.822,
+          "end": 261.463
+        },
+        {
+          "paragraph": 42,
+          "start": 261.463,
+          "end": 266.889
+        },
+        {
+          "paragraph": 43,
+          "start": 266.889,
+          "end": 290.665
+        },
+        {
+          "paragraph": 44,
+          "start": 290.665,
+          "end": 292.289
+        },
+        {
+          "paragraph": 45,
+          "start": 292.289,
+          "end": 297.255
+        },
+        {
+          "paragraph": 46,
+          "start": 297.255,
+          "end": 298.691
+        },
+        {
+          "paragraph": 47,
+          "start": 298.691,
+          "end": 300.401
+        },
+        {
+          "paragraph": 48,
+          "start": 300.401,
+          "end": 302.622
+        },
+        {
+          "paragraph": 49,
+          "start": 302.622,
+          "end": 308.821
+        },
+        {
+          "paragraph": 50,
+          "start": 308.821,
+          "end": 311.065
+        },
+        {
+          "paragraph": 51,
+          "start": 311.065,
+          "end": 354.663
+        },
+        {
+          "paragraph": 52,
+          "start": 354.663,
+          "end": 388.976
+        },
+        {
+          "paragraph": 53,
+          "start": 388.976,
+          "end": 410.628
+        },
+        {
+          "paragraph": 54,
+          "start": 410.628,
+          "end": 429.645
+        },
+        {
+          "paragraph": 55,
+          "start": 429.645,
+          "end": 434.264
+        },
+        {
+          "paragraph": 56,
+          "start": 434.264,
+          "end": 448.631
+        },
+        {
+          "paragraph": 57,
+          "start": 448.631,
+          "end": 451.717
+        },
+        {
+          "paragraph": 58,
+          "start": 451.717,
+          "end": 461.239
+        },
+        {
+          "paragraph": 59,
+          "start": 461.239,
+          "end": 463.078
+        },
+        {
+          "paragraph": 60,
+          "start": 463.078,
+          "end": 466.513
+        },
+        {
+          "paragraph": 61,
+          "start": 466.513,
+          "end": 479.643
+        },
+        {
+          "paragraph": 62,
+          "start": 479.643,
+          "end": 485.989
+        },
+        {
+          "paragraph": 63,
+          "start": 485.989,
+          "end": 488.051
+        },
+        {
+          "paragraph": 64,
+          "start": 488.051,
+          "end": 491.761
+        },
+        {
+          "paragraph": 65,
+          "start": 491.761,
+          "end": 496.241
+        },
+        {
+          "paragraph": 66,
+          "start": 496.241,
+          "end": 498.313
+        },
+        {
+          "paragraph": 67,
+          "start": 498.313,
+          "end": 501.813
+        },
+        {
+          "paragraph": 68,
+          "start": 501.813,
+          "end": 507.339
+        },
+        {
+          "paragraph": 69,
+          "start": 507.339,
+          "end": 514.9
+        },
+        {
+          "paragraph": 70,
+          "start": 514.9,
+          "end": 518.048
+        },
+        {
+          "paragraph": 71,
+          "start": 518.048,
+          "end": 520.29
+        },
+        {
+          "paragraph": 72,
+          "start": 520.29,
+          "end": 526.858
+        },
+        {
+          "paragraph": 73,
+          "start": 526.858,
+          "end": 528.143
+        },
+        {
+          "paragraph": 74,
+          "start": 528.143,
+          "end": 529.797
+        },
+        {
+          "paragraph": 75,
+          "start": 529.797,
+          "end": 531.002
+        },
+        {
+          "paragraph": 76,
+          "start": 531.002,
+          "end": 533.833
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-02.mp3",
+      "duration": 583.397,
+      "firstParagraph": 77,
+      "lastParagraph": 153,
+      "cues": [
+        {
+          "paragraph": 77,
+          "start": 0.0,
+          "end": 2.805
+        },
+        {
+          "paragraph": 78,
+          "start": 2.805,
+          "end": 5.794
+        },
+        {
+          "paragraph": 79,
+          "start": 5.794,
+          "end": 23.99
+        },
+        {
+          "paragraph": 80,
+          "start": 23.99,
+          "end": 27.059
+        },
+        {
+          "paragraph": 81,
+          "start": 27.059,
+          "end": 40.723
+        },
+        {
+          "paragraph": 82,
+          "start": 40.723,
+          "end": 44.349
+        },
+        {
+          "paragraph": 83,
+          "start": 44.349,
+          "end": 46.381
+        },
+        {
+          "paragraph": 84,
+          "start": 46.381,
+          "end": 51.298
+        },
+        {
+          "paragraph": 85,
+          "start": 51.298,
+          "end": 55.223
+        },
+        {
+          "paragraph": 86,
+          "start": 55.223,
+          "end": 65.593
+        },
+        {
+          "paragraph": 87,
+          "start": 65.593,
+          "end": 126.249
+        },
+        {
+          "paragraph": 88,
+          "start": 126.249,
+          "end": 137.695
+        },
+        {
+          "paragraph": 89,
+          "start": 137.695,
+          "end": 141.226
+        },
+        {
+          "paragraph": 90,
+          "start": 141.226,
+          "end": 145.254
+        },
+        {
+          "paragraph": 91,
+          "start": 145.254,
+          "end": 146.942
+        },
+        {
+          "paragraph": 92,
+          "start": 146.942,
+          "end": 153.479
+        },
+        {
+          "paragraph": 93,
+          "start": 153.479,
+          "end": 155.924
+        },
+        {
+          "paragraph": 94,
+          "start": 155.924,
+          "end": 161.833
+        },
+        {
+          "paragraph": 95,
+          "start": 161.833,
+          "end": 163.831
+        },
+        {
+          "paragraph": 96,
+          "start": 163.831,
+          "end": 166.97
+        },
+        {
+          "paragraph": 97,
+          "start": 166.97,
+          "end": 171.002
+        },
+        {
+          "paragraph": 98,
+          "start": 171.002,
+          "end": 174.171
+        },
+        {
+          "paragraph": 99,
+          "start": 174.171,
+          "end": 175.372
+        },
+        {
+          "paragraph": 100,
+          "start": 175.372,
+          "end": 177.797
+        },
+        {
+          "paragraph": 101,
+          "start": 177.797,
+          "end": 186.601
+        },
+        {
+          "paragraph": 102,
+          "start": 186.601,
+          "end": 191.527
+        },
+        {
+          "paragraph": 103,
+          "start": 191.527,
+          "end": 193.891
+        },
+        {
+          "paragraph": 104,
+          "start": 193.891,
+          "end": 197.368
+        },
+        {
+          "paragraph": 105,
+          "start": 197.368,
+          "end": 205.262
+        },
+        {
+          "paragraph": 106,
+          "start": 205.262,
+          "end": 213.216
+        },
+        {
+          "paragraph": 107,
+          "start": 213.216,
+          "end": 218.656
+        },
+        {
+          "paragraph": 108,
+          "start": 218.656,
+          "end": 235.776
+        },
+        {
+          "paragraph": 109,
+          "start": 235.776,
+          "end": 239.404
+        },
+        {
+          "paragraph": 110,
+          "start": 239.404,
+          "end": 241.996
+        },
+        {
+          "paragraph": 111,
+          "start": 241.996,
+          "end": 243.316
+        },
+        {
+          "paragraph": 112,
+          "start": 243.316,
+          "end": 247.05
+        },
+        {
+          "paragraph": 113,
+          "start": 247.05,
+          "end": 250.058
+        },
+        {
+          "paragraph": 114,
+          "start": 250.058,
+          "end": 254.966
+        },
+        {
+          "paragraph": 115,
+          "start": 254.966,
+          "end": 257.157
+        },
+        {
+          "paragraph": 116,
+          "start": 257.157,
+          "end": 260.997
+        },
+        {
+          "paragraph": 117,
+          "start": 260.997,
+          "end": 262.993
+        },
+        {
+          "paragraph": 118,
+          "start": 262.993,
+          "end": 268.228
+        },
+        {
+          "paragraph": 119,
+          "start": 268.228,
+          "end": 271.21
+        },
+        {
+          "paragraph": 120,
+          "start": 271.21,
+          "end": 287.209
+        },
+        {
+          "paragraph": 121,
+          "start": 287.209,
+          "end": 307.366
+        },
+        {
+          "paragraph": 122,
+          "start": 307.366,
+          "end": 318.427
+        },
+        {
+          "paragraph": 123,
+          "start": 318.427,
+          "end": 321.627
+        },
+        {
+          "paragraph": 124,
+          "start": 321.627,
+          "end": 327.253
+        },
+        {
+          "paragraph": 125,
+          "start": 327.253,
+          "end": 347.476
+        },
+        {
+          "paragraph": 126,
+          "start": 347.476,
+          "end": 352.019
+        },
+        {
+          "paragraph": 127,
+          "start": 352.019,
+          "end": 356.667
+        },
+        {
+          "paragraph": 128,
+          "start": 356.667,
+          "end": 368.868
+        },
+        {
+          "paragraph": 129,
+          "start": 368.868,
+          "end": 371.412
+        },
+        {
+          "paragraph": 130,
+          "start": 371.412,
+          "end": 378.151
+        },
+        {
+          "paragraph": 131,
+          "start": 378.151,
+          "end": 382.237
+        },
+        {
+          "paragraph": 132,
+          "start": 382.237,
+          "end": 385.59
+        },
+        {
+          "paragraph": 133,
+          "start": 385.59,
+          "end": 394.603
+        },
+        {
+          "paragraph": 134,
+          "start": 394.603,
+          "end": 408.693
+        },
+        {
+          "paragraph": 135,
+          "start": 408.693,
+          "end": 421.817
+        },
+        {
+          "paragraph": 136,
+          "start": 421.817,
+          "end": 426.035
+        },
+        {
+          "paragraph": 137,
+          "start": 426.035,
+          "end": 427.8
+        },
+        {
+          "paragraph": 138,
+          "start": 427.8,
+          "end": 429.256
+        },
+        {
+          "paragraph": 139,
+          "start": 429.256,
+          "end": 431.19
+        },
+        {
+          "paragraph": 140,
+          "start": 431.19,
+          "end": 433.571
+        },
+        {
+          "paragraph": 141,
+          "start": 433.571,
+          "end": 435.613
+        },
+        {
+          "paragraph": 142,
+          "start": 435.613,
+          "end": 451.441
+        },
+        {
+          "paragraph": 143,
+          "start": 451.441,
+          "end": 453.545
+        },
+        {
+          "paragraph": 144,
+          "start": 453.545,
+          "end": 456.404
+        },
+        {
+          "paragraph": 145,
+          "start": 456.404,
+          "end": 457.861
+        },
+        {
+          "paragraph": 146,
+          "start": 457.861,
+          "end": 460.859
+        },
+        {
+          "paragraph": 147,
+          "start": 460.859,
+          "end": 465.616
+        },
+        {
+          "paragraph": 148,
+          "start": 465.616,
+          "end": 512.127
+        },
+        {
+          "paragraph": 149,
+          "start": 512.127,
+          "end": 523.913
+        },
+        {
+          "paragraph": 150,
+          "start": 523.913,
+          "end": 547.194
+        },
+        {
+          "paragraph": 151,
+          "start": 547.194,
+          "end": 554.564
+        },
+        {
+          "paragraph": 152,
+          "start": 554.564,
+          "end": 581.677
+        },
+        {
+          "paragraph": 153,
+          "start": 581.677,
+          "end": 583.397
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-03.mp3",
+      "duration": 501.331,
+      "firstParagraph": 154,
+      "lastParagraph": 230,
+      "cues": [
+        {
+          "paragraph": 154,
+          "start": 0.0,
+          "end": 2.415
+        },
+        {
+          "paragraph": 155,
+          "start": 2.415,
+          "end": 11.727
+        },
+        {
+          "paragraph": 156,
+          "start": 11.727,
+          "end": 13.522
+        },
+        {
+          "paragraph": 157,
+          "start": 13.522,
+          "end": 14.588
+        },
+        {
+          "paragraph": 158,
+          "start": 14.588,
+          "end": 16.031
+        },
+        {
+          "paragraph": 159,
+          "start": 16.031,
+          "end": 18.342
+        },
+        {
+          "paragraph": 160,
+          "start": 18.342,
+          "end": 28.626
+        },
+        {
+          "paragraph": 161,
+          "start": 28.626,
+          "end": 31.078
+        },
+        {
+          "paragraph": 162,
+          "start": 31.078,
+          "end": 42.885
+        },
+        {
+          "paragraph": 163,
+          "start": 42.885,
+          "end": 49.226
+        },
+        {
+          "paragraph": 164,
+          "start": 49.226,
+          "end": 53.308
+        },
+        {
+          "paragraph": 165,
+          "start": 53.308,
+          "end": 83.84
+        },
+        {
+          "paragraph": 166,
+          "start": 83.84,
+          "end": 88.859
+        },
+        {
+          "paragraph": 167,
+          "start": 88.859,
+          "end": 94.157
+        },
+        {
+          "paragraph": 168,
+          "start": 94.157,
+          "end": 106.249
+        },
+        {
+          "paragraph": 169,
+          "start": 106.249,
+          "end": 114.138
+        },
+        {
+          "paragraph": 170,
+          "start": 114.138,
+          "end": 118.439
+        },
+        {
+          "paragraph": 171,
+          "start": 118.439,
+          "end": 123.186
+        },
+        {
+          "paragraph": 172,
+          "start": 123.186,
+          "end": 141.128
+        },
+        {
+          "paragraph": 173,
+          "start": 141.128,
+          "end": 157.18
+        },
+        {
+          "paragraph": 174,
+          "start": 157.18,
+          "end": 159.844
+        },
+        {
+          "paragraph": 175,
+          "start": 159.844,
+          "end": 175.513
+        },
+        {
+          "paragraph": 176,
+          "start": 175.513,
+          "end": 180.472
+        },
+        {
+          "paragraph": 177,
+          "start": 180.472,
+          "end": 186.562
+        },
+        {
+          "paragraph": 178,
+          "start": 186.562,
+          "end": 200.844
+        },
+        {
+          "paragraph": 179,
+          "start": 200.844,
+          "end": 203.727
+        },
+        {
+          "paragraph": 180,
+          "start": 203.727,
+          "end": 207.241
+        },
+        {
+          "paragraph": 181,
+          "start": 207.241,
+          "end": 210.007
+        },
+        {
+          "paragraph": 182,
+          "start": 210.007,
+          "end": 216.341
+        },
+        {
+          "paragraph": 183,
+          "start": 216.341,
+          "end": 225.633
+        },
+        {
+          "paragraph": 184,
+          "start": 225.633,
+          "end": 229.51
+        },
+        {
+          "paragraph": 185,
+          "start": 229.51,
+          "end": 231.155
+        },
+        {
+          "paragraph": 186,
+          "start": 231.155,
+          "end": 235.004
+        },
+        {
+          "paragraph": 187,
+          "start": 235.004,
+          "end": 238.493
+        },
+        {
+          "paragraph": 188,
+          "start": 238.493,
+          "end": 242.057
+        },
+        {
+          "paragraph": 189,
+          "start": 242.057,
+          "end": 253.395
+        },
+        {
+          "paragraph": 190,
+          "start": 253.395,
+          "end": 258.703
+        },
+        {
+          "paragraph": 191,
+          "start": 258.703,
+          "end": 263.892
+        },
+        {
+          "paragraph": 192,
+          "start": 263.892,
+          "end": 287.795
+        },
+        {
+          "paragraph": 193,
+          "start": 287.795,
+          "end": 296.575
+        },
+        {
+          "paragraph": 194,
+          "start": 296.575,
+          "end": 299.539
+        },
+        {
+          "paragraph": 195,
+          "start": 299.539,
+          "end": 305.463
+        },
+        {
+          "paragraph": 196,
+          "start": 305.463,
+          "end": 309.473
+        },
+        {
+          "paragraph": 197,
+          "start": 309.473,
+          "end": 316.754
+        },
+        {
+          "paragraph": 198,
+          "start": 316.754,
+          "end": 318.106
+        },
+        {
+          "paragraph": 199,
+          "start": 318.106,
+          "end": 324.803
+        },
+        {
+          "paragraph": 200,
+          "start": 324.803,
+          "end": 327.932
+        },
+        {
+          "paragraph": 201,
+          "start": 327.932,
+          "end": 338.845
+        },
+        {
+          "paragraph": 202,
+          "start": 338.845,
+          "end": 344.498
+        },
+        {
+          "paragraph": 203,
+          "start": 344.498,
+          "end": 375.233
+        },
+        {
+          "paragraph": 204,
+          "start": 375.233,
+          "end": 391.809
+        },
+        {
+          "paragraph": 205,
+          "start": 391.809,
+          "end": 401.577
+        },
+        {
+          "paragraph": 206,
+          "start": 401.577,
+          "end": 403.298
+        },
+        {
+          "paragraph": 207,
+          "start": 403.298,
+          "end": 405.274
+        },
+        {
+          "paragraph": 208,
+          "start": 405.274,
+          "end": 408.796
+        },
+        {
+          "paragraph": 209,
+          "start": 408.796,
+          "end": 412.62
+        },
+        {
+          "paragraph": 210,
+          "start": 412.62,
+          "end": 413.738
+        },
+        {
+          "paragraph": 211,
+          "start": 413.738,
+          "end": 418.067
+        },
+        {
+          "paragraph": 212,
+          "start": 418.067,
+          "end": 425.534
+        },
+        {
+          "paragraph": 213,
+          "start": 425.534,
+          "end": 429.152
+        },
+        {
+          "paragraph": 214,
+          "start": 429.152,
+          "end": 430.269
+        },
+        {
+          "paragraph": 215,
+          "start": 430.269,
+          "end": 431.988
+        },
+        {
+          "paragraph": 216,
+          "start": 431.988,
+          "end": 433.71
+        },
+        {
+          "paragraph": 217,
+          "start": 433.71,
+          "end": 436.784
+        },
+        {
+          "paragraph": 218,
+          "start": 436.784,
+          "end": 439.56
+        },
+        {
+          "paragraph": 219,
+          "start": 439.56,
+          "end": 448.457
+        },
+        {
+          "paragraph": 220,
+          "start": 448.457,
+          "end": 452.012
+        },
+        {
+          "paragraph": 221,
+          "start": 452.012,
+          "end": 454.245
+        },
+        {
+          "paragraph": 222,
+          "start": 454.245,
+          "end": 455.829
+        },
+        {
+          "paragraph": 223,
+          "start": 455.829,
+          "end": 457.901
+        },
+        {
+          "paragraph": 224,
+          "start": 457.901,
+          "end": 462.594
+        },
+        {
+          "paragraph": 225,
+          "start": 462.594,
+          "end": 465.516
+        },
+        {
+          "paragraph": 226,
+          "start": 465.516,
+          "end": 471.712
+        },
+        {
+          "paragraph": 227,
+          "start": 471.712,
+          "end": 476.14
+        },
+        {
+          "paragraph": 228,
+          "start": 476.14,
+          "end": 477.882
+        },
+        {
+          "paragraph": 229,
+          "start": 477.882,
+          "end": 485.441
+        },
+        {
+          "paragraph": 230,
+          "start": 485.441,
+          "end": 501.331
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-04a.mp3",
+      "duration": 524.438,
+      "firstParagraph": 231,
+      "lastParagraph": 307,
+      "cues": [
+        {
+          "paragraph": 231,
+          "start": 0.0,
+          "end": 2.861
+        },
+        {
+          "paragraph": 232,
+          "start": 2.861,
+          "end": 7.853
+        },
+        {
+          "paragraph": 233,
+          "start": 7.853,
+          "end": 9.426
+        },
+        {
+          "paragraph": 234,
+          "start": 9.426,
+          "end": 12.827
+        },
+        {
+          "paragraph": 235,
+          "start": 12.827,
+          "end": 15.56
+        },
+        {
+          "paragraph": 236,
+          "start": 15.56,
+          "end": 37.32
+        },
+        {
+          "paragraph": 237,
+          "start": 37.32,
+          "end": 38.661
+        },
+        {
+          "paragraph": 238,
+          "start": 38.661,
+          "end": 55.076
+        },
+        {
+          "paragraph": 239,
+          "start": 55.076,
+          "end": 63.843
+        },
+        {
+          "paragraph": 240,
+          "start": 63.843,
+          "end": 76.705
+        },
+        {
+          "paragraph": 241,
+          "start": 76.705,
+          "end": 85.311
+        },
+        {
+          "paragraph": 242,
+          "start": 85.311,
+          "end": 95.041
+        },
+        {
+          "paragraph": 243,
+          "start": 95.041,
+          "end": 107.393
+        },
+        {
+          "paragraph": 244,
+          "start": 107.393,
+          "end": 111.106
+        },
+        {
+          "paragraph": 245,
+          "start": 111.106,
+          "end": 112.192
+        },
+        {
+          "paragraph": 246,
+          "start": 112.192,
+          "end": 113.752
+        },
+        {
+          "paragraph": 247,
+          "start": 113.752,
+          "end": 119.0
+        },
+        {
+          "paragraph": 248,
+          "start": 119.0,
+          "end": 120.899
+        },
+        {
+          "paragraph": 249,
+          "start": 120.899,
+          "end": 123.024
+        },
+        {
+          "paragraph": 250,
+          "start": 123.024,
+          "end": 125.042
+        },
+        {
+          "paragraph": 251,
+          "start": 125.042,
+          "end": 129.106
+        },
+        {
+          "paragraph": 252,
+          "start": 129.106,
+          "end": 133.077
+        },
+        {
+          "paragraph": 253,
+          "start": 133.077,
+          "end": 135.49
+        },
+        {
+          "paragraph": 254,
+          "start": 135.49,
+          "end": 148.79
+        },
+        {
+          "paragraph": 255,
+          "start": 148.79,
+          "end": 151.674
+        },
+        {
+          "paragraph": 256,
+          "start": 151.674,
+          "end": 166.916
+        },
+        {
+          "paragraph": 257,
+          "start": 166.916,
+          "end": 170.36
+        },
+        {
+          "paragraph": 258,
+          "start": 170.36,
+          "end": 174.257
+        },
+        {
+          "paragraph": 259,
+          "start": 174.257,
+          "end": 177.979
+        },
+        {
+          "paragraph": 260,
+          "start": 177.979,
+          "end": 180.525
+        },
+        {
+          "paragraph": 261,
+          "start": 180.525,
+          "end": 185.814
+        },
+        {
+          "paragraph": 262,
+          "start": 185.814,
+          "end": 186.815
+        },
+        {
+          "paragraph": 263,
+          "start": 186.815,
+          "end": 196.102
+        },
+        {
+          "paragraph": 264,
+          "start": 196.102,
+          "end": 198.714
+        },
+        {
+          "paragraph": 265,
+          "start": 198.714,
+          "end": 207.647
+        },
+        {
+          "paragraph": 266,
+          "start": 207.647,
+          "end": 208.932
+        },
+        {
+          "paragraph": 267,
+          "start": 208.932,
+          "end": 211.636
+        },
+        {
+          "paragraph": 268,
+          "start": 211.636,
+          "end": 213.633
+        },
+        {
+          "paragraph": 269,
+          "start": 213.633,
+          "end": 226.348
+        },
+        {
+          "paragraph": 270,
+          "start": 226.348,
+          "end": 228.801
+        },
+        {
+          "paragraph": 271,
+          "start": 228.801,
+          "end": 236.534
+        },
+        {
+          "paragraph": 272,
+          "start": 236.534,
+          "end": 238.371
+        },
+        {
+          "paragraph": 273,
+          "start": 238.371,
+          "end": 242.041
+        },
+        {
+          "paragraph": 274,
+          "start": 242.041,
+          "end": 254.542
+        },
+        {
+          "paragraph": 275,
+          "start": 254.542,
+          "end": 269.858
+        },
+        {
+          "paragraph": 276,
+          "start": 269.858,
+          "end": 285.899
+        },
+        {
+          "paragraph": 277,
+          "start": 285.899,
+          "end": 296.804
+        },
+        {
+          "paragraph": 278,
+          "start": 296.804,
+          "end": 306.148
+        },
+        {
+          "paragraph": 279,
+          "start": 306.148,
+          "end": 312.726
+        },
+        {
+          "paragraph": 280,
+          "start": 312.726,
+          "end": 318.313
+        },
+        {
+          "paragraph": 281,
+          "start": 318.313,
+          "end": 324.327
+        },
+        {
+          "paragraph": 282,
+          "start": 324.327,
+          "end": 328.931
+        },
+        {
+          "paragraph": 283,
+          "start": 328.931,
+          "end": 337.309
+        },
+        {
+          "paragraph": 284,
+          "start": 337.309,
+          "end": 344.434
+        },
+        {
+          "paragraph": 285,
+          "start": 344.434,
+          "end": 351.484
+        },
+        {
+          "paragraph": 286,
+          "start": 351.484,
+          "end": 358.47
+        },
+        {
+          "paragraph": 287,
+          "start": 358.47,
+          "end": 374.715
+        },
+        {
+          "paragraph": 288,
+          "start": 374.715,
+          "end": 384.922
+        },
+        {
+          "paragraph": 289,
+          "start": 384.922,
+          "end": 401.582
+        },
+        {
+          "paragraph": 290,
+          "start": 401.582,
+          "end": 411.287
+        },
+        {
+          "paragraph": 291,
+          "start": 411.287,
+          "end": 419.309
+        },
+        {
+          "paragraph": 292,
+          "start": 419.309,
+          "end": 431.769
+        },
+        {
+          "paragraph": 293,
+          "start": 431.769,
+          "end": 439.554
+        },
+        {
+          "paragraph": 294,
+          "start": 439.554,
+          "end": 448.126
+        },
+        {
+          "paragraph": 295,
+          "start": 448.126,
+          "end": 452.197
+        },
+        {
+          "paragraph": 296,
+          "start": 452.197,
+          "end": 456.462
+        },
+        {
+          "paragraph": 297,
+          "start": 456.462,
+          "end": 460.439
+        },
+        {
+          "paragraph": 298,
+          "start": 460.439,
+          "end": 465.075
+        },
+        {
+          "paragraph": 299,
+          "start": 465.075,
+          "end": 470.889
+        },
+        {
+          "paragraph": 300,
+          "start": 470.889,
+          "end": 476.927
+        },
+        {
+          "paragraph": 301,
+          "start": 476.927,
+          "end": 484.031
+        },
+        {
+          "paragraph": 302,
+          "start": 484.031,
+          "end": 489.394
+        },
+        {
+          "paragraph": 303,
+          "start": 489.394,
+          "end": 493.649
+        },
+        {
+          "paragraph": 304,
+          "start": 493.649,
+          "end": 497.669
+        },
+        {
+          "paragraph": 305,
+          "start": 497.669,
+          "end": 512.117
+        },
+        {
+          "paragraph": 306,
+          "start": 512.117,
+          "end": 519.956
+        },
+        {
+          "paragraph": 307,
+          "start": 519.956,
+          "end": 524.438
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-04b.mp3",
+      "duration": 420.174,
+      "firstParagraph": 308,
+      "lastParagraph": 384,
+      "cues": [
+        {
+          "paragraph": 308,
+          "start": 0.0,
+          "end": 1.709
+        },
+        {
+          "paragraph": 309,
+          "start": 1.709,
+          "end": 13.282
+        },
+        {
+          "paragraph": 310,
+          "start": 13.282,
+          "end": 28.247
+        },
+        {
+          "paragraph": 311,
+          "start": 28.247,
+          "end": 40.651
+        },
+        {
+          "paragraph": 312,
+          "start": 40.651,
+          "end": 45.442
+        },
+        {
+          "paragraph": 313,
+          "start": 45.442,
+          "end": 49.06
+        },
+        {
+          "paragraph": 314,
+          "start": 49.06,
+          "end": 54.513
+        },
+        {
+          "paragraph": 315,
+          "start": 54.513,
+          "end": 60.39
+        },
+        {
+          "paragraph": 316,
+          "start": 60.39,
+          "end": 65.955
+        },
+        {
+          "paragraph": 317,
+          "start": 65.955,
+          "end": 76.801
+        },
+        {
+          "paragraph": 318,
+          "start": 76.801,
+          "end": 81.566
+        },
+        {
+          "paragraph": 319,
+          "start": 81.566,
+          "end": 86.984
+        },
+        {
+          "paragraph": 320,
+          "start": 86.984,
+          "end": 91.54
+        },
+        {
+          "paragraph": 321,
+          "start": 91.54,
+          "end": 102.214
+        },
+        {
+          "paragraph": 322,
+          "start": 102.214,
+          "end": 104.882
+        },
+        {
+          "paragraph": 323,
+          "start": 104.882,
+          "end": 111.794
+        },
+        {
+          "paragraph": 324,
+          "start": 111.794,
+          "end": 115.41
+        },
+        {
+          "paragraph": 325,
+          "start": 115.41,
+          "end": 117.579
+        },
+        {
+          "paragraph": 326,
+          "start": 117.579,
+          "end": 122.231
+        },
+        {
+          "paragraph": 327,
+          "start": 122.231,
+          "end": 126.775
+        },
+        {
+          "paragraph": 328,
+          "start": 126.775,
+          "end": 139.44
+        },
+        {
+          "paragraph": 329,
+          "start": 139.44,
+          "end": 143.44
+        },
+        {
+          "paragraph": 330,
+          "start": 143.44,
+          "end": 145.987
+        },
+        {
+          "paragraph": 331,
+          "start": 145.987,
+          "end": 150.483
+        },
+        {
+          "paragraph": 332,
+          "start": 150.483,
+          "end": 152.427
+        },
+        {
+          "paragraph": 333,
+          "start": 152.427,
+          "end": 155.799
+        },
+        {
+          "paragraph": 334,
+          "start": 155.799,
+          "end": 170.167
+        },
+        {
+          "paragraph": 335,
+          "start": 170.167,
+          "end": 174.583
+        },
+        {
+          "paragraph": 336,
+          "start": 174.583,
+          "end": 177.039
+        },
+        {
+          "paragraph": 337,
+          "start": 177.039,
+          "end": 180.645
+        },
+        {
+          "paragraph": 338,
+          "start": 180.645,
+          "end": 184.423
+        },
+        {
+          "paragraph": 339,
+          "start": 184.423,
+          "end": 188.103
+        },
+        {
+          "paragraph": 340,
+          "start": 188.103,
+          "end": 192.519
+        },
+        {
+          "paragraph": 341,
+          "start": 192.519,
+          "end": 194.901
+        },
+        {
+          "paragraph": 342,
+          "start": 194.901,
+          "end": 197.218
+        },
+        {
+          "paragraph": 343,
+          "start": 197.218,
+          "end": 204.631
+        },
+        {
+          "paragraph": 344,
+          "start": 204.631,
+          "end": 209.805
+        },
+        {
+          "paragraph": 345,
+          "start": 209.805,
+          "end": 213.589
+        },
+        {
+          "paragraph": 346,
+          "start": 213.589,
+          "end": 220.256
+        },
+        {
+          "paragraph": 347,
+          "start": 220.256,
+          "end": 222.989
+        },
+        {
+          "paragraph": 348,
+          "start": 222.989,
+          "end": 225.8
+        },
+        {
+          "paragraph": 349,
+          "start": 225.8,
+          "end": 229.291
+        },
+        {
+          "paragraph": 350,
+          "start": 229.291,
+          "end": 235.747
+        },
+        {
+          "paragraph": 351,
+          "start": 235.747,
+          "end": 240.877
+        },
+        {
+          "paragraph": 352,
+          "start": 240.877,
+          "end": 243.584
+        },
+        {
+          "paragraph": 353,
+          "start": 243.584,
+          "end": 247.306
+        },
+        {
+          "paragraph": 354,
+          "start": 247.306,
+          "end": 262.41
+        },
+        {
+          "paragraph": 355,
+          "start": 262.41,
+          "end": 269.137
+        },
+        {
+          "paragraph": 356,
+          "start": 269.137,
+          "end": 272.615
+        },
+        {
+          "paragraph": 357,
+          "start": 272.615,
+          "end": 276.418
+        },
+        {
+          "paragraph": 358,
+          "start": 276.418,
+          "end": 281.653
+        },
+        {
+          "paragraph": 359,
+          "start": 281.653,
+          "end": 286.24
+        },
+        {
+          "paragraph": 360,
+          "start": 286.24,
+          "end": 292.369
+        },
+        {
+          "paragraph": 361,
+          "start": 292.369,
+          "end": 298.085
+        },
+        {
+          "paragraph": 362,
+          "start": 298.085,
+          "end": 308.261
+        },
+        {
+          "paragraph": 363,
+          "start": 308.261,
+          "end": 311.969
+        },
+        {
+          "paragraph": 364,
+          "start": 311.969,
+          "end": 314.841
+        },
+        {
+          "paragraph": 365,
+          "start": 314.841,
+          "end": 321.283
+        },
+        {
+          "paragraph": 366,
+          "start": 321.283,
+          "end": 327.545
+        },
+        {
+          "paragraph": 367,
+          "start": 327.545,
+          "end": 332.152
+        },
+        {
+          "paragraph": 368,
+          "start": 332.152,
+          "end": 336.815
+        },
+        {
+          "paragraph": 369,
+          "start": 336.815,
+          "end": 338.747
+        },
+        {
+          "paragraph": 370,
+          "start": 338.747,
+          "end": 341.721
+        },
+        {
+          "paragraph": 371,
+          "start": 341.721,
+          "end": 351.661
+        },
+        {
+          "paragraph": 372,
+          "start": 351.661,
+          "end": 356.459
+        },
+        {
+          "paragraph": 373,
+          "start": 356.459,
+          "end": 359.152
+        },
+        {
+          "paragraph": 374,
+          "start": 359.152,
+          "end": 370.665
+        },
+        {
+          "paragraph": 375,
+          "start": 370.665,
+          "end": 372.428
+        },
+        {
+          "paragraph": 376,
+          "start": 372.428,
+          "end": 375.674
+        },
+        {
+          "paragraph": 377,
+          "start": 375.674,
+          "end": 380.196
+        },
+        {
+          "paragraph": 378,
+          "start": 380.196,
+          "end": 382.775
+        },
+        {
+          "paragraph": 379,
+          "start": 382.775,
+          "end": 385.538
+        },
+        {
+          "paragraph": 380,
+          "start": 385.538,
+          "end": 406.091
+        },
+        {
+          "paragraph": 381,
+          "start": 406.091,
+          "end": 409.103
+        },
+        {
+          "paragraph": 382,
+          "start": 409.103,
+          "end": 412.673
+        },
+        {
+          "paragraph": 383,
+          "start": 412.673,
+          "end": 415.18
+        },
+        {
+          "paragraph": 384,
+          "start": 415.18,
+          "end": 420.174
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-05.mp3",
+      "duration": 376.962,
+      "firstParagraph": 385,
+      "lastParagraph": 461,
+      "cues": [
+        {
+          "paragraph": 385,
+          "start": 0.0,
+          "end": 3.807
+        },
+        {
+          "paragraph": 386,
+          "start": 3.807,
+          "end": 7.046
+        },
+        {
+          "paragraph": 387,
+          "start": 7.046,
+          "end": 9.991
+        },
+        {
+          "paragraph": 388,
+          "start": 9.991,
+          "end": 19.826
+        },
+        {
+          "paragraph": 389,
+          "start": 19.826,
+          "end": 22.251
+        },
+        {
+          "paragraph": 390,
+          "start": 22.251,
+          "end": 26.071
+        },
+        {
+          "paragraph": 391,
+          "start": 26.071,
+          "end": 36.845
+        },
+        {
+          "paragraph": 392,
+          "start": 36.845,
+          "end": 55.031
+        },
+        {
+          "paragraph": 393,
+          "start": 55.031,
+          "end": 63.448
+        },
+        {
+          "paragraph": 394,
+          "start": 63.448,
+          "end": 71.509
+        },
+        {
+          "paragraph": 395,
+          "start": 71.509,
+          "end": 87.71
+        },
+        {
+          "paragraph": 396,
+          "start": 87.71,
+          "end": 90.166
+        },
+        {
+          "paragraph": 397,
+          "start": 90.166,
+          "end": 92.653
+        },
+        {
+          "paragraph": 398,
+          "start": 92.653,
+          "end": 96.381
+        },
+        {
+          "paragraph": 399,
+          "start": 96.381,
+          "end": 98.037
+        },
+        {
+          "paragraph": 400,
+          "start": 98.037,
+          "end": 103.05
+        },
+        {
+          "paragraph": 401,
+          "start": 103.05,
+          "end": 110.644
+        },
+        {
+          "paragraph": 402,
+          "start": 110.644,
+          "end": 114.74
+        },
+        {
+          "paragraph": 403,
+          "start": 114.74,
+          "end": 117.358
+        },
+        {
+          "paragraph": 404,
+          "start": 117.358,
+          "end": 120.132
+        },
+        {
+          "paragraph": 405,
+          "start": 120.132,
+          "end": 124.436
+        },
+        {
+          "paragraph": 406,
+          "start": 124.436,
+          "end": 126.457
+        },
+        {
+          "paragraph": 407,
+          "start": 126.457,
+          "end": 128.455
+        },
+        {
+          "paragraph": 408,
+          "start": 128.455,
+          "end": 134.076
+        },
+        {
+          "paragraph": 409,
+          "start": 134.076,
+          "end": 136.937
+        },
+        {
+          "paragraph": 410,
+          "start": 136.937,
+          "end": 139.426
+        },
+        {
+          "paragraph": 411,
+          "start": 139.426,
+          "end": 140.85
+        },
+        {
+          "paragraph": 412,
+          "start": 140.85,
+          "end": 154.962
+        },
+        {
+          "paragraph": 413,
+          "start": 154.962,
+          "end": 157.61
+        },
+        {
+          "paragraph": 414,
+          "start": 157.61,
+          "end": 159.564
+        },
+        {
+          "paragraph": 415,
+          "start": 159.564,
+          "end": 160.98
+        },
+        {
+          "paragraph": 416,
+          "start": 160.98,
+          "end": 162.818
+        },
+        {
+          "paragraph": 417,
+          "start": 162.818,
+          "end": 165.266
+        },
+        {
+          "paragraph": 418,
+          "start": 165.266,
+          "end": 170.151
+        },
+        {
+          "paragraph": 419,
+          "start": 170.151,
+          "end": 172.341
+        },
+        {
+          "paragraph": 420,
+          "start": 172.341,
+          "end": 182.41
+        },
+        {
+          "paragraph": 421,
+          "start": 182.41,
+          "end": 185.346
+        },
+        {
+          "paragraph": 422,
+          "start": 185.346,
+          "end": 187.641
+        },
+        {
+          "paragraph": 423,
+          "start": 187.641,
+          "end": 197.754
+        },
+        {
+          "paragraph": 424,
+          "start": 197.754,
+          "end": 202.597
+        },
+        {
+          "paragraph": 425,
+          "start": 202.597,
+          "end": 205.231
+        },
+        {
+          "paragraph": 426,
+          "start": 205.231,
+          "end": 207.995
+        },
+        {
+          "paragraph": 427,
+          "start": 207.995,
+          "end": 212.315
+        },
+        {
+          "paragraph": 428,
+          "start": 212.315,
+          "end": 214.971
+        },
+        {
+          "paragraph": 429,
+          "start": 214.971,
+          "end": 218.833
+        },
+        {
+          "paragraph": 430,
+          "start": 218.833,
+          "end": 221.647
+        },
+        {
+          "paragraph": 431,
+          "start": 221.647,
+          "end": 226.467
+        },
+        {
+          "paragraph": 432,
+          "start": 226.467,
+          "end": 231.087
+        },
+        {
+          "paragraph": 433,
+          "start": 231.087,
+          "end": 234.821
+        },
+        {
+          "paragraph": 434,
+          "start": 234.821,
+          "end": 244.174
+        },
+        {
+          "paragraph": 435,
+          "start": 244.174,
+          "end": 257.294
+        },
+        {
+          "paragraph": 436,
+          "start": 257.294,
+          "end": 259.939
+        },
+        {
+          "paragraph": 437,
+          "start": 259.939,
+          "end": 263.566
+        },
+        {
+          "paragraph": 438,
+          "start": 263.566,
+          "end": 266.405
+        },
+        {
+          "paragraph": 439,
+          "start": 266.405,
+          "end": 269.117
+        },
+        {
+          "paragraph": 440,
+          "start": 269.117,
+          "end": 273.769
+        },
+        {
+          "paragraph": 441,
+          "start": 273.769,
+          "end": 276.811
+        },
+        {
+          "paragraph": 442,
+          "start": 276.811,
+          "end": 281.973
+        },
+        {
+          "paragraph": 443,
+          "start": 281.973,
+          "end": 289.815
+        },
+        {
+          "paragraph": 444,
+          "start": 289.815,
+          "end": 294.815
+        },
+        {
+          "paragraph": 445,
+          "start": 294.815,
+          "end": 297.525
+        },
+        {
+          "paragraph": 446,
+          "start": 297.525,
+          "end": 300.846
+        },
+        {
+          "paragraph": 447,
+          "start": 300.846,
+          "end": 302.45
+        },
+        {
+          "paragraph": 448,
+          "start": 302.45,
+          "end": 305.31
+        },
+        {
+          "paragraph": 449,
+          "start": 305.31,
+          "end": 307.745
+        },
+        {
+          "paragraph": 450,
+          "start": 307.745,
+          "end": 310.205
+        },
+        {
+          "paragraph": 451,
+          "start": 310.205,
+          "end": 312.969
+        },
+        {
+          "paragraph": 452,
+          "start": 312.969,
+          "end": 314.825
+        },
+        {
+          "paragraph": 453,
+          "start": 314.825,
+          "end": 317.953
+        },
+        {
+          "paragraph": 454,
+          "start": 317.953,
+          "end": 319.577
+        },
+        {
+          "paragraph": 455,
+          "start": 319.577,
+          "end": 326.831
+        },
+        {
+          "paragraph": 456,
+          "start": 326.831,
+          "end": 334.021
+        },
+        {
+          "paragraph": 457,
+          "start": 334.021,
+          "end": 346.085
+        },
+        {
+          "paragraph": 458,
+          "start": 346.085,
+          "end": 353.006
+        },
+        {
+          "paragraph": 459,
+          "start": 353.006,
+          "end": 357.582
+        },
+        {
+          "paragraph": 460,
+          "start": 357.582,
+          "end": 361.006
+        },
+        {
+          "paragraph": 461,
+          "start": 361.006,
+          "end": 376.962
+        }
+      ]
+    },
+    {
+      "file": "audio/heart-06.mp3",
+      "duration": 426.554,
+      "firstParagraph": 462,
+      "lastParagraph": 538,
+      "cues": [
+        {
+          "paragraph": 462,
+          "start": 0.0,
+          "end": 3.594
+        },
+        {
+          "paragraph": 463,
+          "start": 3.594,
+          "end": 15.391
+        },
+        {
+          "paragraph": 464,
+          "start": 15.391,
+          "end": 27.531
+        },
+        {
+          "paragraph": 465,
+          "start": 27.531,
+          "end": 29.583
+        },
+        {
+          "paragraph": 466,
+          "start": 29.583,
+          "end": 31.419
+        },
+        {
+          "paragraph": 467,
+          "start": 31.419,
+          "end": 37.967
+        },
+        {
+          "paragraph": 468,
+          "start": 37.967,
+          "end": 40.061
+        },
+        {
+          "paragraph": 469,
+          "start": 40.061,
+          "end": 43.367
+        },
+        {
+          "paragraph": 470,
+          "start": 43.367,
+          "end": 46.139
+        },
+        {
+          "paragraph": 471,
+          "start": 46.139,
+          "end": 49.171
+        },
+        {
+          "paragraph": 472,
+          "start": 49.171,
+          "end": 50.7
+        },
+        {
+          "paragraph": 473,
+          "start": 50.7,
+          "end": 52.209
+        },
+        {
+          "paragraph": 474,
+          "start": 52.209,
+          "end": 57.35
+        },
+        {
+          "paragraph": 475,
+          "start": 57.35,
+          "end": 66.802
+        },
+        {
+          "paragraph": 476,
+          "start": 66.802,
+          "end": 84.945
+        },
+        {
+          "paragraph": 477,
+          "start": 84.945,
+          "end": 119.457
+        },
+        {
+          "paragraph": 478,
+          "start": 119.457,
+          "end": 125.804
+        },
+        {
+          "paragraph": 479,
+          "start": 125.804,
+          "end": 129.079
+        },
+        {
+          "paragraph": 480,
+          "start": 129.079,
+          "end": 147.058
+        },
+        {
+          "paragraph": 481,
+          "start": 147.058,
+          "end": 156.425
+        },
+        {
+          "paragraph": 482,
+          "start": 156.425,
+          "end": 168.893
+        },
+        {
+          "paragraph": 483,
+          "start": 168.893,
+          "end": 171.084
+        },
+        {
+          "paragraph": 484,
+          "start": 171.084,
+          "end": 186.956
+        },
+        {
+          "paragraph": 485,
+          "start": 186.956,
+          "end": 192.375
+        },
+        {
+          "paragraph": 486,
+          "start": 192.375,
+          "end": 205.536
+        },
+        {
+          "paragraph": 487,
+          "start": 205.536,
+          "end": 207.354
+        },
+        {
+          "paragraph": 488,
+          "start": 207.354,
+          "end": 209.094
+        },
+        {
+          "paragraph": 489,
+          "start": 209.094,
+          "end": 212.607
+        },
+        {
+          "paragraph": 490,
+          "start": 212.607,
+          "end": 214.961
+        },
+        {
+          "paragraph": 491,
+          "start": 214.961,
+          "end": 217.894
+        },
+        {
+          "paragraph": 492,
+          "start": 217.894,
+          "end": 221.018
+        },
+        {
+          "paragraph": 493,
+          "start": 221.018,
+          "end": 231.93
+        },
+        {
+          "paragraph": 494,
+          "start": 231.93,
+          "end": 233.587
+        },
+        {
+          "paragraph": 495,
+          "start": 233.587,
+          "end": 236.829
+        },
+        {
+          "paragraph": 496,
+          "start": 236.829,
+          "end": 238.976
+        },
+        {
+          "paragraph": 497,
+          "start": 238.976,
+          "end": 241.424
+        },
+        {
+          "paragraph": 498,
+          "start": 241.424,
+          "end": 243.371
+        },
+        {
+          "paragraph": 499,
+          "start": 243.371,
+          "end": 250.378
+        },
+        {
+          "paragraph": 500,
+          "start": 250.378,
+          "end": 252.355
+        },
+        {
+          "paragraph": 501,
+          "start": 252.355,
+          "end": 253.927
+        },
+        {
+          "paragraph": 502,
+          "start": 253.927,
+          "end": 255.711
+        },
+        {
+          "paragraph": 503,
+          "start": 255.711,
+          "end": 260.573
+        },
+        {
+          "paragraph": 504,
+          "start": 260.573,
+          "end": 264.446
+        },
+        {
+          "paragraph": 505,
+          "start": 264.446,
+          "end": 268.467
+        },
+        {
+          "paragraph": 506,
+          "start": 268.467,
+          "end": 271.289
+        },
+        {
+          "paragraph": 507,
+          "start": 271.289,
+          "end": 274.183
+        },
+        {
+          "paragraph": 508,
+          "start": 274.183,
+          "end": 276.191
+        },
+        {
+          "paragraph": 509,
+          "start": 276.191,
+          "end": 279.816
+        },
+        {
+          "paragraph": 510,
+          "start": 279.816,
+          "end": 283.252
+        },
+        {
+          "paragraph": 511,
+          "start": 283.252,
+          "end": 285.092
+        },
+        {
+          "paragraph": 512,
+          "start": 285.092,
+          "end": 288.591
+        },
+        {
+          "paragraph": 513,
+          "start": 288.591,
+          "end": 294.767
+        },
+        {
+          "paragraph": 514,
+          "start": 294.767,
+          "end": 311.406
+        },
+        {
+          "paragraph": 515,
+          "start": 311.406,
+          "end": 314.64
+        },
+        {
+          "paragraph": 516,
+          "start": 314.64,
+          "end": 318.513
+        },
+        {
+          "paragraph": 517,
+          "start": 318.513,
+          "end": 320.191
+        },
+        {
+          "paragraph": 518,
+          "start": 320.191,
+          "end": 324.521
+        },
+        {
+          "paragraph": 519,
+          "start": 324.521,
+          "end": 326.956
+        },
+        {
+          "paragraph": 520,
+          "start": 326.956,
+          "end": 350.261
+        },
+        {
+          "paragraph": 521,
+          "start": 350.261,
+          "end": 352.556
+        },
+        {
+          "paragraph": 522,
+          "start": 352.556,
+          "end": 355.029
+        },
+        {
+          "paragraph": 523,
+          "start": 355.029,
+          "end": 357.293
+        },
+        {
+          "paragraph": 524,
+          "start": 357.293,
+          "end": 360.993
+        },
+        {
+          "paragraph": 525,
+          "start": 360.993,
+          "end": 363.171
+        },
+        {
+          "paragraph": 526,
+          "start": 363.171,
+          "end": 365.67
+        },
+        {
+          "paragraph": 527,
+          "start": 365.67,
+          "end": 375.152
+        },
+        {
+          "paragraph": 528,
+          "start": 375.152,
+          "end": 379.302
+        },
+        {
+          "paragraph": 529,
+          "start": 379.302,
+          "end": 393.169
+        },
+        {
+          "paragraph": 530,
+          "start": 393.169,
+          "end": 395.168
+        },
+        {
+          "paragraph": 531,
+          "start": 395.168,
+          "end": 396.985
+        },
+        {
+          "paragraph": 532,
+          "start": 396.985,
+          "end": 399.261
+        },
+        {
+          "paragraph": 533,
+          "start": 399.261,
+          "end": 402.532
+        },
+        {
+          "paragraph": 534,
+          "start": 402.532,
+          "end": 408.292
+        },
+        {
+          "paragraph": 535,
+          "start": 408.292,
+          "end": 410.297
+        },
+        {
+          "paragraph": 536,
+          "start": 410.297,
+          "end": 420.388
+        },
+        {
+          "paragraph": 537,
+          "start": 420.388,
+          "end": 424.611
+        },
+        {
+          "paragraph": 538,
+          "start": 424.611,
+          "end": 426.554
+        }
+      ]
+    }
+  ],
+  "fullFile": "audio/chapter-1-heart.mp3"
+}
