@@ -1,0 +1,1329 @@
+Still Operational
+Chapter 2: The Broken Link
+Draft 1.3.2 — Mara's emerging command rivalry
+
+At four forty-eight in the morning, Andrew discovered that Darius had prepared enough food to survive a very small siege.
+
+The evidence occupied the common-room table in eight paper-wrapped parcels. Darius stood beside them with a pencil and a look of concentration usually reserved for recipes he was inventing.
+
+“You're not taking all of that into combat,” Andrew said.
+
+“Of course not,” Darius replied. “Some of it is for the journey.”
+
+Nico appeared in the doorway, fastening the collar of his uniform with one hand and holding a piece of toast with the other. His curls had been crushed on one side by a night's sleep and remained rebelliously upright on the other.
+
+Nico stopped beside the table and looked at the small metal thermos. “Darius, is that coffee?”
+
+Darius lifted its lid. “Real coffee. Mara traded a favor for a little tin yesterday. I made enough for eight small cups, if nobody gets greedy.”
+
+“Real coffee before a mission?” Nico said. “Now I'm concerned.”
+
+Andrew accepted the cup Darius handed him. “You were concerned when we got new socks.”
+
+“The socks were suspiciously comfortable,” Nico replied.
+
+Darius poured Nico's share. “Please appreciate what Mara had to give up for those beans.”
+
+Nico lifted his cup toward Darius. “I appreciate every single one. Especially the ones keeping me awake.”
+
+Mara entered with a folded route card and a mug of her own. Her dark-chestnut hair was pulled into a neat ponytail, and her boots still carried dried mud from yesterday's field inspection. She paused when she saw Nico holding up his coffee.
+
+“You can thank me by getting to the gate on time,” Mara said. “Northern corridor remains open. Gate control expects us at zero five twenty.”
+
+“Morning to you too,” Andrew said.
+
+“Morning, Andrew.” Mara laid the route card on the table. “We have thirty minutes.”
+
+Nico lowered his cup. “She even times her generosity.”
+
+“The local detour report came in at three,” Mara said, unfolding the map. “The bridge north of Hamburg is closed to heavy traffic. I marked the western bypass as our primary route.”
+
+Andrew studied the neat line she'd already drawn across their planned corridor. Mara had also written a new arrival estimate beside the checkpoint. It was a better route; he'd have made the same choice.
+
+“You've got the amendment ready to transmit?” Andrew asked.
+
+“Ready,” Mara answered. “Just waiting for you to sign it.”
+
+She slid the pencil toward him before he had to ask.
+
+Andrew signed the card. “Western bypass approved. Send it to gate control.”
+
+“Gut.” Mara took the card back. The new route was already queued on her tablet.
+
+Nico sipped his coffee. “Wonderful. An entire crisis resolved before breakfast. Mara, when did you last sleep?”
+
+“I've been awake precisely as long as necessary,” Mara replied.
+
+“That's what I tell Yelena,” Andrew said.
+
+“Which is how I know it's a lie,” Yelena said from the doorway.
+
+Yelena came in carrying her medical case and an open notebook. Her ash-brown braid lay over one shoulder. She paused in the doorway long enough to survey the room, then turned to Nico.
+
+“Nico, how many hours did you sleep?” she asked.
+
+Nico set his cup down. “Are we discussing personal matters before breakfast?”
+
+“Your fitness for duty isn't personal,” Yelena said.
+
+“Five hours,” Nico answered.
+
+“Four and a half,” Andrew corrected, remembering when Nico had finally stopped talking the night before.
+
+Nico glared at him. “Traitor.”
+
+“Better than yesterday,” Yelena said, recording the answer.
+
+Nico leaned over her notebook. “You're recording our failures?”
+
+“Only the ones that might interfere with today's operation,” Yelena replied.
+
+Juno arrived from the hangar with a battered inspection board tucked under his arm. He had grease on one wrist and the expression of someone who'd been awake long enough to make breakfast feel like a late meal.
+
+“Is this mine?” Juno asked, taking the parcel Darius held out.
+
+“Yes,” Darius said. “Eat it while it's warm.”
+
+“Brilliant,” Juno said.
+
+Mara glanced at Juno's inspection board. “How's the fleet?”
+
+“Six signed off, two left for final checks,” Juno said. “I've already walked every chassis.”
+
+Andrew looked up. “All eight?”
+
+“Every one, mate,” Juno said. “Each pilot ran their own startup checklist. I've checked the leg seals, actuator housings, coolant connections, turret locks and external reactor fittings. Nobody's getting away with a green warning light and a loose bolt.”
+
+“You missed breakfast to do that?” Darius asked.
+
+“Got here in time for it, didn't I?” Juno said, unwrapping his roll.
+
+Andrew nodded toward the hangar. “What still needs attention?”
+
+“Andrew's steering response needs a loaded check, and Nico's standby coolant reading is lagging,” Juno said. “Neither's a stop issue yet. I won't clear either until I've seen the results.”
+
+Sera entered behind him, studying a tablet. “Nico's sensor reads six degrees low at idle. The actual coolant temperature is normal.”
+
+“So it's the probe?” Andrew asked.
+
+“Likely,” Sera said. “Juno's checking the connector. I'll verify the numbers when he's finished.”
+
+Juno nodded. “Andrew can run a brief steering test while I monitor the load response. We have time.”
+
+“Gate control won't wait forever,” Mara reminded him.
+
+“They won't have to,” Juno said. “I'll sign all eight before we move.”
+
+Andrew knew he could trust Juno to distinguish an annoying measurement from a dangerous fault. He also knew the mechanic would ground any of them, including Andrew, if a check failed.
+
+“Finish your food,” Andrew told him. “Then finish the checks.”
+
+Juno raised his half-eaten roll in acknowledgment. “Yes, commander.”
+
+Akari pushed into the room with her camera hanging against her chest.
+
+“Everybody,” she announced, “I have something important.”
+
+Mara didn't look up from the route. “Whatever it is, no.”
+
+“You haven't heard it yet,” Akari protested.
+
+“I know how this usually ends,” Mara replied.
+
+Akari turned to Andrew. “Can I get a picture at the gate? Just the mechs leaving together. It would look amazing if you all lined up properly.”
+
+“We're not delaying a military operation for a photograph,” Andrew said.
+
+“I only need ten seconds,” Akari insisted.
+
+Nico put down his coffee. “You said ten seconds yesterday.”
+
+“Yesterday you moved!” Akari protested.
+
+“Because someone stepped on my foot,” Nico said.
+
+“I did not step on your foot,” Akari replied.
+
+“You came close,” Mara said, glancing up.
+
+Akari pointed at Mara. “See? No injury. Completely safe.”
+
+Andrew took one of the breakfast parcels and slipped it into his jacket. “Get a picture from the courtyard if you can do it without holding anyone up.”
+
+Akari smiled immediately. “You are an excellent commander.”
+
+“That's an opinion you can put in the report,” Andrew told her.
+
+She was already on her way to the door.
+
+Darius watched her go, then passed the remaining food around. The little parcels contained bread rolls with cheese and something sweet that Andrew couldn't identify. Darius had written names on the wrappers, though Nico was already trying to negotiate a trade.
+
+“I'll trade you,” Nico told Juno, holding out his unopened parcel. “Mine has the better filling.”
+
+“You haven't looked,” Juno said.
+
+“I know these things,” Nico replied.
+
+“Then why would you trade it?” Juno asked.
+
+Nico considered the question. “Because I'm generous.”
+
+A few minutes later, Andrew led the others across the courtyard. The depot was barely awake. Light showed through the kitchen window, rainwater filled the cracks between the paving stones, and someone was trying to start a stubborn utility truck near the gate.
+
+The hangar doors were already open.
+
+Inside, eight XR-17s crouched in two rows facing a narrow central aisle. Each carried the same compact six-legged chassis, rotating main turret, twin upright missile pods, nose-mounted rotary cannon and circular rear reactor. Under the hangar lights the armor looked less like anything in a recruitment poster and more like what it was: metal dragged through mud, patched in a hurry and kept alive by people who were always short of parts.
+
+The mechs were identical on the production sheet. The pilots had taken that as a personal challenge.
+
+There was a small rectangle of outer cockpit armor where each pilot had painted a callsign. No added plating, no changes to weapons or controls. Juno had made it clear that anything interfering with a hatch, sensor or maintenance panel would be scraped off before the next deployment.
+
+Mara's mech stood nearest the entrance. CLOCKWORK had been stenciled in white letters so precise they might have come from a factory stencil. Below the name, Mara had painted a tiny clock face with its hands pointed at five twenty, the time she expected everyone at the gate. A thin route line curved beneath it, then ended exactly where she wanted it. Even her personal markings looked inspected and approved.
+
+Mara checked the route against the display in her open cockpit. “Gate control has the amended map,” she told Andrew. “I've set the navigation file on everyone's system.”
+
+“You've already sent everything out?” Andrew asked.
+
+“You signed it. I didn't see a reason to wait.” Mara's lips twitched. “Saved us a job.”
+
+“You did,” he admitted. “Thanks.”
+
+Mara nodded, pleased, and returned to checking the formation's navigation data. Being prepared usually meant she'd thought about a problem before anyone else. Andrew was glad to have her doing it.
+
+Across from her stood SHUTTER.
+
+Akari had painted the name in small lavender letters and surrounded it with the four corners of a camera viewfinder. Beneath her canopy was a strip of tape holding three tiny photographs where only she could see them. One showed Darius in the kitchen with flour on his sleeve. Another was Nico asleep in a chair. The third had been taken so badly that Andrew couldn't tell whose boots were in it.
+
+“It's artistic,” Akari said when she saw him studying it.
+
+“It's a picture of the floor.”
+
+“It's called composition, Andrew.”
+
+“Whose feet?”
+
+“Classified.”
+
+Sera's OWL waited beside Shutter, its name written in pale blue. A tiny owl with watchful square eyes perched below the stencil, almost hidden among the diagnostic markings. Beside the boarding step was a second, even smaller figure: a pixelated cat. Andrew had never heard Sera explain either one.
+
+Akari leaned toward her. “You should make it bigger. Nobody can see it.”
+
+“I can,” Sera answered.
+
+“That's not the point.”
+
+“For me, it is.”
+
+Juno was already halfway around the row with his inspection board. RATCHET was easy to find even without the name: a pair of weathered orange diagonal stripes crossed the upper side armor, and a small white drawing of a spanner sat below the lettering. The letters themselves weren't quite level.
+
+“Did you paint that with your eyes closed?” Nico asked from across the aisle.
+
+“Painted it after a twenty-hour shift,” Juno replied. “And it still looks better than yours.”
+
+He didn't stop working to defend it. He crouched beneath Sera's mech, checked a hydraulic connection, marked the result and moved on to Akari's front leg housings.
+
+“I checked the lot before breakfast,” he told Andrew. “Doing the last walk-around now. Everyone's startup log goes through me.”
+
+Andrew nodded. Juno didn't only keep Ratchet running. Every mech in the hangar had his fingerprints somewhere inside it.
+
+On the opposite row, BISCUIT carried cream-colored lettering with a little sprig of wheat beneath the hatch. Darius had painted a small round biscuit beside it, complete with a bite missing from one edge. The wheat had faded with the weather; the biscuit still looked surprisingly fresh.
+
+The nickname dated back to a training exercise when Darius had arrived with fresh rolls hidden in his equipment bag. Nico had called him Biscuit for the rest of the day. By the end of the week, even the instructors were using it. Darius complained exactly once and then started answering to it.
+
+Now Darius was securing his lunch parcel inside Biscuit's cockpit.
+
+“You're bringing food?” Mara called across the aisle.
+
+“For everyone,” Darius answered. “There's a difference.”
+
+“Good,” Yelena said. “Then nobody will try eating the medical supplies again.”
+
+“That was one time,” Nico protested.
+
+Yelena turned toward his mech. “You tried to drink electrolyte solution from my kit because the label said orange.”
+
+“It did say orange.”
+
+“It said orange flavor. That wasn't permission.”
+
+Her own mech stood directly beside Darius's. ICYHOT was painted in narrow ice-blue letters across a dark panel, the first half edged with white frost and the second with a muted copper-red line. Beneath it, a tiny blue flower curled toward a painted red flame, both tucked well away from the cockpit's sensors. The name had started as one of Nico's jokes: Yelena could ignore a room full of complaining pilots without looking up, but let one of them get hurt and her temper turned fierce enough to silence the hangar. She hadn't smiled when they painted it. She hadn't made them remove it, either.
+
+A small handwritten note was fixed inside the hatch where the pilot would see it before closing up.
+
+*Drink water. Stay alive.*
+
+Andrew had no doubt she meant both instructions literally.
+
+At the far end of the row, DJ was impossible to miss. Nico had drawn a crooked sound wave beneath the two big letters, with music notes along an armor edge Juno had reluctantly approved. Someone—almost certainly Juno—had stuck a label below it reading MIC STILL ON.
+
+Nico hadn't removed the label. He'd added a smaller one beneath it.
+
+*THAT'S THE POINT.*
+
+“That's military equipment,” Mara said, eyeing the exchange.
+
+“It's morale equipment,” Nico replied.
+
+“It's adhesive tape.”
+
+“Extremely affordable morale equipment.”
+
+Sera glanced at Nico's diagnostic display. “Your standby coolant sensor is still reading low.”
+
+“It's being dramatic,” Nico said.
+
+“It's being checked,” Juno corrected, joining them with a tool in hand. He reseated the connector and waited while Sera compared the reading with her reference data.
+
+“Temperature normal,” Sera reported.
+
+“DJ cleared,” Juno said, ticking the inspection board. “Now keep your art off anything I need to open.”
+
+Nico placed a hand over his chest. “You wound me.”
+
+“Not yet.”
+
+The last mech waited near the far hangar wall.
+
+SHEPHERD had plain white lettering beneath its cockpit and a slightly crooked shepherd's crook painted below the name. Andrew had done the emblem himself after a late watch. Nico had first called him Shepherd when Andrew spent an entire evening searching for squadmates who had all wandered off in different directions. The others had found it funny. Andrew had not, until he noticed everyone using the name without thinking.
+
+There was no attempt to make his mech look like a commander's. Apart from an old scuff along the left outer plate and the usual repairs, Shepherd looked much like any other XR-17.
+
+“Still think you should have painted eight little sheep underneath,” Nico told him.
+
+“I'm not painting sheep on a combat mech,” Andrew replied.
+
+“That sounds like something a shepherd would say.”
+
+“You're welcome to try convincing Juno,” Andrew said.
+
+Juno looked up from the inspection board. “No sheep on my armor panels, mate.”
+
+Andrew walked around Shepherd while the others climbed into their cockpits. He touched the edge of the uneven white crook. The paint had begun to chip, and Akari had offered to straighten it. He'd refused. It was the one marking he'd managed to paint without someone's help.
+
+“Ratchet to Shepherd,” Juno said over the maintenance channel. “Steering response is the last check. Take it through the marked test lane; I'll watch the load readings.”
+
+Andrew climbed aboard, secured the harness and brought the reactor online. Under Juno's direction, he moved Shepherd through a short turn in the service square, then returned to the hangar apron.
+
+“Owl to Ratchet. Response within limits,” Sera confirmed over the maintenance channel.
+
+Juno checked Sera's readout against his own. “Ratchet to Rook element. Eight mechs inspected. Eight cleared to move.”
+
+He held up the signed board before handing it to the duty technician at the hangar desk.
+
+Andrew looked down the two rows. CLOCKWORK. SHUTTER. OWL. RATCHET. BISCUIT. ICYHOT. DJ. SHEPHERD.
+
+Eight different names painted on eight battered copies of the same mech.
+
+Then he closed the canopy and reached for the squad radio.
+
+Andrew checked the harness latch and the canopy seal once more. Everything sat where it should.
+
+Reactor temperature, joint alignment and weapon safeties remained green. Seven additional friendly identification markers appeared around Shepherd as the others brought their mechs onto the squad net.
+
+“Shepherd to Rook element,” Andrew said on the squad net. “Communications and launch check. Respond by callsign.”
+
+“Clockwork to Shepherd. Navigation loaded. Systems green,” Mara reported.
+
+“Shutter to Shepherd. Recon sensors green,” Akari reported.
+
+“Owl to Shepherd. Sensor net synchronized,” Sera reported.
+
+“Ratchet to Shepherd. All eight inspections signed off. Systems green,” Juno reported.
+
+“Biscuit to Shepherd. Weapons secured. Systems green,” Darius reported.
+
+“IcyHot to Shepherd. Medical kit secured. Systems green,” Yelena reported.
+
+“DJ to Shepherd. Primary and fallback channels checked. Systems green,” Nico reported.
+
+Every station used the same short format. Andrew watched the final marker change from amber to green.
+
+Their morning conversations could wander all they liked. On the squad net, a clear answer meant a pilot could act on it.
+
+Eight green markers. Eight pilots. The entire detachment.
+
+“Shepherd to Rook element. All stations green,” Andrew said. “Weapons on safe through inhabited corridors. Clockwork leads navigation. Maintain intervals and report faults immediately. Destination: Neumünster forward depot.”
+
+“Clockwork to Shepherd. Route loaded. Copy,” Mara answered.
+
+Andrew shifted the controls. His XR-17 lifted from its resting posture, all six legs extending together until the cockpit rose above the hangar floor. He felt the weight transfer through the chassis, the faint vibration as the reactor took the load.
+
+From his cockpit Andrew saw Akari put her camera away in its padded compartment. She had found time for a single photograph of the parked column before boarding; he hadn't even noticed her taking it.
+
+“Clockwork to Shutter. Confirm harness and canopy secured,” Mara asked.
+
+“Shutter to Clockwork. Both secured. Ready,” Akari answered.
+
+Juno brought Ratchet to the end of the column. His signed inspection board was already with the duty technician.
+
+Andrew called the depot gate on the traffic frequency. “Shepherd to Gate Control. Eight XR-17s ready to depart on the cleared northern route. Request movement.”
+
+“Gate Control to Shepherd. Route clear. Proceed through the gate in sequence,” came the reply.
+
+The gate slid aside.
+
+“Shepherd to Rook element. Move out,” Andrew ordered.
+
+The eight mechs walked through under their own power, turned north and accelerated when the last civilian building was behind them.
+
+At first the mechs moved with the careful precision required by the roads near Celle. Their clawed feet landed on the paved shoulders beside the military lane, each step measured to avoid broken drainage covers and civilian cables. The six-legged gait was almost gentle at this speed. The pilots could have been escorting a parade.
+
+The houses fell behind them.
+
+Beyond the last checkpoint, the land opened into broad fields, low industrial buildings and service roads marked for military traffic. Mara took them onto a hardened strip running along the edge of an abandoned freight route.
+
+“Clockwork to Rook element. Open ground in two hundred meters. Accelerate in formation. Maintain intervals,” Mara said.
+
+The speed indicator climbed.
+
+Andrew felt the XR-17 lengthen its stride. Its front legs reached forward, found ground and released almost before he registered the contact. The middle pair carried the weight through the turn of the gait; the rear pair drove the body onward. At speed, the movement became fluid enough that the cockpit scarcely pitched.
+
+Forty miles an hour. Sixty. Eighty.
+
+Juno let out a brief laugh on the internal channel.
+
+“That's more like it,” Juno said.
+
+“Owl to Ratchet,” Sera reminded Juno over the internal channel. “Keep an eye on your temperature.”
+
+“Ratchet to Owl. Readings normal,” Juno answered. “No problems.”
+
+Andrew watched the speed touch ninety-seven miles an hour, then settle. Their XR-17s could sustain a hundred on good open ground, but the formation held a margin for turning and stopping. On the shared display, Juno's inspection status remained green across all eight mechs.
+
+The fields passed in long, green-brown strips. A flock of birds lifted from a ditch, and Akari's mech shifted sideways to avoid the uneven ground. She did it without losing her place in line.
+
+“Ratchet to Shutter. Nice adjustment,” Juno said as Akari's mech cleared the ditch.
+
+“You may compliment me again after the mission,” Akari replied.
+
+“The gait system deserves most of it,” Juno teased.
+
+“That's a very rude compliment,” Akari said.
+
+“Take it up with the engineers,” Juno replied.
+
+They slowed before the first occupied village. A faded school sign stood beside a row of houses with patched windows. On the square, traders had arranged jars, vegetables and homemade soap beneath an awning. A line of people waited outside a ration office. The eight XR-17s passed at a crawl.
+
+A boy in a yellow coat waved both arms.
+
+Akari raised one of her mech's front legs for a brief wave.
+
+“Clockwork to Shutter. Keep your feet on the marked lane,” Mara ordered.
+
+“Shutter to Clockwork. Copy. Returning to lane,” Akari replied.
+
+The boy laughed and kept waving as Akari lowered the leg. Andrew noticed his mother pull him farther from the road, her eyes on the mechs rather than the market stalls.
+
+Andrew saw a woman take the child's hand and pull him farther from the road. She didn't look angry. She just looked as if she'd already spent the morning being worried about other things.
+
+At the next checkpoint, a column of civilian vehicles was waiting under a temporary roof of camouflage netting. Some had luggage tied to their roofs. Others carried mattresses, bicycles or plants in plastic buckets.
+
+An elderly man sat on the edge of a truck bed, holding a cage covered with a towel. Whatever lived inside shifted when the XR-17s passed.
+
+The checkpoint officer appeared on Andrew's forward display, helmet camera catching a tired face and a sleepless pair of eyes.
+
+The checkpoint officer studied Andrew's identification on the video feed. “Walker detachment? Confirm eight XR-17s.”
+
+“Shepherd to Checkpoint Control. Acting commander Walker, eight XR-17s northbound to Neumünster sector. Request route clearance,” Andrew replied.
+
+“Checkpoint Control to Shepherd. Clearance granted. Keep west at the next junction. Engineers still working the eastern span,” the officer replied.
+
+“Copy. Any change to the northern threat report?” Andrew asked.
+
+“Artillery contact farther north. No confirmed breach on your corridor. Monitor the route net,” the checkpoint officer replied.
+
+Andrew glanced toward the civilian column waiting behind the barriers. “And the people at your gate?”
+
+The officer followed his gaze. “Heading south when the transport queue allows. Still have a few coming north for duty.”
+
+Andrew acknowledged the report. Families might be evacuating, but the people keeping the hospitals and roads operating still had to travel toward the front.
+
+The officer waved them through, and the barrier rose.
+
+When the squad was clear, Mara switched them back to the military corridor. They accelerated again, though not as fast as before. A maintenance convoy occupied one lane, and beyond it crews were reinforcing a line of concrete barriers. Their bulldozer had lost a track and stood crooked beside the road.
+
+Darius broke the quiet on the channel.
+
+“Those people have been waiting since before dawn,” Darius said over the quieter internal channel.
+
+“Probably longer,” Yelena replied.
+
+Darius glanced at the man holding the covered cage. “I wonder what he's carrying.”
+
+“A cat?” Nico suggested.
+
+“Could be a chicken,” Juno said.
+
+“Either one would be nervous around us,” Akari replied.
+
+“A chicken would be a patient if it needed me,” Yelena said dryly.
+
+Darius chuckled. Andrew listened while the others turned a bleak little checkpoint scene into an ordinary argument over an unseen animal. It helped more than he liked to admit.
+
+North of Hamburg, the clouds lowered and the landscape changed. Defensive markers appeared beside the road, then concrete firing positions, then embankments built from earth and broken stone. The population was thinner here, though no less busy. Mechanics worked beneath vehicles. Uniformed volunteers carried cable drums. A group of children helped stack empty crates outside a clinic while a tired teacher tried to keep them away from the road.
+
+On a rise to the east, Andrew could see an artillery battery adjusting its barrels.
+
+The radio carried a request for replacement ammunition, followed by a reply too faint to make out.
+
+“That's not our sector,” Mara said.
+
+“I know,” Andrew replied.
+
+A few moments later the ground gave a distant, hollow thud. The artillery line had fired.
+
+Nico reduced the volume of the general traffic channel. “They've been busy.”
+
+“Shepherd to DJ. Keep the depot channel open,” Andrew ordered.
+
+“DJ to Shepherd. Copy,” Nico replied.
+
+Andrew checked the time. They'd covered most of the distance in a little over two hours, with the delays and slower sections accounting for as much of the journey as the open ground. Mara's estimate had been good.
+
+The forward depot came into view shortly after eight.
+
+It occupied the grounds of a former distribution center, surrounded by hurriedly built walls and an assortment of buildings that had not been designed to withstand a battle. One warehouse had lost half its roof. Workers had enclosed the loading docks with sandbags. A row of civilian vans waited behind concrete barriers.
+
+There were fewer mechs here than Andrew expected.
+
+The depot sentry cleared the gate for their eight XR-17s, then directed them to a hardened inspection pad. Andrew brought his mech down into a low waiting posture while the other seven took positions around the square.
+
+“Don't block the medical entrance,” Mara said.
+
+“Wasn't going to,” Nico replied.
+
+“You're standing across it,” Mara said.
+
+“Ah,” Nico replied.
+
+Nico shuffled his mech three meters to the side.
+
+Andrew opened his canopy. Cool air washed across his face, carrying the smell of damp concrete and engine exhaust. He climbed down from the mech and approached the orange-jacketed woman waiting at the edge of the pad.
+
+“Acting commander Walker?” the woman asked.
+
+“Andrew Walker,” he said. “Rook detachment. This is Mara Venn, my deputy. Reporting with eight mission-ready XR-17s.”
+
+“Leonie Krüger, communications maintenance lead.” She shook his hand. “Good. You're ahead of the movement window.”
+
+“We've come to get your repair team through,” Andrew replied.
+
+“Good,” Leonie said. “I don't think this station has another afternoon to spare.”
+
+Behind her, two small utility vans stood packed with replacement cable, tools and portable batteries. A young technician was checking a coil of wire, while an older driver studied a greasy map.
+
+Leonie followed Andrew's glance toward the vans. “Mika's our junior technician. Oskar's driving the second van and handles our power gear. Three of us, two vans. We weren't going to risk more people than we needed.”
+
+“What failed at the station?” Andrew asked.
+
+“The primary data line has been dropping out for two days,” Leonie said. “Last night the backup power feed started failing too. We suspect stormwater got into the coupling housing.”
+
+“You haven't confirmed the fault?” Mara asked.
+
+“Not until we open the cabinet,” Leonie replied. “The parts are in the van. The problem is getting there.”
+
+Mara nodded once. “Understood.”
+
+Sergeant Brandt met them at the depot office, acknowledged Andrew's salute and led them to the operations map. The sergeant wore a stained field jacket over his uniform and looked as if he'd come directly from the overnight watch.
+
+“Relay's here,” Brandt said, tapping a mark northeast of the depot. “The eastern bridge is underwater. Engineers closed it last night. West route goes through the old workshop ground and cuts back toward the relay after the drainage culvert.”
+
+Mara leaned over the map before Andrew had finished studying it. She drew a circle around the workshop yard. “We can hold the vans here if the culvert isn't clear. There's room to turn them around.”
+
+Brandt looked toward Andrew rather than the pencil in Mara's hand.
+
+“That's our proposed fallback,” Andrew confirmed. “Mara planned the route. I'll give the move order once reconnaissance checks the far side.”
+
+Brandt nodded at her markings. “Good choice. We used that yard for recovery traffic before the floods.”
+
+“What about West Watch?” Mara asked.
+
+“Two observation posts,” Brandt said. “The northern one evacuated before dawn to support the batteries. The southern post still has eyes on the western field and the workshop approach, but its radio is unreliable without the relay.”
+
+“Can they confirm the far end of the culvert?” Andrew asked.
+
+“Negative,” Brandt said. “They can see the western field and our side of the service road. The culvert exit itself is blind.”
+
+Mara studied the marked positions. “Then the blind section stays closed until Shutter gets eyes on it,” she said, marking the obstruction on their shared map.
+
+“Agreed,” Andrew replied. He had no intention of sending two civilian vans into a place nobody could see.
+
+“Correct,” Brandt said. “We requested more coverage, but the north has already taken our spare crew.”
+
+Andrew acknowledged the limitation. A half-reliable observer was useful, but not a substitute for the squad's own eyes.
+
+He didn't offer a dramatic explanation. He simply moved his finger north.
+
+“Two sectors have been asking for reinforcements since midnight,” Brandt said. “We're still holding here. My job is to get the technicians through. Yours is to keep the road open long enough to do it.”
+
+Leonie leaned over the map. “And my job is to fix the relay before another convoy spends a night parked in the open.”
+
+“Exactly,” Andrew said.
+
+Andrew asked Brandt for the latest patrol times. Mara compared them with the flood report. Nico programmed a short-range fallback frequency and coded light signals in case the sector network failed. Sera checked the incoming observation feeds. Juno walked the line of eight XR-17s again, looking for loosened fittings or high-speed travel damage while Sera compared his findings with each mech's logged temperatures and actuator loads.
+
+Yelena opened Leonie's medical case.
+
+“You have dressings,” Yelena said.
+
+“Yes,” Leonie answered.
+
+“Tourniquets?” Yelena asked.
+
+Leonie pointed to a side pocket.
+
+“Good,” Yelena said. “Keep them where you can reach them.”
+
+Mika, the young technician, watched her repack the case.
+
+“Will we need those?” he asked.
+
+“Hopefully not,” Yelena said.
+
+He didn't look reassured.
+
+She closed the case and handed it back. “That's why we're bringing them.”
+
+Andrew returned to the map. The western route was marked in pencil, with the old workshop yard circled in blue.
+
+“Here's the hardstand,” Mara said. “If anything goes wrong, the vans stop here. The culvert's three hundred meters of poor sightline. We keep the mechs on both sides of the road as far as the ground allows.”
+
+“Can your mechs really outrun our vans by that much?” Leonie asked.
+
+“By a bit,” Juno said from the doorway.
+
+Sera glanced at him. “Don't undersell it.”
+
+Leonie looked between them, waiting for a useful answer.
+
+“A hundred miles an hour on good ground,” Andrew said. “But we'll match your pace through the danger area.”
+
+“Good,” Leonie said. “I've had enough surprises already.”
+
+Andrew smiled. “We'll keep you together.”
+
+Brandt's desk radio crackled. A voice from a northern battery requested confirmation of a firing lane. Brandt answered in clipped German, then switched the set off again.
+
+“Stay on your assigned route,” he told Andrew. “I can't spare another unit if you go looking for a bigger fight.”
+
+“We aren't looking for one,” Andrew assured Brandt.
+
+Brandt glanced at the eight mechs outside. “Glad to hear it.”
+
+Andrew signed the escort sheet, passed the final route confirmation to Mara and climbed back into his XR-17.
+
+“Shepherd to Rook element. Confirm ready for escort,” Andrew called over the squad net.
+
+Clockwork, Shutter, Owl, Ratchet, Biscuit, IcyHot and DJ acknowledged Shepherd in turn. Nico confirmed that the technicians were on the convoy channel.
+
+The two vans started their engines. Their brake lights glowed against the wet loading docks.
+
+“Shepherd to Rook element. Escort formation. Moving to the relay,” Andrew ordered.
+
+The two utility vans looked very small between eight XR-17s.
+
+Andrew had seen columns like this before. A few ordinary vehicles carrying something essential, surrounded by mechs worth more than the roads beneath them. The people doing the essential work were rarely the ones with armor.
+
+“Is this your normal escort speed?” Leonie asked over the civilian channel.
+
+“Only when we're trying to impress the passengers,” Nico replied.
+
+“Then you've succeeded,” Leonie said.
+
+Nico let out a quiet laugh. “A rare review I can put in writing.”
+
+They were moving at barely thirty kilometers an hour. Andrew's mech placed its six feet carefully along the service road, its reactor barely working compared with the drive north.
+
+Andrew and Mara led. Darius and Juno kept to either side of the vans. Sera monitored the eastern drainage channel, Akari screened the western fields, Nico handled communications, and Yelena covered the road behind them.
+
+The road narrowed between fields heavy with rainwater. Ahead, the old eastern crossing had vanished beneath brown floodwater. Only the tops of two markers and the broken edge of the bridge were visible.
+
+Mara indicated the submerged road on their shared display.
+
+Mara highlighted the submerged road on the shared map. “That's why we took the longer route.”
+
+“Agreed,” Andrew said. “I prefer not to test a bridge we can't see.”
+
+“That's the first sensible thing you've said about the crossing,” Mara teased.
+
+Andrew glanced at her marker. “I'll put your endorsement in the report.”
+
+“Please do,” Mara replied.
+
+The convoy turned west onto her service road.
+
+It passed an abandoned workshop complex built around a broad paved yard. Most of the windows had been boarded over. A sign marked VEHICLE MAINTENANCE leaned against a fence. Someone had drawn a line through the word VEHICLE.
+
+“Juno would like this place,” Nico said.
+
+“Wouldn't mind a look,” Juno admitted.
+
+“After the mission,” Andrew told him.
+
+“That's exactly what I was going to say,” Juno replied.
+
+Sera studied his diagnostic feed. “You were going to ask permission to salvage the sign.”
+
+Beyond the workshop yard, the service road curved toward the culvert. The drainage bank blocked the view beyond it for nearly three hundred meters. On Andrew's display, the far side remained an empty strip marked UNOBSERVED.
+
+“Shepherd to Shutter. Report ahead,” Andrew ordered.
+
+“Shutter to Shepherd. Fresh soil on the east bank,” Akari reported. “Something climbed out recently. No visual contact yet.”
+
+Sera scanned the drainage channel. “Owl to Shepherd. Cold returns under the road. Embankment blocks my angle. Can't identify them.”
+
+“Shepherd to DJ. Contact West Watch One,” Andrew ordered.
+
+Nico switched to the fallback channel. “DJ to West Watch One. Approaching Culvert Three. Request visual on the northern exit.”
+
+Static answered him.
+
+He tried again.
+
+“...watch one...” a distant voice answered. “...east bank... movement...”
+
+The transmission dissolved into static.
+
+“DJ to West Watch One. Repeat last transmission,” Nico called.
+
+Nothing answered.
+
+Mara marked the workshop yard on their shared display. “Clockwork to Shepherd. Hardstand for the vans. Two mechs forward, two covering withdrawal. Nobody enters the blind stretch until Shutter confirms it.”
+
+Andrew glanced at the formation markers. Mara had positioned them already, but the assignments made sense. She'd anticipated what he was about to ask for.
+
+“Shepherd to Clockwork. Approved,” Andrew said. He switched to the civilian channel. “Shepherd to Leonie. Pull both vans onto the hardstand. Hold until further orders.”
+
+“Leonie to Shepherd. Understood,” Leonie replied.
+
+The first van turned through the workshop gate.
+
+Akari climbed the small rise west of the road. Her mech remained low, turret facing the drainage embankment.
+
+“Shutter to Shepherd. Movement, eastern ditch,” Akari reported. Her normally bright voice was controlled.
+
+“Count?” Andrew asked.
+
+“Too many to identify in one pass,” Akari answered.
+
+A figure rose behind the concrete edge of the culvert.
+
+At first Andrew saw a young man struggling up from the drainage channel. His short hair lay flat against his forehead. The skin of his face was pale but almost uninjured, and his eyes searched the road with the helpless confusion of someone who had woken in the wrong place.
+
+He opened his mouth. His lips shaped a word Andrew couldn't hear through the cockpit glass.
+
+Then the man hauled himself onto the bank. His shirt had split across the chest, revealing metal beneath the skin. Dark struts rose beside his sternum and vanished into raw tissue at the shoulders. Something moved under his throat as though a cable were pulling the tendons there. His expression stayed frightened even after his limbs drove him forward with brutal, purposeful speed.
+
+Another head appeared beside it.
+
+Then a third.
+
+“Shutter to Shepherd. Huskframes. Fifteen visible, more behind,” Akari reported.
+
+“Shepherd to Leonie. Stop on the hardstand. Engines off. Remain inside the vans until IcyHot gives the all-clear,” Andrew ordered.
+
+The first Huskframe stumbled off the bank. For two steps it moved like a wounded person, dragging its boots through the mud. Then its posture snapped upright and it ran toward the workshops as fast as its rigid legs would carry it.
+
+Andrew fired a short rotary-cannon burst into its chest. The body buckled backward, the face retaining its bewildered expression as it fell into the ditch.
+
+Andrew's rotary cannon fired a short burst. The rounds struck the creature in the chest and knocked it backward into the ditch.
+
+More Reclaimed came over the bank.
+
+Andrew's optics magnified the figures coming over the bank. Their heads looked stolen from an evacuation line: a woman with damp hair stuck to her cheek, an elderly man whose lips were moving, a boyish face above a throat packed with machinery. None of the heads had been crushed or disguised. The Reclaimed wanted defenders to see exactly who had been taken.
+
+One figure lifted its hand toward the mechs as if pleading for help. Behind its wrist the flesh drew taut over a narrow steel brace. Its mouth kept working even as the body accelerated into the gunfire.
+
+“Shepherd to Rook element. Clockwork, cover the west approach. Owl, suppress the ditch. Ratchet and Biscuit, guard the vans. Shutter, continue reconnaissance. IcyHot, secure the rear. DJ, keep working West Watch,” Andrew ordered.
+
+“Clockwork to Shepherd. Copy,” Mara said. She moved her mech to cover the workshop lane while Sera opened fire across the eastern bank.
+
+Sera's rotary cannon opened up. Several Huskframes fell, but those behind them stepped into the gaps without pausing.
+
+The sound of impacts beneath the road made Andrew check his footing.
+
+A chunk of concrete lifted beside the culvert.
+
+“Owl to Shepherd. Movement beneath the road,” Sera warned.
+
+A low shape unfolded from the broken drainage pipe. Its back was a cage of rusted braces threaded with swollen, pale tissue; beneath it hung a man's head, nearly untouched. Water ran through the hair and over his blinking eyes. The creature dragged itself forward on four bent limbs, scraping its knuckles against concrete until the joints stiffened and it accelerated.
+
+“DJ to Shepherd. Crawler at your front joint!” Nico called.
+
+It lunged at Andrew's front joint. He lifted the leg, moved sideways and fired downward, driving the Crawler into the open trench.
+
+Another emerged behind it.
+
+Then another.
+
+The repair vans sat less than a hundred meters behind the squad's forward positions.
+
+Darius turned his XR-17 sideways across the workshop entrance. Its six legs braced along the road edge, armored body protecting the vehicles while its turret tracked the drainage gap.
+
+“DJ to Biscuit. Crawlers pushing through the workshop gate,” Nico warned.
+
+“Biscuit to DJ. Visual contact,” Darius answered, angling his mech across the opening.
+
+A Crawler slipped beneath a broken fence panel and caught the second van's axle. Oskar shouted through the civilian channel.
+
+“Something's under the van! It's pulling at the wheel!” Oskar shouted.
+
+“IcyHot to Oskar. Brakes on. Do not accelerate,” Yelena ordered. Then she switched channels. “IcyHot to Biscuit. Keep the road covered. I'll draw it away.”
+
+Yelena moved her XR-17 into the empty lane beside the drainage trench and struck the concrete grate with a heavy foot. The impact rang through the pavement. The Crawler abandoned the axle and whipped its human face toward the noise, dragging its steel limbs free of the undercarriage.
+
+“IcyHot to Shepherd. Crawler is following me,” Yelena reported.
+
+She backed into the clear firing lane. The Crawler sprang toward her nearest joint. Only once the van was safely behind her line of fire did she open up with the rotary cannon, dropping the creature into the trench.
+
+“Crawler neutralized. Oskar, hold position,” Yelena said.
+
+“Understood,” Oskar answered, still breathing hard.
+
+At the northern workshop wall, something tall dropped from the broken roofline. Its feet hit the concrete almost silently, long knees compressing beneath a narrow torso whose skin had split around rows of black actuators. A man's face looked out from above the ruin of a collar, his brow still drawn into an ordinary worried frown.
+
+The creature remained absolutely still for one terrible moment. Then it crossed the open ground in a series of violent, almost effortless strides.
+
+“Shutter to Shepherd. Stalker at the north workshops!” Akari called.
+
+Juno turned toward it. His rotary cannon barked, but the creature changed direction between bursts and darted behind a workshop building.
+
+“Fast contact,” Juno reported, tracking the figure around the building.
+
+“Shepherd to Ratchet. Keep it off the vans,” Andrew ordered.
+
+“Ratchet to Shepherd. Copy,” Juno replied.
+
+The Stalker shot out beside Juno's mech. He pivoted sharply, planting his legs on the hardstand while the creature's claws rasped across his outer armor. His rotary cannon caught it in the torso before it could grab a joint.
+
+The Stalker struck the wall and crawled another meter with one arm before stopping.
+
+“Ratchet to Shepherd. First Stalker down. Side armor scored. Systems normal,” Juno reported.
+
+“Owl to Ratchet. Second Stalker moving toward IcyHot,” Sera warned.
+
+“Which route?” Juno asked.
+
+“Owl to Ratchet. Behind the workshop. Shutter intercepting,” Sera replied.
+
+Akari was already moving.
+
+Her mech swept around the workshop yard, six legs placing themselves in rapid succession over the broken ground. The second Stalker dropped from an embankment, aiming for the rear of Yelena's XR-17.
+
+Akari fired as it landed.
+
+The first burst struck the wall. The Stalker folded its limbs and tried to slip beneath the line of fire. Akari corrected and hit it before it could reach the road.
+
+“Shutter to Shepherd. Second Stalker down. IcyHot's rear clear,” Akari reported.
+
+“IcyHot to Shutter. Copy. Thank you,” Yelena answered.
+
+“You owe me one later,” Akari said, unable to resist.
+
+“Survive the next five minutes first,” Yelena replied.
+
+Akari's next answer was a crisp acknowledgment.
+
+For a moment, Andrew thought they had contained the attack.
+
+The Huskframes at the culvert were thinning. Sera had the eastern bank covered, Mara held the west approach, and Darius remained between the technicians and anything that could reach them.
+
+Then the remaining Huskframes changed direction.
+
+They withdrew from the road, spreading to either side of the northern exit.
+
+Something struck the culvert wall from beyond the embankment.
+
+The concrete cracked.
+
+A second impact tore away a slab the size of a small car.
+
+“Clockwork to Shepherd. Heavy contact, north exit,” Mara reported.
+
+The Brute shoved through the shattered culvert wall.
+
+It was taller than the workshop gate, with heavy limbs wrapped in overlapping plates of iron and bone. Gray-pink tissue bulged around the joints like muscle forced to grow inside industrial supports. Thick cables entered the flesh at its shoulders and disappeared beneath its ribbed chest; every step pulled against them with a sound like wet leather stretched over gears.
+
+A man's head was fixed above that terrible body. His dark hair was neatly parted despite the mud on his cheeks. Nothing had replaced his eyes or teeth. His mouth moved with the hesitant shape of a man asking a question, while the immense arms tore chunks from the road.
+
+“Owl to Shepherd. Brute confirmed. Frontal armor reinforced,” Sera reported.
+
+Andrew's threat display changed color.
+
+The creature did not turn toward the nearest mech.
+
+It turned toward the workshop yard.
+
+Toward the vans.
+
+“Shepherd to Ratchet. Cannon solution?” Andrew asked.
+
+“Ratchet to Shepherd. Need a clear side angle,” Juno replied. “Civilian vans are inside my firing line. No shot.”
+
+“Shepherd to Ratchet. Hold your main cannon,” Andrew ordered. “Shepherd to Biscuit. Maintain cover on the vans.”
+
+“Biscuit to Shepherd. Copy,” Darius answered.
+
+The Brute began moving down the road.
+
+Each step sent water out from the drainage ditch. It was slower than the XR-17s, but it had enough mass to tear apart the workshop buildings if it reached them.
+
+Mara brought up the field west of the road.
+
+Mara highlighted the western field on Andrew's map. “Clockwork to Shepherd. Firm ground beyond the workshops. We can pull it there, outside the cannon line to the vans.”
+
+Andrew checked the distance, then the enemy tracks. The smaller Reclaimed were withdrawing toward the northern drainage route. Following them might expose the breach and prevent another attack, but the Brute was still moving toward the civilians.
+
+The vans sat close behind Darius's armor. Leonie's crew had no way to escape the heavy creature if it reached them.
+
+“Shepherd to Clockwork. Cover the road,” Andrew ordered. “I'll draw the Brute into your marked field.”
+
+“Clockwork to Shepherd. Copy. Stop before the next rise. We lose visual beyond it,” Mara replied.
+
+“Shepherd to Clockwork. Copy,” Andrew answered.
+
+Andrew pushed his XR-17 across the workshop lane and into the open field.
+
+Andrew's mech accelerated across the firm ground, its body low as six legs drove it north. He turned the turret without slowing and fired the rotary cannon into the Brute's armored shoulder.
+
+The rounds struck but failed to slow it.
+
+The man's head turned toward Andrew, the frightened eyes keeping pace with his cockpit even while the Brute's body seemed interested only in the gunfire.
+
+Andrew fired a second burst.
+
+The Brute changed course toward him.
+
+“Owl to Shepherd. Brute is tracking you,” Sera reported.
+
+“Shepherd to Owl. Copy. Hold the convoy perimeter,” Andrew answered.
+
+The creature charged into the field, digging deep tracks in the wet ground. Andrew shifted sideways and let it pass, then fired into its upper torso from behind.
+
+It turned with startling balance. A heavy arm swept toward his canopy.
+
+Andrew dropped his mech low and lunged beneath the swing. The limb passed overhead but clipped an outer plate, jolting him against the harness.
+
+His alarms sounded.
+
+“IcyHot to Shepherd. Damage report,” Yelena requested.
+
+“Shepherd to IcyHot. Still mobile. Left outer armor hit. No joint warnings,” Andrew replied.
+
+“IcyHot to Shepherd. Copy. Keep its arms out of reach,” Yelena said.
+
+“Understood,” Andrew answered.
+
+The Brute faced him again.
+
+Along the road, Mara held the left approach while Sera and Darius kept the last Huskframes away from the vans. Nico switched his XR-17's local transmitter to the fallback frequency and established a direct short-range link with West Watch One, the surviving post overlooking the western field.
+
+“DJ to Shepherd. West Watch One confirms no civilians in the western field,” Nico reported. “They cannot see beyond the northern rise. Our own recon feed confirms this side is clear.”
+
+Juno advanced to the field entrance, turret following the creature.
+
+“Ratchet to Shepherd. Cannon corridor open. Need the target twenty meters farther west,” Juno reported.
+
+Andrew assessed the Brute's heading. Farther north would break visual contact with Mara, so he kept the maneuver inside the marked field.
+
+“Shepherd to Clockwork. Confirm maneuvering margin,” Andrew called.
+
+“Clockwork to Shepherd. Fifteen meters farther west, then turn its chest toward you,” Mara answered.
+
+Andrew followed the route she'd drawn across his display.
+
+The Brute came again. He waited until it committed to the charge, then drove sideways. His XR-17 covered the distance in a single smooth burst. The six legs kept the low body level through the turn.
+
+The creature missed.
+
+“Shepherd to Ratchet. Target exposed. Take the shot,” Andrew ordered.
+
+“Ratchet to Shepherd. Charging,” Juno answered.
+
+The orange channel along Juno's cannon brightened through the rain.
+
+“Ratchet to Shepherd. Firing,” Juno called.
+
+The discharge struck beneath the Brute's shoulder. The force drove its massive torso sideways, buckling armor and exposing a cavity of cables and pale tissue.
+
+The creature dropped to one knee.
+
+It began to rise.
+
+“Owl to Shepherd. Target still mobile,” Sera reported.
+
+“Ratchet to Shepherd. Cannon cooling. Cannot fire again yet,” Juno answered.
+
+Andrew rotated his turret toward the opening Juno had made.
+
+The intact head remained visible above the cavity in the Brute's torso. The man's lips moved; Andrew's magnified feed showed the tip of his tongue against his teeth, as if he were trying to pronounce a name.
+
+Andrew checked the terrain behind the Brute. The field was empty, with no civilians or friendly mechs beyond the target.
+
+“Shepherd to Rook element. Preparing western cannon shot. All stations, confirm clear by callsign,” Andrew ordered.
+
+Clockwork, Shutter, Owl, Ratchet, Biscuit, IcyHot and DJ each acknowledged Shepherd and confirmed clear. Every friendly marker sat outside the firing corridor.
+
+Andrew fired.
+
+The energy discharge drove into the Brute's exposed structure. Its arms locked in place, then fell loose. The torso collapsed, the enormous body hitting the ground hard enough to shake the workshop windows.
+
+Andrew kept his turret on it.
+
+The head was still visible above the twisted armor. For a moment it faced the sky, eyes open.
+
+Then the wreckage settled over it.
+
+“Shepherd to Rook element. Brute neutralized,” Andrew reported.
+
+“Clockwork to Shepherd. Two Huskframes still at the road. Hold position,” Mara answered.
+
+Darius fired a controlled burst from the workshop gate.
+
+“Biscuit to Shepherd. Final contacts down,” Darius reported.
+
+Andrew watched the Brute's body for movement. There was none.
+
+“Shepherd to Rook element. Status check. Report by callsign,” Andrew ordered.
+
+“Clockwork to Shepherd. Operational,” Mara answered.
+
+“Shutter to Shepherd. Operational,” Akari reported.
+
+“Owl to Shepherd. Right sensor array fouled. Otherwise operational,” Sera answered.
+
+“Ratchet to Shepherd. Operational. Cannon cooling,” Juno reported.
+
+“Biscuit to Shepherd. Operational. Both vans protected,” Darius confirmed.
+
+“IcyHot to Shepherd. Operational. Checking the civilians,” Yelena reported.
+
+“DJ to Shepherd. Operational. Fallback channel holding,” Nico reported.
+
+“Shepherd to Rook element. Commander operational. All eight accounted for,” Andrew said, making the last entry in the log.
+
+Eight pilots, accounted for.
+
+Leonie shouted from the workshop yard.
+
+“Medic! Mika's hurt!” Leonie called.
+
+Yelena was already out of her cockpit when Andrew arrived.
+
+The second van's passenger door stood open. Mika sat on the pavement with blood darkening one sleeve. A piece of glass had cut his forearm when the Crawler struck the van.
+
+Mika was trying to stand, using his uninjured arm to push off the pavement. “It's just a scratch,” he insisted.
+
+“Sit down,” Yelena snapped. Mika froze. She'd been so calm during the fight that the sudden sharpness of her voice startled even Andrew. “You have blood running down your hand, and you're worried about getting back to work?”
+
+Mika sat again. Yelena knelt beside him, her movements instantly gentle as she eased the fabric away from his arm. “Let me look,” she said, much more quietly. She cleaned the wound, checked his fingers and wrapped the arm while Leonie held his shoulder.
+
+“You've treated injuries like this before?” Mika asked Yelena.
+
+Yelena did not look up from the dressing. “Yes.”
+
+Mika glanced at the blood on his sleeve. “How many?”
+
+“Enough to know you'll do better if you hold still,” Yelena replied.
+
+Mika held still.
+
+Juno had his inspection tablet out again. Andrew found him moving from one XR-17 to the next, checking scuffed armor, actuator temperatures and the warnings recorded during the fight.
+
+“Give me the short version,” Andrew said.
+
+“Your outer armor's fractured. Ratchet took a hit to the side plate. Owl's sensor housing needs cleaning,” Juno reported. “The others are mobile, but I'm checking every joint before we march.”
+
+“Any reason to hold the convoy?” Andrew asked.
+
+“Not yet. I'll finish the inspections while the technicians pack. I don't sign off faults I haven't looked at,” Juno said.
+
+Andrew nodded. He left Juno to his work instead of adding another question.
+
+Juno stood and looked toward the fallen Brute.
+
+For a moment he said nothing.
+
+“Those faces never get easier,” Juno said at last.
+
+Andrew followed his gaze.
+
+A Huskframe lay beside the road, its cheek pressed into the mud. The face belonged to an ordinary-looking woman with a small scar over her eyebrow. Under the torn collar, her spine disappeared into metal supports. Her mouth had stopped moving. Andrew wished he hadn't seen it move earlier.
+
+“No,” Andrew said quietly. “They don't.”
+
+Darius approached carrying a water bottle and the parcel of food he'd saved from breakfast.
+
+“Anybody hungry?” Darius asked, offering the water and the last food parcel.
+
+Leonie stared at him. “After that?”
+
+“Especially after that,” Darius replied.
+
+Nico appeared beside Darius, taking a bottle of his own. “He thinks feeding people fixes everything.”
+
+“Not everything,” Darius said. “But it helps.”
+
+Mika laughed before he could stop himself, then winced as Yelena secured his bandage.
+
+“There,” Yelena said. “You may laugh, but you're not lifting anything heavy with that arm.”
+
+“That's almost all I do,” Mika replied.
+
+“Then supervise the others,” Yelena said.
+
+Leonie accepted the roll from Darius. “He'll enjoy supervising us. He already tries.”
+
+Andrew checked the road. Broken concrete partly blocked the culvert, but there was enough space for the vans to move through one at a time.
+
+“Shepherd to Rook element. Shutter and Owl, sweep both approaches. DJ, check relay on local radio. Clockwork, confirm the culvert is passable. No movement until we're clear,” Andrew ordered.
+
+The squad reported its sectors secure. Mara confirmed the vans could pass the damaged culvert one at a time while the mechs covered each side.
+
+The vans pulled out of the hardstand.
+
+The last stretch to the relay took less than ten minutes.
+
+The station stood on a low ridge behind a bent fence, with two squat aerial towers and a concrete equipment building between them. The exterior looked as if it had survived several storms and at least one careless artillery crew.
+
+Nico studied it through his cockpit display.
+
+“After all that, the relay's just a concrete box?” Nico said.
+
+Leonie heard him on the local channel. “If you wanted a beautiful building, you should've joined the museum service.”
+
+Juno laughed.
+
+Inside the equipment building, the air smelled of damp insulation and hot plastic. Several warning lights flashed on a cabinet beside the primary transmitter.
+
+Leonie opened the housing and stared.
+
+“Well,” Leonie said when she opened the coupling cabinet.
+
+Andrew glanced at the corroded housing. “Good news or bad?”
+
+“Both. Water got into the lower coupling box,” Leonie answered.
+
+Brown stains marked the cabinet floor. A cracked connector sat beneath a layer of corrosion, and the backup power line ran through the same compartment.
+
+“Stormwater damaged the primary coupling,” Leonie explained. “The backup's been carrying a full load through an unreliable connection.”
+
+“Do you have the part?” Andrew asked.
+
+“Of course. It was in the van. The part was the easy bit,” Leonie replied.
+
+She turned to Mika. “Dry housing, insulated connectors, portable test set. Carefully. And let Oskar carry the battery.”
+
+Mika gave Yelena a wary glance before obeying.
+
+Andrew left the technicians to their work and returned to his mech.
+
+The squad spread around the station, covering the northern approach, the culvert road and the fields beyond the ridge. Their main cannons cooled while the smaller weapons remained ready. In the distance, artillery continued to fire.
+
+Andrew watched the route on his screen.
+
+One section of the communications network had failed, and civilian movement across several checkpoints had stopped with it. It wasn't the greatest threat facing Germany. It might not even make the evening briefing.
+
+But it mattered to the people waiting for someone to tell them they could go home.
+
+“Andrew,” Mara said on their private channel.
+
+“Go ahead, Mara,” Andrew replied on the private channel.
+
+“Left outer plate has a shallow fracture,” Mara said. “Juno's logged it for repair.”
+
+“Good. We'll handle it at the depot,” Andrew answered.
+
+“You should have reported the impact immediately.”
+
+“I reported my armor damage during the fight.”
+
+“You reported that you were mobile. Not what had hit you,” Mara replied.
+
+Andrew checked the cockpit's damage history. His report hadn't been wrong, but it had been incomplete.
+
+“The joint telemetry stayed green,” he said. “I was still in control.”
+
+“I know. I saw it.” Mara's reply came without hesitation. “You make the rest of us give complete damage reports. You don't get a different standard because you're in command.”
+
+He started to answer, then stopped. She was right.
+
+“Understood. Next time you'll have the full report.”
+
+“Good,” Mara said, her tone softening a little. “I'd prefer not to learn something's broken when we're already back at the depot.”
+
+The private channel closed.
+
+Inside the relay station, metal tools clicked against the cabinet. Leonie gave brisk instructions. Mika called out voltage readings, corrected one, then reported a steady result.
+
+Nico had patched a short-range set into the relay's test circuit.
+
+“Local circuit is good,” Nico reported. “Long-range still off.”
+
+“Five minutes,” Leonie replied from the cabinet.
+
+“You said five minutes ten minutes ago,” Nico reminded her.
+
+“Would twenty make you happier?” Leonie asked.
+
+“Five is perfect,” Nico answered.
+
+A soft electronic tone sounded in Andrew's cockpit.
+
+Then another.
+
+The northern observation markers, which had been uncertain all morning, began appearing on the map.
+
+“Leonie, I think we have the primary carrier,” Nico said, leaning into his console.
+
+“Don't celebrate until it passes verification,” Leonie replied.
+
+Static hissed, then a thin voice reached them from farther south.
+
+“...Relay Three, this is Convoy Control. Is anybody receiving?”
+
+“DJ to Convoy Control. Transmitting from Relay Three. Receiving your signal. Stand by for verification,” Nico replied.
+
+“Convoy Control to DJ. Identify your station authority,” the remote operator requested.
+
+Leonie read the relay's authentication sequence while Nico repeated the challenge response and waited for acceptance.
+
+A clean tone sounded.
+
+“DJ to Shepherd. Primary carrier stable. Switching to backup test,” Nico reported.
+
+“Backup stable too,” Leonie said, sounding exhausted and delighted.
+
+Andrew checked the time. The repair was late, but the medical convoy should still be able to make its scheduled passage.
+
+“Shepherd to DJ. Contact the southern roadblock,” Andrew ordered.
+
+“DJ to Shepherd. Copy. Calling now,” Nico replied.
+
+“Southern convoy gate receiving. Send your traffic,” a new voice answered.
+
+“DJ to Southern Convoy Gate. Relay Three communications restored. Local route secure. Official release confirmation to follow,” Nico reported.
+
+There was a brief pause.
+
+“Southern Convoy Gate to DJ. We've been holding civilian traffic since last night. Good to hear you,” the gate operator replied.
+
+Nico smiled at his display. “Good to hear you too.”
+
+Leonie came outside with her gloves tucked beneath one arm. For the first time since meeting her, Andrew saw her relax.
+
+“Final diagnostics look good,” she said. “It's working.”
+
+“Properly working?” Andrew asked.
+
+“Don't ruin this for me,” Leonie replied.
+
+“Wouldn't dream of it,” Andrew said.
+
+The first convoy cleared its roadblock a few minutes later.
+
+The medical convoy reported that it had received the restored route information and was preparing to move. The workers at the depot confirmed that their local telephone link had returned.
+
+“That's two convoys released,” Nico announced on the crew channel.
+
+“Three, actually,” Sera corrected.
+
+Nico checked his display. “What did I miss?”
+
+“The maintenance truck at the western gate,” Sera answered. “Its clearance came through too.”
+
+Nico nodded solemnly. “Then the official number is three. I supervised very effectively.”
+
+“Leonie repaired the relay,” Sera said.
+
+“Emotionally, I was indispensable,” Nico replied.
+
+Leonie heard them on the local channel. “I'll accept joint credit.”
+
+Darius approached carrying one of the last breakfast parcels.
+
+“Leonie,” he said, “have you eaten anything since we left the depot?”
+
+Leonie looked at Darius's outstretched hand and the wrapped roll.
+
+“No,” she admitted.
+
+“Then please eat,” Darius said.
+
+Leonie accepted it, a little embarrassed. “Thank you.”
+
+“Don't thank me until you've tasted it,” Darius replied.
+
+At the edge of the yard, Akari approached the three technicians with her camera.
+
+“Would you mind one photograph?” Akari asked the three technicians. “I'd like to remember who put this relay back together.”
+
+Mika glanced at his bandaged arm. “Even looking like this?”
+
+“Especially like this,” Akari said. “You did the work.”
+
+Leonie glanced at the battered concrete building. “Can we stand somewhere that doesn't make it look as though we repaired a prison?”
+
+“The vans will do,” Akari replied.
+
+Andrew watched her arrange them beside the vehicles. Oskar looked awkward, Mika tried to hide his bandage, and Leonie stood with both hands folded as though waiting for an inspection.
+
+“Andrew, can you take it?” Akari asked, holding out the camera. “I want to be in this one.”
+
+Andrew took the camera and checked its display. “Everyone ready?”
+
+“Ready,” Akari said. Leonie nodded, and Mika managed a tired smile.
+
+The camera clicked.
+
+Akari hurried over to inspect the picture. For a moment she said nothing.
+
+“That's a good one,” she said quietly.
+
+He was about to answer when the restored northern communications channel filled with new traffic.
+
+A battery requested updated coordinates.
+
+A position farther north reported contact beyond its forward obstacles.
+
+Another officer asked for reinforcements at a road junction.
+
+The voices were tired and matter-of-fact. They weren't announcing a victory or a catastrophe. They were trying to keep people informed enough to get through the next hour.
+
+“Clockwork to Shepherd. Depot confirms we're cleared to return once the technicians are packed,” Mara reported. “No new tasking. I've prepared the return route and formation.”
+
+“Shepherd to Clockwork. Good. Hold movement until all three technicians are aboard,” Andrew replied.
+
+“Clockwork to Shepherd. Copy. Standing by.”
+
+He checked the eight friendly markers on his display. Everyone was at their assigned security position.
+
+“Shepherd to Rook element. Maintain perimeter until the civilians are ready. We'll escort them back to the depot before heading home,” Andrew ordered.
+
+“Ratchet to Shepherd. Any objections to taking the return leg at full corridor speed?” Juno asked.
+
+“Shepherd to Ratchet. Only if you try racing DJ,” Andrew replied.
+
+“DJ to Shepherd. I object to being volunteered for a race,” Nico said.
+
+“Owl to DJ. Nobody volunteered you,” Sera replied.
+
+Andrew grinned despite himself, listening to them slip into familiar argument only now that the assignment was nearly over.
+
+The northern channel remained busy in his other ear.
+
+Akari sent Andrew the image from her camera. The technicians were smiling beside the two vans, tired and dirty and very much alive. Akari stood between Mika and Leonie, her own grin making the photograph look almost like one from a school trip.
+
+“Worth it?” she asked him over a private channel.
+
+Andrew glanced at the three civilians preparing to leave, then at the mechs guarding the ridge. “Yeah,” he said. “Worth it.”
+
+“Good. I'm putting this one up beside yesterday's,” Akari said.
+
+“Mara might complain,” Andrew said.
+
+“She always complains about the frame,” Akari replied.
+
+Andrew laughed. The radio brought another northern request for reinforcements. He marked it for the end-of-mission briefing, then checked his squad's positions once more.
+
+For now, every marker was green. Their job here was done, and they could take the technicians back alive.
